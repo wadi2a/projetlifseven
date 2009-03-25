@@ -4,7 +4,12 @@
 
 void Case_initialisation(Case &a)
 {
-    strcopy(a.carre,"vide");
+    strcpy(a.carre,"vide");
+}
+
+void Case_setCase(Case &a, const Case &b)
+{
+        strcpy(a.carre,b.carre);
 }
 
 
