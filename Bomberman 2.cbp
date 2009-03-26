@@ -36,6 +36,7 @@
 		<Unit filename="case.cpp" />
 		<Unit filename="case.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="makefile" />
 		<Unit filename="terrain.cpp" />
 		<Unit filename="terrain.h" />
 		<Extensions>

@@ -73,7 +73,7 @@ void Terrain_initialisation(Terrain & t, const int &niveau)
 
 void Terrain_testament(Terrain &t)
 {
-        delete t.plateau;
+        delete[] t.plateau;
 }
 
 void Terrain_affichageCase(const Terrain &t,const int &posx,const int &posy)
