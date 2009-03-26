@@ -1,4 +1,3 @@
-
 #ifndef _Terrain
 #define _Terrain
 #include "case.h"
@@ -18,10 +17,10 @@ void Terrain_initialisation(Terrain & t, const int &niveau);
 void Terrain_testament(Terrain &t);
 // Vide correctement en mémoire le Terrain.
 
-Case * Terrain_Getcase(Terrain &t,const int &posx,const int &posy);
+Case * Terrain_Getcase(const Terrain &t,const int &posx,const int &posy);
 // Accesseur du module terrain : on obtient une case
 
-void Terrain_affichageCase(Terrain &t,const int &posx,const int &posy);
+void Terrain_affichageCase(const Terrain &t,const int &posx,const int &posy);
 // Affichage avec printf de l'etat d'une case du plateau
 
 void Terrain_Setcase(Terrain &t, const Case &c, const int &posx,const int &poxy);
