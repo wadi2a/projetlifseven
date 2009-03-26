@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="bombe.cpp" />
+		<Unit filename="bombe.h" />
 		<Unit filename="case.cpp" />
 		<Unit filename="case.h" />
 		<Unit filename="main.cpp" />

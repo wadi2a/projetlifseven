@@ -1,33 +1,42 @@
 #include <stdlib.h>
 #include <iostream>
 #include "terrain.h"
+#include "bombe.h"
+
+void Jeu_Affichagetemporaire(const Terrain &t);
+//Procédure temporaire d'affichae du terrain
 
 int main(void)
 {
     Terrain jeu;
+    Bombe test;
+    // Initialisation du jeu en niveau 2
     Terrain_initialisation(jeu,2);
-    int i,j;
+    //Affichage
+    Jeu_Affichagetemporaire(jeu);
+    printf("\n");
+    //On tente de poser une bombe aux coordonnée (0,0)
+    Bombe_bombe(test,jeu,0,0);
+    system("clear");
+    //Affichage du résultat
+    Jeu_Affichagetemporaire(jeu);
 
 
-    for (i=0;i<=jeu.dim/jeu.dim;i++)
+    Terrain_testament(jeu);
+
+    return EXIT_SUCCESS;
+}
+
+void Jeu_Affichagetemporaire(const Terrain &t)
+{
+   int i,j;
+   for (i=0;i<=t.dim-1;i++)
     {
-        for (j=0;j<=jeu.dim/jeu.dim;j++)
+        for (j=0;j<=t.dim-1;j++)
         {
-            Terrain_affichageCase(jeu,i,j);
+            Terrain_affichageCase(t,j,i);
 
         }
         printf("\n");
     }
-    /*char a[10],b[10],c[10],d[10];
-    strcpy(a,jeu.plateau[0].carre);
-    strcpy(b,jeu.plateau[1].carre);
-    strcpy(c,jeu.plateau[2].carre);
-    strcpy(d,jeu.plateau[3].carre);
-    std::printf("%s ",a);
-    std::printf("%s ",b);
-    std::printf("%s ",c);
-    std::printf("%s ",d);*/
-
-    Terrain_testament(jeu);
-    return EXIT_SUCCESS;
 }
