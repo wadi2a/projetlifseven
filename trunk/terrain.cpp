@@ -52,14 +52,14 @@ void Terrain_initialisation(Terrain & t, const int &niveau)
             strcpy(s.carre,"mursolide");
             strcpy(c.carre,"mur");
             Terrain_Setcase(t,v,0,0);
-            Terrain_Setcase(t,s,1,0);
-            Terrain_Setcase(t,c,2,0);
+            Terrain_Setcase(t,v,1,0);
+            Terrain_Setcase(t,v,2,0);
             Terrain_Setcase(t,v,3,0);
             Terrain_Setcase(t,c,0,1);
-            Terrain_Setcase(t,s,1,1);
-            Terrain_Setcase(t,s,2,1);
+            Terrain_Setcase(t,c,1,1);
+            Terrain_Setcase(t,v,2,1);
             Terrain_Setcase(t,c,3,1);
-            Terrain_Setcase(t,c,0,2);
+            Terrain_Setcase(t,v,0,2);
             Terrain_Setcase(t,v,1,2);
             Terrain_Setcase(t,s,2,2);
             Terrain_Setcase(t,v,3,2);
@@ -67,7 +67,6 @@ void Terrain_initialisation(Terrain & t, const int &niveau)
             Terrain_Setcase(t,c,1,3);
             Terrain_Setcase(t,v,2,3);
             Terrain_Setcase(t,c,3,3);
-
         }
 }
 
@@ -81,4 +80,3 @@ void Terrain_affichageCase(const Terrain &t,const int &posx,const int &posy)
     Case * p = Terrain_Getcase(t,posx,posy);
     printf("%s ",p->carre);
 }
-

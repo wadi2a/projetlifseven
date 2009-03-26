@@ -33,6 +33,8 @@
 		</Compiler>
 		<Unit filename="bombe.cpp" />
 		<Unit filename="bombe.h" />
+		<Unit filename="bomberman.cpp" />
+		<Unit filename="bomberman.h" />
 		<Unit filename="case.cpp" />
 		<Unit filename="case.h" />
 		<Unit filename="main.cpp" />

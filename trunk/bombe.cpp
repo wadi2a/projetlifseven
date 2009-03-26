@@ -15,7 +15,6 @@ bool Bombe_posebombe(Bombe &b, const int &posx, const int &posy,Terrain &t, cons
             b.y = posy;
             b.r_exp = rayon;
             }else return false;
-
        }else return false;
     return true;
 }
@@ -27,10 +26,9 @@ void Bombe_minuteur(const int &tmp)
 
 void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
 {
-
     int i;
     Case *m;
-  // Test sur x>0
+// Test sur x>0
     for(i=1;i<=b.r_exp;i++)
     {
       m = Terrain_Getcase(t,b.x+i,b.y);
@@ -42,13 +40,12 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
                 Case p;
                 Case_initialisation(p);
                 Terrain_Setcase(t,p,b.x+i,b.y);
-
+                i=b.r_exp+1;
                 }
 
         }
     }
-
-    // Test sur x<0
+// Test sur x<0
     if(b.x >= b.r_exp)
     {
         for(i=1;i<=b.r_exp;i++)
@@ -62,14 +59,12 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
                     Case p;
                     Case_initialisation(p);
                     Terrain_Setcase(t,p,b.x-i,b.y);
-
+                    i=b.r_exp+1;
                     }
-
             }
         }
     }
-
-    // Test sur y>0
+// Test sur y>0
     for(i=1;i<=b.r_exp;i++)
     {
       m = Terrain_Getcase(t,b.x,b.y+i);
@@ -81,13 +76,12 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
                 Case p;
                 Case_initialisation(p);
                 Terrain_Setcase(t,p,b.x,b.y+i);
-
+                i=b.r_exp+1;
                 }
-
         }
     }
 
-    // Test sur y<0
+// Test sur y<0
     if(b.x >= b.r_exp)
     {
         for(i=1;i<=b.r_exp;i++)
@@ -101,9 +95,8 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
                     Case p;
                     Case_initialisation(p);
                     Terrain_Setcase(t,p,b.x,b.y-i);
-
+                    i=b.r_exp+1;
                     }
-
             }
         }
     }
