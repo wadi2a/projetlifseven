@@ -106,7 +106,7 @@ void Bombe_bombe(Bombe &b, Terrain &t, const int &x, const int &y)
 {
         if (Bombe_posebombe(b,x,y,t,1))
         {
-                Bombe_minuteur(5);
+                Bombe_minuteur(3);
                 Bombe_ExplosionSurTerrain(b,t);
         }
 }
