@@ -16,7 +16,7 @@ int main(void)
     Jeu_Affichagetemporaire(jeu);
     printf("\n");
     //On tente de poser une bombe aux coordonnée (0,0)
-    Bombe_bombe(test,jeu,2,1);
+    Bombe_bombe(test,jeu,0,1);
     system("clear");
     //Affichage du résultat
     Jeu_Affichagetemporaire(jeu);
