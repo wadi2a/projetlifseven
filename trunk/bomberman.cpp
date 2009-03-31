@@ -82,9 +82,48 @@ void Bomberman_Initialisation(Bomberman &b)
         Bomberman_Setbombe(b,30);
 }
 
-void Bomberman_mouvement(Bomberman &a, const Terrain &t, const char &dir)
+void Bomberman_mouvement(Bomberman &a, const Terrain &t, char &dir_act, const char &dir_clavier)
 {
+    if ( dir_act != dir_clavier )
+    {
+            Bomberman_Setdirection(b,dir_clavier);
+    }else{
+        x = Bomberman_Getposx(b);
+        y = Bomberman_Getposy(b);
+        if (dir_clavier == 'h')
+        {
+            if (y != 0)
+            {
+                Case * c;
+                c = Terrain_Getcase(t,x,y+1);
+                if (!strcmp(c->carre,"vide"))
+                {
+                    Bomberman_Setposy(b,y+1);
+                }
+            }
+        }else{
+            if (dir_clavier == 'b')
+            {
+                    if (y != t.dim - 1)
+                    {
+                            Case * c;
+                            c = Terrain_Getcase(t,x,y-1);
+                            if (!strcmp(c->carre,"vide"))
+                            {
+                                Bomberman_Setposy(b,y-1);
+                            }
+                    }
+            }else{
+                if (dir_clavier == 'd')
+                {
+                            Case * c;
+                            c = Terrain_Getcase(t,x+1,y);
+                            if (!strcmp(c->carre,"vide"))
+                            {
+                                Bomberman_Setposx(b,x+1);
+                            }
+                }else{
 
 }
 
-void Bomberman_testBombe(Bomberman &a, const Bombe &b);*/
+//void Bomberman_testBombe(Bomberman &a, const Bombe &b);
