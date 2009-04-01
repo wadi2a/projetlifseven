@@ -100,16 +100,19 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
             }
         }
     }
+    Case a;
+    strcpy(a.carre,"vide");
+    Terrain_Setcase(t,a,b.x,b.y);
 }
 
 void Bombe_bombe(Bombe &b, Terrain &t, const int &x, const int &y)
 {
         if (Bombe_posebombe(b,x,y,t,1))
         {
-                Bombe_minuteur(3);
                 Case a;
                 strcpy(a.carre,"bombe");
                 Terrain_Setcase(t,a,x,y);
-                Bombe_ExplosionSurTerrain(b,t);
+                //Bombe_minuteur(3);
+                //Bombe_ExplosionSurTerrain(b,t);
         }
 }

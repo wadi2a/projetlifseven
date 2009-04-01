@@ -33,9 +33,11 @@ void Bomberman_Setnbvie(Bomberman &b, const int &nbv);
 
 void Bomberman_Incrementevie(Bomberman &b);
 
+void Bomberman_Decrementevie(Bomberman &b);
+
 void Bomberman_Initialisation(Bomberman &b);
 
 void Bomberman_mouvement(Bomberman &a, const Terrain &t, const char &dir);
 
-void Bomberman_testBombe(Bomberman &a, const Bombe &b);
+bool Bomberman_PresenceSurTrajetBombe(Bomberman &a, const Bombe &b);
 #endif

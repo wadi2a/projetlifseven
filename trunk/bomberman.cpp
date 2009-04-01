@@ -72,6 +72,11 @@ void Bomberman_Incrementevie(Bomberman &b)
         Bomberman_Setnbvie(b,b.nb_vie + 1);
 }
 
+void Bomberman_Decrementevie(Bomberman &b)
+{
+        Bomberman_Setnbvie(b,b.nb_vie - 1);
+}
+
 void Bomberman_Initialisation(Bomberman &b)
 {
         char dir = 'd';
@@ -82,12 +87,13 @@ void Bomberman_Initialisation(Bomberman &b)
         Bomberman_Setbombe(b,30);
 }
 
-void Bomberman_mouvement(Bomberman &a, const Terrain &t, char &dir_act, const char &dir_clavier)
+void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const char &dir_clavier)
 {
     if ( dir_act != dir_clavier )
     {
             Bomberman_Setdirection(b,dir_clavier);
     }else{
+        int x,y;
         x = Bomberman_Getposx(b);
         y = Bomberman_Getposy(b);
         if (dir_clavier == 'h')
@@ -116,14 +122,51 @@ void Bomberman_mouvement(Bomberman &a, const Terrain &t, char &dir_act, const ch
             }else{
                 if (dir_clavier == 'd')
                 {
+                        if ( x != t.dim - 1)
+                        {
                             Case * c;
                             c = Terrain_Getcase(t,x+1,y);
                             if (!strcmp(c->carre,"vide"))
                             {
                                 Bomberman_Setposx(b,x+1);
                             }
-                }else{
+                        }
 
+                }else{
+                    if (dir_clavier == 'g')
+                        {
+                            if ( x != 0)
+                            {
+                                Case * c;
+                                c = Terrain_Getcase(t,x+1,y);
+                                if (!strcmp(c->carre,"vide"))
+                                {
+                                    Bomberman_Setposx(b,x+1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    }
 }
 
-//void Bomberman_testBombe(Bomberman &a, const Bombe &b);
+bool Bomberman_PresenceSurTrajetBombe(Bomberman &a, const Bombe &b)
+{
+    if (a.posx == b.x && a.posy == b.y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
+    {
+            return true;
+    }else{ // On teste si le bomberman se trouve sur la zone d'explosion de la bombe
+        int i;
+        for(i=(b.x-b.r_exp);i<=(b.x+b.r_exp);i++)
+        {
+            if( a.posx == i && a.posy == b.y) return true;
+        }
+
+        for(i=(b.y - b.r_exp);i<=(b.y + b.r_exp);i++)
+        {
+            if( a.posy == i && a.posx == b.x) return true;
+        }
+    }
+    return false;
+}
