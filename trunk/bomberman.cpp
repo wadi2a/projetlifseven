@@ -1,6 +1,4 @@
 #include "bomberman.h"
-#include <iostream>
-#include <stdlib.h>
 
 int Bomberman_Getposx(const Bomberman &b)
 {
@@ -151,7 +149,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
     }
 }
 
-bool Bomberman_PresenceSurTrajetBombe(Bomberman &a, const Bombe &b)
+bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, const Bombe &b)
 {
     if (a.posx == b.x && a.posy == b.y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
     {

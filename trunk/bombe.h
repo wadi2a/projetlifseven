@@ -1,6 +1,7 @@
 #ifndef _Bombe
 #define _Bombe
 #include "terrain.h"
+#include <time.h>
 
 struct sBombe
 {
