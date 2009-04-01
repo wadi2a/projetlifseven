@@ -1,8 +1,4 @@
-#include <stdlib.h>
-#include <iostream>
 #include "bomberman.h"
-#include "terrain.h"
-#include "time.h"
 
 void Jeu_Affichagetemporaire(const Terrain &t);
 //Procédure temporaire d'affichae du terrain

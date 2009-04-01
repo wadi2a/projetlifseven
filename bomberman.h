@@ -25,7 +25,7 @@ void Bomberman_Setposx(Bomberman &b, const int &nb);
 
 void Bomberman_Setposy(Bomberman &b, const int &nb);
 
-void Bomberman_Setdirection(Bomberman &b, const int &nb);
+void Bomberman_Setdirection(Bomberman &b, const char &nb);
 
 int Bombeman_Getnbvie(const Bomberman &b);
 
@@ -37,7 +37,7 @@ void Bomberman_Decrementevie(Bomberman &b);
 
 void Bomberman_Initialisation(Bomberman &b);
 
-void Bomberman_mouvement(Bomberman &a, const Terrain &t, const char &dir);
+void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const char &dir_clavier);
 
-bool Bomberman_PresenceSurTrajetBombe(Bomberman &a, const Bombe &b);
+bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, const Bombe &b);
 #endif

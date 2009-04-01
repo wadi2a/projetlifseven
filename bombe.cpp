@@ -1,7 +1,5 @@
-#include <stdlib.h>
-#include <iostream>
 #include "bombe.h"
-#include <time.h>
+
 
 bool Bombe_posebombe(Bombe &b, const int &posx, const int &posy,Terrain &t, const int &rayon)
 {
