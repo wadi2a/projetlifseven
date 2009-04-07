@@ -9,7 +9,7 @@ int main(void)
     Terrain jeu;
     Bomberman perso;
     Bomberman_Initialisation(perso);
-    Bomberman_Setposx(perso,2);
+    Bomberman_Setposx(perso,0);
     Bomberman_Setposy(perso,0);
     Terrain_initialisation(jeu,2);
     int vie = Bombeman_Getnbvie(perso);
@@ -22,11 +22,11 @@ int main(void)
 
     //On tente de poser une bombe aux coordonnée (x,y)
 
-    if (Bombe_posebombe(test,2,0,jeu,1))
+    if (Bombe_posebombe(test,1,0,jeu,1))
         {
                 Case a;
                 strcpy(a.carre,"bombe");
-                Terrain_Setcase(jeu,a,2,0);
+                Terrain_Setcase(jeu,a,1,0);
                 Jeu_Affichagetemporaire(jeu);
                 printf("\n");
 

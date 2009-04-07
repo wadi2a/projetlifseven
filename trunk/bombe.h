@@ -21,4 +21,5 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t);
 //Explosion de la bombe avec suppresion des murs cassables à partir du point d'impact et sur le rayon définis dans la structure
 
 void Bombe_bombe(Bombe &b, Terrain &t, const int &x, const int &y);
+//
 #endif
