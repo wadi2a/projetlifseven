@@ -28,7 +28,7 @@ void Ennemi_Setnbvie(Ennemi &e, const int &nbv);
 
 void Ennemi_Decrementevie(Ennemi &e);
 
-void Ennemi_Initialisation(Ennemi &e);
+void Ennemi_Initialisation(Ennemi &e, const Terrain &t);
 
 void Ennemi_mouvement(Ennemi &e, const Terrain &t, char &dir_act);
 

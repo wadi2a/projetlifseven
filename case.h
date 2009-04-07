@@ -2,6 +2,7 @@
 #define _Case
 #include <stdlib.h>
 #include <iostream>
+#include <time.h>
 
 struct sCase
 {
