@@ -30,7 +30,9 @@ void Ennemi_Decrementevie(Ennemi &e);
 
 void Ennemi_Initialisation(Ennemi &e, const Terrain &t);
 
-void Ennemi_mouvement(Ennemi &e, const Terrain &t, char &dir_act);
+void Ennemi_mouvement(Ennemi &e, const Terrain &t);
 
 bool Ennemi_PresenceSurTrajetBombe(const Ennemi &e, const Bombe &b);
+
+void Ennemi_InitRand();
 #endif

@@ -57,21 +57,24 @@ void Ennemi_Decrementevie(Ennemi &e)
     Ennemi_Setnbvie(e,e.nb_vie - 1);
 }
 
+void Ennemi_InitRand()
+{
+  srand(time(NULL));
+}
 
 void Ennemi_Initialisation(Ennemi &e, const Terrain &t)
 {
         char dir = 'd';
-        Ennemi_Setnbvie(e,3);
-        srand(time(NULL));
-
+        Ennemi_Setnbvie(e,1);
         int x,y;
         Case * p;
 
+
         do{
-            x = rand()%3;
-            y = rand()%3;
+            x = rand()%4;
+            y = rand()%4;
             p = Terrain_Getcase(t,x,y);
-        }while( x != 0 && y != 0 && (!strcmp(p->carre,"vide")));
+        }while( (x == 0 && y == 0) || ( strcmp(p->carre,"vide") < 0 || strcmp(p->carre,"vide") > 0));
 
         Ennemi_Setposx(e,x);
         Ennemi_Setposy(e,y);
@@ -79,36 +82,56 @@ void Ennemi_Initialisation(Ennemi &e, const Terrain &t)
 
 }
 
-void Ennemi_mouvement(Ennemi &e, const Terrain &t, char &dir_act)
+void Ennemi_mouvement(Ennemi &e, const Terrain &t)
 {
-    srand(time(NULL));
-    int booleen;
-    booleen = rand()%1;
+    int booleen,posy,posx;
+    booleen = rand()%2;
+    posx = Ennemi_Getposx(e);
+    posy = Ennemi_Getposy(e);
     Case *p;
 
-    if (booleen) // variation de x
+    if (booleen == 1) // variation de x
     {
         int x;
-
         do {
-            x = rand()%3 - 1;
-            p = Terrain_Getcase(t,e.posx + x,e.posy);
-        }while (!strcmp(p->carre,"vide"));
-
+            if(posx == 0)
+            {
+                x = rand()%2;
+                p = Terrain_Getcase(t,e.posx + x,e.posy);
+            }else{
+                if (posx == t.dim)
+                {
+                    x = rand()%2 - 1;
+                    p = Terrain_Getcase(t,e.posx + x,e.posy);
+                }else{
+                    x = rand()%3 - 1;
+                    p = Terrain_Getcase(t,e.posx + x,e.posy);
+                }
+            }
+        }while (strcmp(p->carre,"vide") < 0 || strcmp(p->carre,"vide") > 0);
         Ennemi_Setposx(e, e.posx + x);
-
-
-    }else{ // variation de y
-
-        int y;
-
-        do {
-            y = rand()%3 - 1;
-            p = Terrain_Getcase(t,e.posx,e.posy + y);
-        }while (!strcmp(p->carre,"vide"));
-
-        Ennemi_Setposy(e, e.posy + y);
-
+    }else{
+        if(booleen == 0)
+        { // variation de y
+            int y;
+            do {
+                if (posy == 0)
+                {
+                    y = rand()%2;
+                    p = Terrain_Getcase(t,e.posx,e.posy + y);
+                }else{
+                    if (posy == t.dim)
+                    {
+                        y = rand()%2 - 1;
+                        p = Terrain_Getcase(t,e.posx,e.posy + y);
+                    }else{
+                        y = rand()%3 - 1;
+                        p = Terrain_Getcase(t,e.posx,e.posy + y);
+                    }
+                }
+            }while (strcmp(p->carre,"vide") < 0 || strcmp(p->carre,"vide") > 0);
+            Ennemi_Setposy(e, e.posy + y);
+        }
     }
 }
 
