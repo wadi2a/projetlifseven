@@ -1,13 +1,16 @@
 #include "bomberman.h"
+#include "ennemi.h"
 
 void Jeu_Affichagetemporaire(const Terrain &t);
 //Procédure temporaire d'affichae du terrain
 
 int main(void)
 {
-    Bombe test;
+    /*Bombe test;
     Terrain jeu;
     Bomberman perso;
+    Ennemi mechant;
+    Ennemi_Initialisation(mechant);
     Bomberman_Initialisation(perso);
     Bomberman_Setposx(perso,0);
     Bomberman_Setposy(perso,0);
@@ -42,7 +45,36 @@ int main(void)
     sleep(3);
     printf("%d",vie);
 
+    Terrain_testament(jeu);*/
+   // return EXIT_SUCCESS;
+
+    Terrain jeu;
+    Ennemi mechant;
+    Terrain_initialisation(jeu,2);
+    Ennemi_InitRand();
+
+    int x,y,vie;
+
+
+        Ennemi_Initialisation(mechant,jeu);
+        x=Ennemi_Getposx(mechant);
+        y=Ennemi_Getposy(mechant);
+        vie = Ennemi_Getnbvie(mechant);
+        printf("vie = %d, \nx = %d et y = %d \n \n" , vie,x,y);
+        Jeu_Affichagetemporaire(jeu);
+        int i=0;
+        do
+        {
+            Ennemi_mouvement(mechant,jeu);
+            x=Ennemi_Getposx(mechant);
+            y=Ennemi_Getposy(mechant);
+            vie = Ennemi_Getnbvie(mechant);
+            printf("vie = %d, \nx = %d et y = %d \n \n" , vie,x,y);
+            i++;
+        }while(i<=10);
+
     Terrain_testament(jeu);
+
     return EXIT_SUCCESS;
 }
 
