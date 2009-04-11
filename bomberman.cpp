@@ -82,7 +82,7 @@ void Bomberman_Initialisation(Bomberman &b)
         Bomberman_Setposx(b,0);
         Bomberman_Setposy(b,0);
         Bomberman_Setdirection(b,dir);
-        Bomberman_Setbombe(b,30);
+        Bomberman_Setbombe(b,50);
 }
 
 void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const char &dir_clavier)
@@ -100,7 +100,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
             {
                 Case * c;
                 c = Terrain_Getcase(t,x,y+1);
-                if (!strcmp(c->carre,"vide"))
+                if (!strcmp(c->carre,"V"))
                 {
                     Bomberman_Setposy(b,y+1);
                 }
@@ -112,7 +112,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
                     {
                             Case * c;
                             c = Terrain_Getcase(t,x,y-1);
-                            if (!strcmp(c->carre,"vide"))
+                            if (!strcmp(c->carre,"V"))
                             {
                                 Bomberman_Setposy(b,y-1);
                             }
@@ -124,7 +124,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
                         {
                             Case * c;
                             c = Terrain_Getcase(t,x+1,y);
-                            if (!strcmp(c->carre,"vide"))
+                            if (!strcmp(c->carre,"V"))
                             {
                                 Bomberman_Setposx(b,x+1);
                             }
@@ -137,7 +137,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
                             {
                                 Case * c;
                                 c = Terrain_Getcase(t,x+1,y);
-                                if (!strcmp(c->carre,"vide"))
+                                if (!strcmp(c->carre,"V"))
                                 {
                                     Bomberman_Setposx(b,x+1);
                                 }

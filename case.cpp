@@ -2,7 +2,7 @@
 
 void Case_initialisation(Case &a)
 {
-    strcpy(a.carre,"vide");
+    strcpy(a.carre,"V");
 }
 
 void Case_setCase(Case &a, const Case &b)

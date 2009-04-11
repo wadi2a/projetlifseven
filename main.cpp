@@ -6,15 +6,15 @@ void Jeu_Affichagetemporaire(const Terrain &t);
 
 int main(void)
 {
-    /*Bombe test;
+/*    Bombe test;
+    Ennemi_InitRand();
     Terrain jeu;
     Bomberman perso;
-    Ennemi mechant;
-    Ennemi_Initialisation(mechant);
     Bomberman_Initialisation(perso);
     Bomberman_Setposx(perso,0);
     Bomberman_Setposy(perso,0);
-    Terrain_initialisation(jeu,2);
+    Terrain_initialisation(jeu);
+    Terrain_affectationaleatoire(jeu);
     int vie = Bombeman_Getnbvie(perso);
     //Affichage
     Jeu_Affichagetemporaire(jeu);
@@ -23,12 +23,12 @@ int main(void)
     printf("\n");
     sleep(5);
 
-    //On tente de poser une bombe aux coordonnée (x,y)
+//On tente de poser une bombe aux coordonnée (x,y)
 
     if (Bombe_posebombe(test,1,0,jeu,1))
         {
                 Case a;
-                strcpy(a.carre,"bombe");
+                strcpy(a.carre,"B");
                 Terrain_Setcase(jeu,a,1,0);
                 Jeu_Affichagetemporaire(jeu);
                 printf("\n");
@@ -45,14 +45,14 @@ int main(void)
     sleep(3);
     printf("%d",vie);
 
-    Terrain_testament(jeu);*/
-   // return EXIT_SUCCESS;
+    Terrain_testament(jeu);
+   // return EXIT_SUCCESS; */
 
     Terrain jeu;
     Ennemi mechant;
-    Terrain_initialisation(jeu,2);
+    Terrain_initialisation(jeu);
     Ennemi_InitRand();
-
+    Terrain_affectationaleatoire(jeu);
     int x,y,vie;
 
 
@@ -74,6 +74,7 @@ int main(void)
         }while(i<=10);
 
     Terrain_testament(jeu);
+
 
     return EXIT_SUCCESS;
 }

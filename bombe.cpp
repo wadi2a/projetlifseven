@@ -7,7 +7,7 @@ bool Bombe_posebombe(Bombe &b, const int &posx, const int &posy,Terrain &t, cons
    {
         Case *n;
         n = Terrain_Getcase(t,posx,posy);
-        if(strcmp(n->carre,"mursolide") && strcmp(n->carre, "mur"))
+        if(strcmp(n->carre,"S") && strcmp(n->carre, "M"))
         {
             b.x = posx;
             b.y = posy;
@@ -30,10 +30,10 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
     for(i=1;i<=b.r_exp;i++)
     {
       m = Terrain_Getcase(t,b.x+i,b.y);
-      if(strcmp(m->carre,"mursolide") == 0)
+      if(strcmp(m->carre,"S") == 0)
       {
         i=b.r_exp+1;
-      }else{ if(strcmp(m->carre,"mur") == 0)
+      }else{ if(strcmp(m->carre,"M") == 0)
             {
                 Case p;
                 Case_initialisation(p);
@@ -49,10 +49,10 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
         for(i=1;i<=b.r_exp;i++)
         {
         m = Terrain_Getcase(t,b.x-i,b.y);
-        if(strcmp(m->carre,"mursolide") == 0)
+        if(strcmp(m->carre,"S") == 0)
         {
             i=b.r_exp+1;
-        }else{ if(strcmp(m->carre,"mur") == 0)
+        }else{ if(strcmp(m->carre,"M") == 0)
                 {
                     Case p;
                     Case_initialisation(p);
@@ -66,10 +66,10 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
     for(i=1;i<=b.r_exp;i++)
     {
       m = Terrain_Getcase(t,b.x,b.y+i);
-      if(strcmp(m->carre,"mursolide") == 0)
+      if(strcmp(m->carre,"S") == 0)
       {
         i=b.r_exp+1;
-      }else{ if(strcmp(m->carre,"mur") == 0)
+      }else{ if(strcmp(m->carre,"M") == 0)
             {
                 Case p;
                 Case_initialisation(p);
@@ -85,10 +85,10 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
         for(i=1;i<=b.r_exp;i++)
         {
         m = Terrain_Getcase(t,b.x,b.y-i);
-        if(strcmp(m->carre,"mursolide") == 0)
+        if(strcmp(m->carre,"S") == 0)
         {
             i=b.r_exp+1;
-        }else{ if(strcmp(m->carre,"mur") == 0)
+        }else{ if(strcmp(m->carre,"M") == 0)
                 {
                     Case p;
                     Case_initialisation(p);
@@ -99,7 +99,7 @@ void Bombe_ExplosionSurTerrain(const Bombe &b,Terrain &t)
         }
     }
     Case a;
-    strcpy(a.carre,"vide");
+    strcpy(a.carre,"V");
     Terrain_Setcase(t,a,b.x,b.y);
 }
 
@@ -108,7 +108,7 @@ void Bombe_bombe(Bombe &b, Terrain &t, const int &x, const int &y)
         if (Bombe_posebombe(b,x,y,t,1))
         {
                 Case a;
-                strcpy(a.carre,"bombe");
+                strcpy(a.carre,"B");
                 Terrain_Setcase(t,a,x,y);
                 //Bombe_minuteur(3);
                 //Bombe_ExplosionSurTerrain(b,t);
