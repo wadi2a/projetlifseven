@@ -34,5 +34,5 @@ void Ennemi_mouvement(Ennemi &e, const Terrain &t);
 
 bool Ennemi_PresenceSurTrajetBombe(const Ennemi &e, const Bombe &b);
 
-void Ennemi_InitRand();
+
 #endif

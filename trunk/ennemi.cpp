@@ -57,11 +57,6 @@ void Ennemi_Decrementevie(Ennemi &e)
     Ennemi_Setnbvie(e,e.nb_vie - 1);
 }
 
-void Ennemi_InitRand()
-{
-  srand(time(NULL));
-}
-
 void Ennemi_Initialisation(Ennemi &e, const Terrain &t)
 {
         char dir = 'd';
@@ -71,10 +66,10 @@ void Ennemi_Initialisation(Ennemi &e, const Terrain &t)
 
 
         do{
-            x = rand()%4;
-            y = rand()%4;
+            x = rand()%14 +1;
+            y = rand()%14 +1;
             p = Terrain_Getcase(t,x,y);
-        }while( (x == 0 && y == 0) || ( strcmp(p->carre,"vide") < 0 || strcmp(p->carre,"vide") > 0));
+        }while( strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
 
         Ennemi_Setposx(e,x);
         Ennemi_Setposy(e,y);
@@ -108,7 +103,7 @@ void Ennemi_mouvement(Ennemi &e, const Terrain &t)
                     p = Terrain_Getcase(t,e.posx + x,e.posy);
                 }
             }
-        }while (strcmp(p->carre,"vide") < 0 || strcmp(p->carre,"vide") > 0);
+        }while (strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
         Ennemi_Setposx(e, e.posx + x);
     }else{
         if(booleen == 0)
@@ -129,7 +124,7 @@ void Ennemi_mouvement(Ennemi &e, const Terrain &t)
                         p = Terrain_Getcase(t,e.posx,e.posy + y);
                     }
                 }
-            }while (strcmp(p->carre,"vide") < 0 || strcmp(p->carre,"vide") > 0);
+            }while (strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
             Ennemi_Setposy(e, e.posy + y);
         }
     }

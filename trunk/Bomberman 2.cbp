@@ -37,8 +37,12 @@
 		<Unit filename="bomberman.h" />
 		<Unit filename="case.cpp" />
 		<Unit filename="case.h" />
+		<Unit filename="dennemis.cpp" />
+		<Unit filename="dennemis.h" />
 		<Unit filename="ennemi.cpp" />
 		<Unit filename="ennemi.h" />
+		<Unit filename="jeu.cpp" />
+		<Unit filename="jeu.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="makefile" />
 		<Unit filename="terrain.cpp" />
