@@ -1,13 +1,15 @@
 #include "bomberman.h"
 #include "ennemi.h"
+#include "jeu.h"
 
 void Jeu_Affichagetemporaire(const Terrain &t);
 //Procédure temporaire d'affichae du terrain
 
 int main(void)
 {
-/*    Bombe test;
-    Ennemi_InitRand();
+    Bombe * test;
+    Bombe_InitialisationBombe(test);
+    Jeu_InitRand();
     Terrain jeu;
     Bomberman perso;
     Bomberman_Initialisation(perso);
@@ -25,11 +27,11 @@ int main(void)
 
 //On tente de poser une bombe aux coordonnée (x,y)
 
-    if (Bombe_posebombe(test,1,0,jeu,1))
+    if (Bombe_posebombe(test,2,3,jeu,1))
         {
                 Case a;
                 strcpy(a.carre,"B");
-                Terrain_Setcase(jeu,a,1,0);
+                Terrain_Setcase(jeu,a,2,3);
                 Jeu_Affichagetemporaire(jeu);
                 printf("\n");
 
@@ -44,24 +46,34 @@ int main(void)
     Jeu_Affichagetemporaire(jeu);
     sleep(3);
     printf("%d",vie);
-
+    Bombe_testament(test);
     Terrain_testament(jeu);
-   // return EXIT_SUCCESS; */
 
-    Terrain jeu;
-    Ennemi mechant;
+
+   /* Terrain jeu;
+
+
+    Ennemi * mechant;
+    Ennemi_Creation(mechant);
+
     Terrain_initialisation(jeu);
-    Ennemi_InitRand();
     Terrain_affectationaleatoire(jeu);
-    int x,y,vie;
+
+    Jeu_InitRand();
+    Terrain_affectationaleatoire(jeu);
+    Ennemi_affectationsurterrain(mechant,jeu);
 
 
-        Ennemi_Initialisation(mechant,jeu);
-        x=Ennemi_Getposx(mechant);
-        y=Ennemi_Getposy(mechant);
-        vie = Ennemi_Getnbvie(mechant);
-        printf("vie = %d, \nx = %d et y = %d \n \n" , vie,x,y);
-        Jeu_Affichagetemporaire(jeu);
+
+   int x,y,vie;
+
+
+    x=Ennemi_Getposx(mechant);
+    y=Ennemi_Getposy(mechant);
+    vie = Ennemi_Getnbvie(mechant);
+    printf("vie = %d, \nx = %d et y = %d \n \n" , vie,x,y);
+
+    Jeu_Affichagetemporaire(jeu);
         int i=0;
         do
         {
@@ -74,7 +86,9 @@ int main(void)
         }while(i<=10);
 
     Terrain_testament(jeu);
+    Ennemi_testament(mechant);
 
+*/
 
     return EXIT_SUCCESS;
 }
