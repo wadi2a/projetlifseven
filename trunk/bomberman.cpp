@@ -149,21 +149,21 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
     }
 }
 
-bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, const Bombe &b)
+bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, const Bombe * b)
 {
-    if (a.posx == b.x && a.posy == b.y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
+    if (a.posx == b->x && a.posy == b->y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
     {
             return true;
     }else{ // On teste si le bomberman se trouve sur la zone d'explosion de la bombe
         int i;
-        for(i=(b.x-b.r_exp);i<=(b.x+b.r_exp);i++)
+        for(i=(b->x-b->r_exp);i<=(b->x+b->r_exp);i++)
         {
-            if( a.posx == i && a.posy == b.y) return true;
+            if( a.posx == i && a.posy == b->y) return true;
         }
 
-        for(i=(b.y - b.r_exp);i<=(b.y + b.r_exp);i++)
+        for(i=(b->y - b->r_exp);i<=(b->y + b->r_exp);i++)
         {
-            if( a.posy == i && a.posx == b.x) return true;
+            if( a.posy == i && a.posx == b->x) return true;
         }
     }
     return false;

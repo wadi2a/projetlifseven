@@ -6,7 +6,8 @@
 struct sJeu
 {
         int niveau;
-}
+
+};
 
 void Jeu_InitRand();
 
