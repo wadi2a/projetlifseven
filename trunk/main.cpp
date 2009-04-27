@@ -1,22 +1,32 @@
-#include "bomberman.h"
-#include "ennemi.h"
 #include "jeu.h"
 
 void Jeu_Affichagetemporaire(const Terrain &t);
 //Procédure temporaire d'affichae du terrain
 
+
+
 int main(void)
 {
+    /*Jeu_InitRand();
+
+    int nb;
+    Jeu j;
+    printf("Choix du nombre d'ennemis ?\n");
+    scanf("%d",&nb);
+    Jeu_ChoixNiveau(j,nb);
+    Jeu_ChoixMechant(j,nb);
+
+
     Bombe * test;
+    dEnnemi mechant;
     Bombe_InitialisationBombe(test);
-    Jeu_InitRand();
     Terrain jeu;
     Bomberman perso;
-    Bomberman_Initialisation(perso);
-    Bomberman_Setposx(perso,0);
-    Bomberman_Setposy(perso,0);
-    Terrain_initialisation(jeu);
-    Terrain_affectationaleatoire(jeu);
+    Jeu_Initialisation(j,jeu,mechant,perso);
+
+
+
+
     int vie = Bombeman_Getnbvie(perso);
     //Affichage
     Jeu_Affichagetemporaire(jeu);
@@ -47,34 +57,65 @@ int main(void)
     sleep(3);
     printf("%d",vie);
     Bombe_testament(test);
-    Terrain_testament(jeu);
+    Terrain_testament(jeu);*/
 
-
-   /* Terrain jeu;
-
-
-    Ennemi * mechant;
-    Ennemi_Creation(mechant);
-
-    Terrain_initialisation(jeu);
-    Terrain_affectationaleatoire(jeu);
 
     Jeu_InitRand();
-    Terrain_affectationaleatoire(jeu);
-    Ennemi_affectationsurterrain(mechant,jeu);
 
+    int nb;
+    Jeu j;
+    printf("Choix du nombre d'ennemis ?\n");
+    scanf("%d",&nb);
+    Jeu_ChoixNiveau(j,nb);
+    Jeu_ChoixMechant(j,nb);
 
+    dEnnemi mechant;
+    Terrain jeu;
+    Bomberman perso;
+    Jeu_Initialisation(j,jeu,mechant,perso);
 
-   int x,y,vie;
+    int x,y,i;
+    int * tab;
+    tab = dEnnemi_GetPosition(mechant);
 
-
-    x=Ennemi_Getposx(mechant);
-    y=Ennemi_Getposy(mechant);
-    vie = Ennemi_Getnbvie(mechant);
-    printf("vie = %d, \nx = %d et y = %d \n \n" , vie,x,y);
+    for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
+    {
+        x=tab[i];
+        y=tab[i+1];
+        printf("x = %d et y = %d \n \n" , x,y);
+    }
 
     Jeu_Affichagetemporaire(jeu);
-        int i=0;
+    sleep(5);
+    delete tab;
+
+    Ennemi * test = mechant.liste_en.prem->suivant->suivant->en;
+    dEnnemi_SupprimeEnnemi(mechant,test);
+
+    tab = dEnnemi_GetPosition(mechant);
+    for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
+    {
+        x=tab[i];
+        y=tab[i+1];
+        printf("x = %d et y = %d \n \n" , x,y);
+    }
+    int com;
+    for(com=0;com<=4;i++)
+    {
+        sleep(5);
+        printf("\n");
+        delete tab;
+        dEnnemi_Mouvement(mechant,jeu);
+        tab = dEnnemi_GetPosition(mechant);
+        for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
+        {
+            x=tab[i];
+            y=tab[i+1];
+            printf("x = %d et y = %d \n \n" , x,y);
+        }
+    }
+
+        /*int i=0;
         do
         {
             Ennemi_mouvement(mechant,jeu);
@@ -82,13 +123,12 @@ int main(void)
             y=Ennemi_Getposy(mechant);
             vie = Ennemi_Getnbvie(mechant);
             printf("vie = %d, \nx = %d et y = %d \n \n" , vie,x,y);
-            i++;
-        }while(i<=10);
+            i++;mechant
+        }while(i<=10);*/
 
     Terrain_testament(jeu);
-    Ennemi_testament(mechant);
+    dEnnemi_Testament(mechant);
 
-*/
 
     return EXIT_SUCCESS;
 }
@@ -106,3 +146,4 @@ void Jeu_Affichagetemporaire(const Terrain &t)
         printf("\n");
     }
 }
+
