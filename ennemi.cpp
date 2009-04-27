@@ -5,17 +5,17 @@ void Ennemi_Creation(Ennemi *& e)
         e = new Ennemi;
 }
 
-int Ennemi_Getposx(const Ennemi * e)
+int Ennemi_Getposx(Ennemi * e)
 {
     return e->posx;
 }
 
-int Ennemi_Getposy(const Ennemi * e)
+int Ennemi_Getposy(Ennemi * e)
 {
     return e->posy;
 }
 
-char Ennemi_Getdirection(const Ennemi * e)
+char Ennemi_Getdirection(Ennemi * e)
 {
     return e->direction;
 }
@@ -44,7 +44,7 @@ void Ennemi_Setdirection(Ennemi * e,const char &dir)
     }
 }
 
-int Ennemi_Getnbvie(const Ennemi * e)
+int Ennemi_Getnbvie(Ennemi * e)
 {
         return e->nb_vie;
 }

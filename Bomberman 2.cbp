@@ -43,6 +43,8 @@
 		<Unit filename="ennemi.h" />
 		<Unit filename="jeu.cpp" />
 		<Unit filename="jeu.h" />
+		<Unit filename="liste.h" />
+		<Unit filename="listedoublechainee.cpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="makefile" />
 		<Unit filename="terrain.cpp" />
