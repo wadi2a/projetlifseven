@@ -111,7 +111,7 @@ void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
 
 bool Bombe_bombe(Bombe * b, Terrain &t, const int &x, const int &y,const int &time)
 {
-        if (Bombe_posebombe(b,x,y,t,1))
+        if (Bombe_posebombe(b,x,y,t,2))
         {
                 Case a;
                 strcpy(a.carre,"B");
