@@ -57,7 +57,7 @@ void Terrain_affectationaleatoire(Terrain &t)
             do{
                 x = rand()%15;
                 y = rand()%15;
-            }while((x%2 == 1 && y%2 == 1) || (x == 0 && y == 0));
+            }while((x%2 == 1 && y%2 == 1) || (x == 0 && y == 0) || (x == 1 && y == 0) || (x == 0 && y == 1));
 
             Terrain_Setcase(t,c,x,y);
         }

@@ -77,7 +77,7 @@ void Bomberman_Decrementevie(Bomberman &b)
 
 void Bomberman_Initialisation(Bomberman &b)
 {
-        char dir = 'd';
+        char dir = 'b';
         Bomberman_Setnbvie(b,3);
         Bomberman_Setposx(b,0);
         Bomberman_Setposy(b,0);
@@ -85,8 +85,22 @@ void Bomberman_Initialisation(Bomberman &b)
         Bomberman_Setbombe(b,50);
 }
 
-void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const char &dir_clavier)
+void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
 {
+    char dir_act = Bomberman_Getdirection(b);
+    char dir_clavier;
+    switch (pos)
+    {
+        case 1 : dir_clavier='h';
+                break;
+        case 2 : dir_clavier='b';
+                break;
+        case 3 : dir_clavier='d';
+                break;
+        case 4 : dir_clavier='g';
+                break;
+    }
+
     if ( dir_act != dir_clavier )
     {
             Bomberman_Setdirection(b,dir_clavier);
@@ -96,7 +110,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
         y = Bomberman_Getposy(b);
         if (dir_clavier == 'h')
         {
-            if (y != 0)
+            if (y != t.dim - 1)
             {
                 Case * c;
                 c = Terrain_Getcase(t,x,y+1);
@@ -108,7 +122,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
         }else{
             if (dir_clavier == 'b')
             {
-                    if (y != t.dim - 1)
+                    if (y != 0)
                     {
                             Case * c;
                             c = Terrain_Getcase(t,x,y-1);
@@ -136,10 +150,10 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
                             if ( x != 0)
                             {
                                 Case * c;
-                                c = Terrain_Getcase(t,x+1,y);
+                                c = Terrain_Getcase(t,x-1,y);
                                 if (!strcmp(c->carre,"V"))
                                 {
-                                    Bomberman_Setposx(b,x+1);
+                                    Bomberman_Setposx(b,x-1);
                                 }
                             }
                         }
@@ -149,7 +163,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const ch
     }
 }
 
-bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, const Bombe * b)
+bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, Bombe * b)
 {
     if (a.posx == b->x && a.posy == b->y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
     {

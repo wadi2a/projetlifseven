@@ -37,7 +37,8 @@ void Bomberman_Decrementevie(Bomberman &b);
 
 void Bomberman_Initialisation(Bomberman &b);
 
-void Bomberman_mouvement(Bomberman &b, const Terrain &t, char &dir_act, const char &dir_clavier);
+void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos);
 
-bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, const Bombe * b);
+bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, Bombe * b);
+
 #endif

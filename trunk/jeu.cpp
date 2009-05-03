@@ -7,10 +7,10 @@ void Jeu_InitRand()
 
 void Jeu_PerteVieContactEnnemi(Bomberman &b, const dEnnemi &e)
 {
-    Cellule * p = e.liste_en.prem;
-    while(p != NULL)
+    Cellule * p = e.liste_en.prem->suivant;
+    while(p != e.liste_en.prem)
     {
-        if(b.posx==p->en->posx && b.posy==p->en->posx)
+        if(b.posx==p->en->posx && b.posy==p->en->posy)
         {
             Bomberman_Decrementevie(b);
         }
