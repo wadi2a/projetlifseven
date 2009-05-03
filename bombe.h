@@ -8,6 +8,8 @@ struct sBombe
     int x;
     int y;
     int r_exp;
+    int temps;
+    int nb;
 };
 typedef struct sBombe Bombe;
 
@@ -22,7 +24,7 @@ void Bombe_minuteur(const int &tmp);
 void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t);
 //Explosion de la bombe avec suppresion des murs cassables à partir du point d'impact et sur le rayon définis dans la structure
 
-void Bombe_bombe(Bombe * b, Terrain &t, const int &x, const int &y);
+bool Bombe_bombe(Bombe * b, Terrain &t, const int &x, const int &y,const int &time);
 //
 
 void Bombe_testament(Bombe *b);

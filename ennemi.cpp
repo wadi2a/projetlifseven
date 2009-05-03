@@ -106,7 +106,7 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
                 x = rand()%2;
                 p = Terrain_Getcase(t,e->posx + x,e->posy);
             }else{
-                if (posx == t.dim)
+                if (posx == t.dim - 1)
                 {
                     x = rand()%2 - 1;
                     p = Terrain_Getcase(t,e->posx + x,e->posy);
@@ -127,7 +127,7 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
                     y = rand()%2;
                     p = Terrain_Getcase(t,e->posx,e->posy + y);
                 }else{
-                    if (posy == t.dim)
+                    if (posy == t.dim - 1)
                     {
                         y = rand()%2 - 1;
                         p = Terrain_Getcase(t,e->posx,e->posy + y);
@@ -142,7 +142,7 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
     }
 }
 
-bool Ennemi_PresenceSurTrajetBombe(const Ennemi * e, const Bombe * b)
+bool Ennemi_PresenceSurTrajetBombe(Ennemi * e, Bombe * b)
 {
     if (e->posx == b->x && e->posy == b->y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
     {

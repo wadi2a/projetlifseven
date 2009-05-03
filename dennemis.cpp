@@ -55,7 +55,19 @@ void dEnnemi_Mouvement(dEnnemi & e, const Terrain &t)
     }
 }
 
-void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b);
+void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b)
+{
+    Cellule * p = e.liste_en.prem->suivant;
+    while(p != e.liste_en.prem)
+    {
+        if(Ennemi_PresenceSurTrajetBombe(p->en,b))
+        {
+            Ennemi_Decrementevie(p->en);
+            if(Ennemi_Getnbvie(p->en) <= 0) dEnnemi_SupprimeEnnemi(e,p->en);
+        }
+        p=p->suivant;
+    }
+}
 
 int * dEnnemi_GetPosition(dEnnemi & e)
 {

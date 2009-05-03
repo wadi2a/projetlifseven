@@ -3,6 +3,7 @@
 void Bombe_InitialisationBombe(Bombe *& b)
 {
         b = new Bombe;
+        b->nb=1;
 
 }
 
@@ -108,16 +109,17 @@ void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
     Terrain_Setcase(t,a,b->x,b->y);
 }
 
-void Bombe_bombe(Bombe * b, Terrain &t, const int &x, const int &y)
+bool Bombe_bombe(Bombe * b, Terrain &t, const int &x, const int &y,const int &time)
 {
         if (Bombe_posebombe(b,x,y,t,1))
         {
                 Case a;
                 strcpy(a.carre,"B");
                 Terrain_Setcase(t,a,x,y);
-                //Bombe_minuteur(3);
-                //Bombe_ExplosionSurTerrain(b,t);
+                b->temps = time;
+                return true;
         }
+        return false;
 }
 
 void Bombe_testament(Bombe *b)
