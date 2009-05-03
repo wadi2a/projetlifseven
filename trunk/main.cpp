@@ -1,11 +1,6 @@
 #include "jeu.h"
 #include <SDL/SDL.h>
 
-void Jeu_Affichagetemporaire(const Terrain &t);
-//Procédure temporaire d'affichae du terrain
-
-void pause_sdl();
-
 int main(void)
 {
     SDL_Surface *ecran = NULL;
@@ -16,13 +11,12 @@ int main(void)
     SDL_Surface *personnage[4] = {NULL};
     SDL_Surface *persoactuel = NULL;
     SDL_Surface *ennemi = NULL;
-    SDL_Event event;
     SDL_Surface *menu = NULL;
     SDL_Surface *gameover = SDL_LoadBMP("Menu/gameover.bmp");
 
+    SDL_Event event;
 
-
-     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) // Démarrage de la SDL. Si erreur alors..
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) // Démarrage de la SDL. Si erreur alors..
     {
         fprintf(stderr, "Erreur d'initialisation de la SDL : %s\n", SDL_GetError()); // Ecriture de l'erreur
         exit(EXIT_FAILURE); // On quitte le programme
@@ -76,12 +70,8 @@ int main(void)
                 break;
         }
     }
-
-
-
-
-
-
+    Jeu bombermangame;
+    Bomberman perso;
 
 // Boucle de jeu
 while(win)
@@ -99,12 +89,12 @@ while(win)
 
     dEnnemi mechant;
     Terrain jeu;
-    Bomberman perso;
+
     Bombe * bombe;
 
     Jeu_InitRand();
     Bombe_InitialisationBombe(bombe);
-    Jeu bombermangame;
+
     Jeu_ChoixNiveau(bombermangame,niveau);
     Jeu_ChoixMechant(bombermangame,niveau + 1);
 
@@ -141,12 +131,8 @@ while(win)
                     SDL_BlitSurface(mursolide, NULL, ecran, &murpos);
 
                 }
-
             }
-
         }
-
-
     }
 //Chargement du Bomberman et des Ennemis
     personnage[0] = SDL_LoadBMP("LibNiveau/herbe/bombermanbas.bmp"); //bas
@@ -174,9 +160,6 @@ while(win)
     }
     SDL_Flip(ecran); //MAJ de l'ecran
 
-
-
-
 //Début de la boucle infinie avec gestion des mouvements et bombe
     int continuer = 1;
     int quitter = 0;
@@ -185,12 +168,7 @@ while(win)
     int initb = 0;
     int tempsac = 0;
 
-
-
     SDL_EnableKeyRepeat(10, 10);
-
-
-
 
     while(continuer)
     {
@@ -262,7 +240,7 @@ while(win)
         if(poser)
         {
             tempsac = SDL_GetTicks();
-            if(tempsac - bombe->temps >= 4000) // On explose la bombe
+            if(tempsac - bombe->temps >= 2500) // On explose la bombe
             {
                 poser = 0;
                 tempsac = 0;
@@ -275,9 +253,6 @@ while(win)
 
             }
         }
-
-
-
 
         // Reblittage de l'image
         dEnnemi_Mouvement(mechant,jeu);
@@ -312,9 +287,7 @@ while(win)
                         }
                     }
                 }
-
-
-         }
+            }
         }
 
         tab = dEnnemi_GetPosition(mechant);
@@ -340,25 +313,17 @@ while(win)
                 continuer = 0;
                 win = 1;
                 niveau = 2;
-        }
 
+        }
 
         SDL_BlitSurface(persoactuel, NULL, ecran, &posbomberman);
         SDL_Flip(ecran);
         SDL_Delay(80);
-
-
     }
 
     Terrain_testament(jeu);
     dEnnemi_Testament(mechant);
 }
-
-
-
-
-
-
 
 // Test de Game Over ?
 if(dead)
@@ -381,6 +346,7 @@ if(dead)
     SDL_FreeSurface(menu);
     SDL_FreeSurface(gameover);
     SDL_EnableKeyRepeat(0, 0);
+
     SDL_Quit();
 
 
