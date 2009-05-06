@@ -55,12 +55,12 @@ void dEnnemi_Mouvement(dEnnemi & e, const Terrain &t)
     }
 }
 
-void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b)
+void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b, const Terrain &t)
 {
     Cellule * p = e.liste_en.prem->suivant;
     while(p != e.liste_en.prem)
     {
-        if(Ennemi_PresenceSurTrajetBombe(p->en,b))
+        if(Ennemi_PresenceSurTrajetBombe(p->en,b,t))
         {
             Ennemi_Decrementevie(p->en);
             if(Ennemi_Getnbvie(p->en) <= 0) dEnnemi_SupprimeEnnemi(e,p->en);
@@ -82,6 +82,24 @@ int * dEnnemi_GetPosition(dEnnemi & e)
 
             m = m->suivant;
             i=i+2;
+        }
+        return p;
+}
+
+char * dEnnemi_GetDirection(dEnnemi & e)
+{
+
+        char * p = new char[e.liste_en.nb_en];
+        Cellule * m = e.liste_en.prem->suivant;
+        int i = 0;
+
+        while(m != e.liste_en.prem)
+        {
+            p[i]=Ennemi_Getdirection(m->en);
+
+
+            m = m->suivant;
+            i=i+1;
         }
         return p;
 }

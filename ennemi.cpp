@@ -66,7 +66,7 @@ void Ennemi_affectationsurterrain(Ennemi * e, const Terrain &t)
 {
 
 
-    char dir = 'd';
+    char dir = 'b';
     Ennemi_Setnbvie(e,1);
 
         int x,y;
@@ -117,6 +117,15 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
             }
         }while (strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
         Ennemi_Setposx(e, e->posx + x);
+        if(x == 1)
+        {
+            Ennemi_Setdirection(e,'d');
+        }else{if (x == -1)
+            {
+                Ennemi_Setdirection(e,'g');
+            }
+        }
+
     }else{
         if(booleen == 0)
         { // variation de y
@@ -138,27 +147,78 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
                 }
             }while (strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
             Ennemi_Setposy(e, e->posy + y);
+            if(y == 1)
+            {
+                Ennemi_Setdirection(e,'b');
+            }else{if (y == -1)
+                {
+                    Ennemi_Setdirection(e,'h');
+                }
+            }
         }
     }
 }
 
-bool Ennemi_PresenceSurTrajetBombe(Ennemi * e, Bombe * b)
+bool Ennemi_PresenceSurTrajetBombe(Ennemi * e, Bombe * b,const Terrain &t)
 {
+    Case * p;
     if (e->posx == b->x && e->posy == b->y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
     {
             return true;
     }else{ // On teste si le bomberman se trouve sur la zone d'explosion de la bombe
         int i;
-        for(i=(b->x-b->r_exp);i<=(b->x+b->r_exp);i++)
+        for(i= b->x ;i>= b->x - b->r_exp;i--)
         {
-            if( e->posx == i && e->posy == b->y) return true;
+
+                 if(i <0  ) break;
+                 else{
+                     p=Terrain_Getcase(t,i,b->y);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e->posx == i && e->posy == b->y) return true;
+                    }else break;
+                 }
         }
 
-        for(i=(b->y - b->r_exp);i<=(b->y + b->r_exp);i++)
+        for(i=b->x;i<=b->x+b->r_exp ;i++)
         {
-            if( e->posy == i && e->posx == b->x) return true;
+                  if(i >= t.dim) break;
+                else{
+
+                    p=Terrain_Getcase(t,i,b->y);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e->posx == i && e->posy == b->y) return true;
+                    }else break;
+                }
+        }
+
+        for(i=b->y;i>=b->y-b->r_exp;i--)
+        {
+                if(i <0  ) break;
+                 else{
+                      p=Terrain_Getcase(t,b->x,i);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e->posy == i && e->posx == b->x) return true;
+                    }else{ break;}
+                 }
+        }
+
+        for(i=b->y;i<=b->y + b->r_exp;i++)
+        {
+                  if(i >= t.dim) break;
+                else{
+
+                    p=Terrain_Getcase(t,b->x,i);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e->posy == i && e->posx == b->x) return true;
+                    }else{ break;}
+                }
         }
     }
+
     return false;
 }
 

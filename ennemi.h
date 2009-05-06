@@ -34,7 +34,7 @@ void Ennemi_affectationsurterrain(Ennemi * e, const Terrain &t);
 
 void Ennemi_mouvement(Ennemi * e, const Terrain &t);
 
-bool Ennemi_PresenceSurTrajetBombe(Ennemi * e, Bombe * b);
+bool Ennemi_PresenceSurTrajetBombe(Ennemi * e, Bombe * b,const Terrain &t);
 
 void Ennemi_testament(Ennemi * e);
 
