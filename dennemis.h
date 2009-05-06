@@ -20,7 +20,7 @@ void dEnnemi_Testament(dEnnemi & e);
 void dEnnemi_Mouvement(dEnnemi & e, const Terrain &t);
 // Effectue les mouvements sur l'ensemble des ennemis du terrain
 
-void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b, const Terrain &t);
+void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b, Terrain &t);
 // Teste si l'ensemble des ennemis sont present a coté de l'explosion d'une bombe. Si oui perte de vie.
 
 int * dEnnemi_GetPosition(dEnnemi & e);
@@ -28,5 +28,6 @@ int * dEnnemi_GetPosition(dEnnemi & e);
 
 char * dEnnemi_GetDirection(dEnnemi & e);
 
+void dEnnemi_ToucheExplosion(dEnnemi & e, const Terrain &t);
 
 #endif

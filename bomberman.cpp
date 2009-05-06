@@ -114,7 +114,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
             {
                 Case * c;
                 c = Terrain_Getcase(t,x,y+1);
-                if (!strcmp(c->carre,"V"))
+                if (!strcmp(c->carre,"V") || !strcmp(c->carre,"E"))
                 {
                     Bomberman_Setposy(b,y+1);
                 }
@@ -126,7 +126,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
                     {
                             Case * c;
                             c = Terrain_Getcase(t,x,y-1);
-                            if (!strcmp(c->carre,"V"))
+                            if (!strcmp(c->carre,"V") || !strcmp(c->carre,"E"))
                             {
                                 Bomberman_Setposy(b,y-1);
                             }
@@ -138,7 +138,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
                         {
                             Case * c;
                             c = Terrain_Getcase(t,x+1,y);
-                            if (!strcmp(c->carre,"V"))
+                            if (!strcmp(c->carre,"V") || !strcmp(c->carre,"E"))
                             {
                                 Bomberman_Setposx(b,x+1);
                             }
@@ -151,7 +151,7 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
                             {
                                 Case * c;
                                 c = Terrain_Getcase(t,x-1,y);
-                                if (!strcmp(c->carre,"V"))
+                                if (!strcmp(c->carre,"V") || !strcmp(c->carre,"E"))
                                 {
                                     Bomberman_Setposx(b,x-1);
                                 }
