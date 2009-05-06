@@ -160,7 +160,9 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
                     }
                 }
             }
+
     }
+
 }
 
 bool Bomberman_PresenceSurTrajetBombe(const Bomberman &e, Bombe * b,const Terrain &t)

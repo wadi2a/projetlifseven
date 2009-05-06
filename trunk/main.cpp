@@ -4,6 +4,10 @@
 int main(void)
 {
     SDL_Surface *ecran = NULL;
+    SDL_Surface *menu = NULL;
+    SDL_Surface *gameover = SDL_LoadBMP("Menu/gameover.bmp");
+    SDL_Surface *nombre[10] = {NULL};
+    SDL_Event event;
     SDL_Surface *terrain = NULL;
     SDL_Surface *bombes = NULL;
     SDL_Surface *mursolide = NULL;
@@ -13,16 +17,12 @@ int main(void)
     SDL_Surface *personnage[4] = {NULL};
     SDL_Surface *persoactuel = NULL;
     SDL_Surface *ennemi[4] = {NULL};
-    SDL_Surface *menu = NULL;
-    SDL_Surface *gameover = SDL_LoadBMP("Menu/gameover.bmp");
     SDL_Surface *fond = NULL;
-    SDL_Surface *nombre[10] = {NULL};
 
-    SDL_Event event;
-
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) // Démarrage de la SDL. Si erreur alors..
+   if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) // Démarrage de la SDL. Si erreur alors..
     {
         fprintf(stderr, "Erreur d'initialisation de la SDL : %s\n", SDL_GetError()); // Ecriture de l'erreur
+        SDL_Quit();
         exit(EXIT_FAILURE); // On quitte le programme
     }
     ecran = SDL_SetVideoMode(800,600,32,SDL_HWSURFACE | SDL_DOUBLEBUF);
@@ -79,6 +79,7 @@ int main(void)
                         niveau = 1;
                         attente = 0;
                         win = 1;
+                        SDL_Delay(70);
 
                         break;
                     case SDLK_ESCAPE :
@@ -92,6 +93,7 @@ int main(void)
 
                 break;
         }
+        SDL_Delay(70);
     }
     Jeu bombermangame;
     Bomberman perso;
@@ -134,10 +136,10 @@ while(win)
     dEnnemi mechant;
     Terrain jeu;
 
-    Bombe * bombe;
+
 
     Jeu_InitRand();
-    Bombe_InitialisationBombe(bombe);
+
 
     Jeu_ChoixNiveau(bombermangame,niveau);
     Jeu_ChoixMechant(bombermangame,niveau + 1);
@@ -275,19 +277,23 @@ while(win)
 
     }
     SDL_Flip(ecran); //MAJ de l'ecran
+    delete[] tab;
 
 //Début de la boucle infinie avec gestion des mouvements et bombe
     int continuer = 1;
     int quitter = 0;
     int bombepos = 0;
     int poser = 0;
-    int initb = 0;
+    int initb = 1;
     int tempsac = 0;
     int explosion = 0;
     int temps_explosion = 0;
     int possible_mb = 0;
     int perte_v = 0;
+    int init_a = 0;
+
     Case * touche_explosion;
+    Bombe * bombe;
 
     SDL_EnableKeyRepeat(10, 10);
 
@@ -295,9 +301,10 @@ while(continuer)
 {
         if(initb)
         {
-                Bombe * bombe;
-                Bombe_InitialisationBombe(bombe);
+                bombe = Bombe_InitialisationBombe();
                 initb = 0;
+                init_a = 1;
+
         }
 
 
@@ -353,8 +360,10 @@ while(continuer)
           if(!(Bombe_bombe(bombe,jeu,perso.posx,perso.posy,bombt)))
           {
             Bombe_testament(bombe);
+            init_a = 0;
             poser = 0;
             bombe->nb++;
+            initb = 1;
           }
           bombepos = 0;
         }
@@ -375,7 +384,8 @@ while(continuer)
                 dEnnemi_PresenceSurBombe(mechant,bombe,jeu);
                 Bombe_ExplosionSurTerrain(bombe,jeu);
                 Bombe_testament(bombe);
-                 explosion = 1;
+                init_a = 0;
+                explosion = 1;
                 temps_explosion = SDL_GetTicks();
                 initb=1;
                 possible_mb = 1;
@@ -456,6 +466,7 @@ while(continuer)
             }
         }
 
+
         tab = dEnnemi_GetPosition(mechant);
         en_dir = dEnnemi_GetDirection(mechant);
         for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
@@ -479,10 +490,14 @@ while(continuer)
             }
             // Changt position ennemi
 
+
+
             SDL_SetColorKey(ennemiact, SDL_SRCCOLORKEY, SDL_MapRGB(ennemiact->format, 255, 0, 0));
             SDL_BlitSurface(ennemiact, NULL, ecran, &posennemi);
 
         }
+        delete[] tab;
+        delete[] en_dir;
         // Fin de blittage de l'écran
 
         Jeu_PerteVieContactEnnemi(perso,mechant); // Test si contact ennemi
@@ -518,6 +533,7 @@ while(continuer)
 
     Terrain_testament(jeu);
     dEnnemi_Testament(mechant);
+    if(init_a) Bombe_testament(bombe);
 }
 
 // Test de Game Over ?
@@ -527,28 +543,29 @@ if(dead)
     SDL_Flip(ecran);
     SDL_Delay(5000);
 }
-    int i;
+
     SDL_FreeSurface(ecran);
-    SDL_FreeSurface(persoactuel);
-    SDL_FreeSurface(bombes);
-    for(i=0;i<4;i++)
-    {
-        SDL_FreeSurface(personnage[i]);
-        SDL_FreeSurface(ennemi[i]);
-    }
-    SDL_FreeSurface(mur);
-    SDL_FreeSurface(mursolide);
-    SDL_FreeSurface(terrain);
     SDL_FreeSurface(menu);
     SDL_FreeSurface(gameover);
-    SDL_FreeSurface(ennemiact);
-    SDL_FreeSurface(fond);
-    SDL_FreeSurface(explode);
-    for(i=0;i<10;i++) SDL_FreeSurface(nombre[i]);
+    for(int i=0;i<10;i++) SDL_FreeSurface(nombre[i]);
     SDL_EnableKeyRepeat(0, 0);
-
+    SDL_FreeSurface(terrain);
+    SDL_FreeSurface(bombes);
+    SDL_FreeSurface(mursolide);
+    SDL_FreeSurface(explode);
+    SDL_FreeSurface(ennemiact);
+    SDL_FreeSurface(mur);
+    SDL_FreeSurface(fond);
+     for(int i=0;i<4;i++)
+    {
+        SDL_FreeSurface(personnage[i]);
+    }
+    SDL_FreeSurface(persoactuel);
+    for(int i=0;i<4;i++)
+    {
+        SDL_FreeSurface(ennemi[i]);
+    }
     SDL_Quit();
-
 
     return EXIT_SUCCESS;
 }
