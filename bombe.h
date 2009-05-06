@@ -13,7 +13,7 @@ struct sBombe
 };
 typedef struct sBombe Bombe;
 
-void Bombe_InitialisationBombe(Bombe *& b);
+Bombe * Bombe_InitialisationBombe();
 
 bool Bombe_posebombe(Bombe * b, const int &posx, const int &posy, Terrain &t, const int &rayon);
 //Pose une bombe aux coordonnées x et y, sur le plateau du jeu, il doit s'agir d'une case vide. Renvoit vrai si la bombe est posée, faux sinon.

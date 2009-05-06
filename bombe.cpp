@@ -1,9 +1,10 @@
 #include "bombe.h"
 
-void Bombe_InitialisationBombe(Bombe *& b)
+Bombe * Bombe_InitialisationBombe()
 {
-        b = new Bombe;
+        Bombe * b = new Bombe;
         b->nb=1;
+        return b;
 
 }
 
