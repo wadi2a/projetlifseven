@@ -55,7 +55,7 @@ void dEnnemi_Mouvement(dEnnemi & e, const Terrain &t)
     }
 }
 
-void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b, const Terrain &t)
+void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b, Terrain &t)
 {
     Cellule * p = e.liste_en.prem->suivant;
     while(p != e.liste_en.prem)
@@ -63,7 +63,14 @@ void dEnnemi_PresenceSurBombe(dEnnemi & e, Bombe * b, const Terrain &t)
         if(Ennemi_PresenceSurTrajetBombe(p->en,b,t))
         {
             Ennemi_Decrementevie(p->en);
-            if(Ennemi_Getnbvie(p->en) <= 0) dEnnemi_SupprimeEnnemi(e,p->en);
+            if(Ennemi_Getnbvie(p->en) <= 0)
+            {
+
+                Case a;
+                strcpy(a.carre,"E");
+                Terrain_Setcase(t,a,p->en->posx,p->en->posy);
+                dEnnemi_SupprimeEnnemi(e,p->en);
+            }
         }
         p=p->suivant;
     }
@@ -102,6 +109,28 @@ char * dEnnemi_GetDirection(dEnnemi & e)
             i=i+1;
         }
         return p;
+}
+
+void dEnnemi_ToucheExplosion(dEnnemi & e, const Terrain &t)
+{
+
+        Cellule * m = e.liste_en.prem->suivant;
+        Case * p;
+        Ennemi * k;
+        int i,j;
+
+        while(m != e.liste_en.prem)
+        {
+               i=Ennemi_Getposx(m->en);
+               j=Ennemi_Getposy(m->en);
+               p=Terrain_Getcase(t,i,j);
+               if(!strcmp(p->carre,"E"))
+               {
+                  k = m->en;
+                  m = m->suivant;
+                  dEnnemi_SupprimeEnnemi(e,k);
+              }else m=m->suivant;
+        }
 }
 
 

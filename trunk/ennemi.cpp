@@ -115,7 +115,7 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
                     p = Terrain_Getcase(t,e->posx + x,e->posy);
                 }
             }
-        }while (strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
+        }while ((strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0) && (strcmp(p->carre,"E") < 0 || strcmp(p->carre,"E") > 0));
         Ennemi_Setposx(e, e->posx + x);
         if(x == 1)
         {
@@ -145,7 +145,7 @@ void Ennemi_mouvement(Ennemi * e, const Terrain &t)
                         p = Terrain_Getcase(t,e->posx,e->posy + y);
                     }
                 }
-            }while (strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0);
+            }while ((strcmp(p->carre,"V") < 0 || strcmp(p->carre,"V") > 0) && (strcmp(p->carre,"E") < 0 || strcmp(p->carre,"E") > 0));
             Ennemi_Setposy(e, e->posy + y);
             if(y == 1)
             {

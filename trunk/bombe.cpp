@@ -46,10 +46,18 @@ void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
         }else{ if(strcmp(m->carre,"M") == 0)
                 {
                     Case p;
-                    Case_initialisation(p);
+                    strcpy(p.carre,"E");
                     Terrain_Setcase(t,p,b->x+i,b->y);
                     break;
+                }else{
+                    if(strcmp(m->carre,"V") == 0)
+                    {
+                        Case p;
+                        strcpy(p.carre,"E");
+                        Terrain_Setcase(t,p,b->x+i,b->y);
+                    }
                 }
+
         }
 
         }
@@ -68,10 +76,17 @@ void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
                 }else{ if(strcmp(m->carre,"M") == 0)
                     {
                         Case p;
-                        Case_initialisation(p);
+                        strcpy(p.carre,"E");
                         Terrain_Setcase(t,p,b->x-i,b->y);
                         break;
+                    }else{
+                    if(strcmp(m->carre,"V") == 0)
+                    {
+                        Case p;
+                        strcpy(p.carre,"E");
+                        Terrain_Setcase(t,p,b->x-i,b->y);
                     }
+                }
                 }
             }
         }
@@ -88,9 +103,16 @@ void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
       }else{ if(strcmp(m->carre,"M") == 0)
             {
                 Case p;
-                Case_initialisation(p);
+                strcpy(p.carre,"E");
                 Terrain_Setcase(t,p,b->x,b->y+i);
                 break;
+                }else{
+                    if(strcmp(m->carre,"V") == 0)
+                    {
+                        Case p;
+                        strcpy(p.carre,"E");
+                        Terrain_Setcase(t,p,b->x,b->y+i);
+                    }
                 }
         }
       }
@@ -110,16 +132,23 @@ void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
         }else{ if(strcmp(m->carre,"M") == 0)
                 {
                     Case p;
-                    Case_initialisation(p);
+                    strcpy(p.carre,"E");
                     Terrain_Setcase(t,p,b->x,b->y-i);
                     break;
+                    }else{
+                        if(strcmp(m->carre,"V") == 0)
+                        {
+                            Case p;
+                            strcpy(p.carre,"E");
+                            Terrain_Setcase(t,p,b->x,b->y-i);
+                        }
                     }
             }
-      }
+        }
         }
 
     Case a;
-    strcpy(a.carre,"V");
+    strcpy(a.carre,"E");
     Terrain_Setcase(t,a,b->x,b->y);
 }
 
