@@ -7,6 +7,7 @@ struct sJeu
 {
     int niveau;
     int nb_mechant;
+    int temps_mouvement;
 };typedef struct sJeu Jeu;
 
 void Jeu_InitRand();
@@ -17,7 +18,7 @@ void Jeu_ChoixNiveau(Jeu &j, const int &niv);
 
 void Jeu_ChoixMechant(Jeu &j, const int &mech);
 
-void Jeu_Initialisation(const Jeu &j, Terrain &t, dEnnemi &l, Bomberman &b);
+void Jeu_Initialisation(Jeu &j, Terrain &t, dEnnemi &l, Bomberman &b, const int &temps);
 
 //void Jeu_Posebombe();
 

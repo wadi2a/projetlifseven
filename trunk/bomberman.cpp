@@ -163,22 +163,64 @@ void Bomberman_mouvement(Bomberman &b, const Terrain &t,const int &pos)
     }
 }
 
-bool Bomberman_PresenceSurTrajetBombe(const Bomberman &a, Bombe * b)
+bool Bomberman_PresenceSurTrajetBombe(const Bomberman &e, Bombe * b,const Terrain &t)
 {
-    if (a.posx == b->x && a.posy == b->y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
+    Case * p;
+    if (e.posx == b->x && e.posy == b->y) // Bomberman se trouve sur la position de la bombe (même si c'est impossible, corrige un eventuel bug
     {
             return true;
     }else{ // On teste si le bomberman se trouve sur la zone d'explosion de la bombe
         int i;
-        for(i=(b->x-b->r_exp);i<=(b->x+b->r_exp);i++)
+        for(i=b->x;i>=b->x-b->r_exp;i--)
         {
-            if( a.posx == i && a.posy == b->y) return true;
+                 if(i <0  ) break;
+                 else{
+
+                        p=Terrain_Getcase(t,i,b->y);
+                        if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                        {
+                        if( e.posx == i && e.posy == b->y) return true;
+                        }else break;
+                 }
         }
 
-        for(i=(b->y - b->r_exp);i<=(b->y + b->r_exp);i++)
+        for(i=b->x;i<=b->x+b->r_exp;i++)
         {
-            if( a.posy == i && a.posx == b->x) return true;
+                if(i >= t.dim) break;
+                else{
+
+                    p=Terrain_Getcase(t,i,b->y);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e.posx == i && e.posy == b->y) return true;
+                    }else break;
+                }
         }
+
+        for(i=b->y;i>=b->y-b->r_exp;i--)
+        {
+                if(i<0  ) break;
+                 else{
+                     p=Terrain_Getcase(t,b->x,i);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e.posy == i && e.posx == b->x) return true;
+                    }else break;
+                 }
+        }
+
+        for(i=b->y;i<=b->y+b->r_exp;i++)
+        {
+                if(i >= t.dim) break;
+                else{
+                    p=Terrain_Getcase(t,b->x,i);
+                    if(!strcmp(p->carre,"V") || (!strcmp(p->carre,"B")))
+                    {
+                        if( e.posy == i && e.posx == b->x) return true;
+                    }else break;
+                }
+        }
+
     }
     return false;
 }

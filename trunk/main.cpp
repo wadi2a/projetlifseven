@@ -7,10 +7,11 @@ int main(void)
     SDL_Surface *terrain = NULL;
     SDL_Surface *bombes = NULL;
     SDL_Surface *mursolide = NULL;
+    SDL_Surface *ennemiact = NULL;
     SDL_Surface *mur = NULL;
     SDL_Surface *personnage[4] = {NULL};
     SDL_Surface *persoactuel = NULL;
-    SDL_Surface *ennemi = NULL;
+    SDL_Surface *ennemi[4] = {NULL};
     SDL_Surface *menu = NULL;
     SDL_Surface *gameover = SDL_LoadBMP("Menu/gameover.bmp");
 
@@ -80,7 +81,21 @@ while(win)
     SDL_Rect position;
     position.x = 212.5;
     position.y = 112.5;
-    terrain = SDL_LoadBMP("LibNiveau/herbe/Terrain.bmp");
+    if(niveau == 1 || niveau == 4 || niveau == 7)
+    {
+            terrain = SDL_LoadBMP("LibNiveau/herbe/Terrain.bmp");
+    }else{
+        if(niveau == 2 || niveau == 5 || niveau == 8)
+            {
+                terrain = SDL_LoadBMP("LibNiveau/eau/Terrain.bmp");
+            }else{
+                if(niveau == 3 || niveau == 6 || niveau == 9)
+                {
+                    terrain = SDL_LoadBMP("LibNiveau/espace/Terrain.bmp");
+                }
+            }
+    }
+
     SDL_BlitSurface(terrain, NULL, ecran, &position);
     SDL_Flip(ecran);
 
@@ -98,17 +113,35 @@ while(win)
     Jeu_ChoixNiveau(bombermangame,niveau);
     Jeu_ChoixMechant(bombermangame,niveau + 1);
 
-
-    Jeu_Initialisation(bombermangame,jeu,mechant,perso);
+    Jeu_Initialisation(bombermangame,jeu,mechant,perso,400 - 50 * niveau);
+    mechant.time=SDL_GetTicks();
 
 // Affichage des cases
 
     int i,j;
     Case * cases;
 
-    mursolide = SDL_LoadBMP("LibNiveau/herbe/mursolide.bmp");
-    mur = SDL_LoadBMP("LibNiveau/herbe/mur.bmp");
-    bombes = SDL_LoadBMP("LibNiveau/herbe/bombe.bmp");
+    if(niveau == 1 || niveau == 4 || niveau == 7)
+    {
+        mursolide = SDL_LoadBMP("LibNiveau/herbe/mursolide.bmp");
+        mur = SDL_LoadBMP("LibNiveau/herbe/mur.bmp");
+        bombes = SDL_LoadBMP("LibNiveau/herbe/bombe.bmp");
+    }else{
+        if(niveau == 2 || niveau == 5 || niveau == 8)
+            {
+                mursolide = SDL_LoadBMP("LibNiveau/eau/mursolide.bmp");
+                mur = SDL_LoadBMP("LibNiveau/eau/mur.bmp");
+                bombes = SDL_LoadBMP("LibNiveau/eau/bombe.bmp");
+            }else{
+                if(niveau == 3 || niveau == 6 || niveau == 9)
+                {
+                    mursolide = SDL_LoadBMP("LibNiveau/espace/mursolide.bmp");
+                    mur = SDL_LoadBMP("LibNiveau/espace/mur.bmp");
+                    bombes = SDL_LoadBMP("LibNiveau/espace/bombe.bmp");
+                }
+            }
+    }
+
     SDL_Rect murpos;
 
     for(i=0;i<=jeu.dim-1;i++)//y
@@ -135,27 +168,72 @@ while(win)
         }
     }
 //Chargement du Bomberman et des Ennemis
-    personnage[0] = SDL_LoadBMP("LibNiveau/herbe/bombermanbas.bmp"); //bas
-    personnage[1] = SDL_LoadBMP("LibNiveau/herbe/bombermanhaut.bmp"); //haut
-    personnage[2] = SDL_LoadBMP("LibNiveau/herbe/bombermangauche.bmp"); // gauche
-    personnage[3] = SDL_LoadBMP("LibNiveau/herbe/bombermandroit.bmp"); // droite
-    persoactuel = personnage[0];
+
+    if(niveau == 1 || niveau == 4 || niveau == 7)
+    {
+        personnage[0] = SDL_LoadBMP("LibNiveau/herbe/bombermanbas.bmp"); //bas
+        personnage[1] = SDL_LoadBMP("LibNiveau/herbe/bombermanhaut.bmp"); //haut
+        personnage[2] = SDL_LoadBMP("LibNiveau/herbe/bombermangauche.bmp"); // gauche
+        personnage[3] = SDL_LoadBMP("LibNiveau/herbe/bombermandroit.bmp"); // droite
+        persoactuel = personnage[0];
+
+        ennemi[0] = SDL_LoadBMP("LibNiveau/herbe/ennemibas.bmp");
+        ennemi[1] = SDL_LoadBMP("LibNiveau/herbe/ennemihaut.bmp");
+        ennemi[2] = SDL_LoadBMP("LibNiveau/herbe/ennemigauche.bmp");
+        ennemi[3] = SDL_LoadBMP("LibNiveau/herbe/ennemidroit.bmp");
+        ennemiact = ennemi[0];
+    }else{
+        if(niveau == 2 || niveau == 5 || niveau == 8)
+            {
+                personnage[0] = SDL_LoadBMP("LibNiveau/eau/bombermanbas.bmp"); //bas
+                personnage[1] = SDL_LoadBMP("LibNiveau/eau/bombermanhaut.bmp"); //haut
+                personnage[2] = SDL_LoadBMP("LibNiveau/eau/bombermangauche.bmp"); // gauche
+                personnage[3] = SDL_LoadBMP("LibNiveau/eau/bombermandroit.bmp"); // droite
+                persoactuel = personnage[0];
+
+                ennemi[0] = SDL_LoadBMP("LibNiveau/eau/ennemibas.bmp");
+                ennemi[1] = SDL_LoadBMP("LibNiveau/eau/ennemihaut.bmp");
+                ennemi[2] = SDL_LoadBMP("LibNiveau/eau/ennemigauche.bmp");
+                ennemi[3] = SDL_LoadBMP("LibNiveau/eau/ennemidroit.bmp");
+                ennemiact = ennemi[0];
+            }else{
+                if(niveau == 3 || niveau == 6 || niveau == 9)
+                {
+                    personnage[0] = SDL_LoadBMP("LibNiveau/espace/bombermanbas.bmp"); //bas
+                    personnage[1] = SDL_LoadBMP("LibNiveau/espace/bombermanhaut.bmp"); //haut
+                    personnage[2] = SDL_LoadBMP("LibNiveau/espace/bombermangauche.bmp"); // gauche
+                    personnage[3] = SDL_LoadBMP("LibNiveau/espace/bombermandroit.bmp"); // droite
+                    persoactuel = personnage[0];
+
+                    ennemi[0] = SDL_LoadBMP("LibNiveau/espace/ennemibas.bmp");
+                    ennemi[1] = SDL_LoadBMP("LibNiveau/espace/ennemihaut.bmp");
+                    ennemi[2] = SDL_LoadBMP("LibNiveau/espace/ennemigauche.bmp");
+                    ennemi[3] = SDL_LoadBMP("LibNiveau/espace/ennemidroit.bmp");
+                    ennemiact = ennemi[0];
+                }
+            }
+    }
+
+
     SDL_Rect posbomberman;
     posbomberman.x=Bomberman_Getposx(perso) * 25 + 212.5;
     posbomberman.y=Bomberman_Getposy(perso) * 25 + 112.5;
+    SDL_SetColorKey(persoactuel, SDL_SRCCOLORKEY, SDL_MapRGB(persoactuel->format, 255, 0, 0));
     SDL_BlitSurface(persoactuel, NULL, ecran, &posbomberman);
 
-    ennemi = SDL_LoadBMP("LibNiveau/herbe/explosioncentre.bmp");
+
     SDL_Rect posennemi;
 
+    char * en_dir;
     int * tab;
     tab = dEnnemi_GetPosition(mechant);
+    SDL_SetColorKey(ennemiact, SDL_SRCCOLORKEY, SDL_MapRGB(ennemiact->format, 255, 0, 0));
 
     for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
     {
         posennemi.x=(tab[i] * 25) + 212.5;
         posennemi.y=(tab[i+1] * 25) + 112.5;
-        SDL_BlitSurface(ennemi, NULL, ecran, &posennemi);
+        SDL_BlitSurface(ennemiact, NULL, ecran, &posennemi);
 
     }
     SDL_Flip(ecran); //MAJ de l'ecran
@@ -245,8 +323,8 @@ while(win)
                 poser = 0;
                 tempsac = 0;
                 bombe->nb++;
-                if (Bomberman_PresenceSurTrajetBombe(perso,bombe)) Bomberman_Decrementevie(perso);
-                dEnnemi_PresenceSurBombe(mechant,bombe);
+                if (Bomberman_PresenceSurTrajetBombe(perso,bombe,jeu)) Bomberman_Decrementevie(perso);
+                dEnnemi_PresenceSurBombe(mechant,bombe,jeu);
                 Bombe_ExplosionSurTerrain(bombe,jeu);
                 Bombe_testament(bombe);
                 initb=1;
@@ -255,7 +333,12 @@ while(win)
         }
 
         // Reblittage de l'image
-        dEnnemi_Mouvement(mechant,jeu);
+        int entime = SDL_GetTicks();
+        if(entime - mechant.time >= bombermangame.temps_mouvement)
+        {
+            dEnnemi_Mouvement(mechant,jeu);
+            mechant.time = entime;
+        }
         posbomberman.x=Bomberman_Getposx(perso) * 25 + 212.5;
         posbomberman.y=Bomberman_Getposy(perso) * 25 + 112.5;
         SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 17, 206, 112));
@@ -291,11 +374,36 @@ while(win)
         }
 
         tab = dEnnemi_GetPosition(mechant);
+        en_dir = dEnnemi_GetDirection(mechant);
         for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
         {
             posennemi.x=(tab[i] * 25) + 212.5;
             posennemi.y=(tab[i+1] * 25) + 112.5;
-            SDL_BlitSurface(ennemi, NULL, ecran, &posennemi);
+            if(en_dir[i/2] == 'b')
+            {
+                ennemiact = ennemi[0];
+            }else{ if(en_dir[i/2] == 'h')
+                    {
+                            ennemiact = ennemi[1];
+                    }else { if(en_dir[i/2] == 'g')
+                            {
+                                ennemiact = ennemi[2];
+                            }else if(en_dir[i/2] == 'd')
+                            {
+                                ennemiact = ennemi[3];
+                            }
+                    }
+            }
+
+
+
+
+
+
+            // Changt position ennemi
+
+            SDL_SetColorKey(ennemiact, SDL_SRCCOLORKEY, SDL_MapRGB(ennemiact->format, 255, 0, 0));
+            SDL_BlitSurface(ennemiact, NULL, ecran, &posennemi);
 
         }
         // Fin de blittage de l'écran
@@ -315,10 +423,10 @@ while(win)
                 niveau = 2;
 
         }
-
+        SDL_SetColorKey(persoactuel, SDL_SRCCOLORKEY, SDL_MapRGB(persoactuel->format, 255, 0, 0));
         SDL_BlitSurface(persoactuel, NULL, ecran, &posbomberman);
         SDL_Flip(ecran);
-        SDL_Delay(80);
+        SDL_Delay(85);
     }
 
     Terrain_testament(jeu);
@@ -339,12 +447,16 @@ if(dead)
     SDL_FreeSurface(personnage[1]);
     SDL_FreeSurface(personnage[2]);
     SDL_FreeSurface(personnage[3]);
-    SDL_FreeSurface(ennemi);
+    SDL_FreeSurface(ennemi[0]);
+    SDL_FreeSurface(ennemi[1]);
+    SDL_FreeSurface(ennemi[2]);
+    SDL_FreeSurface(ennemi[3]);
     SDL_FreeSurface(mur);
     SDL_FreeSurface(mursolide);
     SDL_FreeSurface(terrain);
     SDL_FreeSurface(menu);
     SDL_FreeSurface(gameover);
+    SDL_FreeSurface(ennemiact);
     SDL_EnableKeyRepeat(0, 0);
 
     SDL_Quit();
