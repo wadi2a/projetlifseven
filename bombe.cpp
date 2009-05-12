@@ -24,11 +24,6 @@ bool Bombe_posebombe(Bombe * b, const int &posx, const int &posy,Terrain &t, con
     return true;
 }
 
-void Bombe_minuteur(const int &tmp)
-{
-        sleep(tmp);
-}
-
 void Bombe_ExplosionSurTerrain(const Bombe * b,Terrain &t)
 {
     int i;

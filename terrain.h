@@ -22,9 +22,6 @@ void Terrain_testament(Terrain &t);
 Case * Terrain_Getcase(const Terrain &t,const int &posx,const int &posy);
 // Accesseur du module terrain : on obtient une case
 
-void Terrain_affichageCase(const Terrain &t,const int &posx,const int &posy);
-// Affichage avec printf de l'etat d'une case du plateau
-
 void Terrain_Setcase(Terrain &t, const Case &c, const int &posx,const int &poxy);
 // Accesseur du module terrain : modifie une case par une autre à une telle position
 

@@ -67,9 +67,3 @@ void Terrain_testament(Terrain &t)
 {
         delete[] t.plateau;
 }
-
-void Terrain_affichageCase(const Terrain &t,const int &posx,const int &posy)
-{
-    Case * p = Terrain_Getcase(t,posx,posy);
-    printf("%s ",p->carre);
-}
