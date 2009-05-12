@@ -1,8 +1,15 @@
 #include "jeu.h"
-#include <SDL/SDL.h>
+#include <SDL.h>
 
-int main(void)
+int main (int argc, char** argv)
 {
+    if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) // Démarrage de la SDL. Si erreur alors..
+    {
+        fprintf(stderr, "Erreur d'initialisation de la SDL : %s\n", SDL_GetError()); // Ecriture de l'erreur
+        SDL_Quit();
+        exit(EXIT_FAILURE); // On quitte le programme
+    }
+
     SDL_Surface *ecran = NULL;
     SDL_Surface *menu = NULL;
     SDL_Surface *gameover = SDL_LoadBMP("Menu/gameover.bmp");
@@ -19,14 +26,8 @@ int main(void)
     SDL_Surface *ennemi[4] = {NULL};
     SDL_Surface *fond = NULL;
 
-   if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) == -1) // Démarrage de la SDL. Si erreur alors..
-    {
-        fprintf(stderr, "Erreur d'initialisation de la SDL : %s\n", SDL_GetError()); // Ecriture de l'erreur
-        SDL_Quit();
-        exit(EXIT_FAILURE); // On quitte le programme
-    }
     ecran = SDL_SetVideoMode(800,600,32,SDL_HWSURFACE | SDL_DOUBLEBUF);
-    SDL_WM_SetCaption("Super Bomberman Deluxe Edition", NULL);
+    SDL_WM_SetCaption("Super Bomberman - Deluxe Edition", NULL);
 
 // Couleur de fond de la fenetre
     SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 17, 206, 112));
@@ -57,7 +58,7 @@ int main(void)
 
 
 
-    int win;
+    int win = 0;
     int quitter = 0;
     int niveau;
     int dead = 0;
@@ -107,8 +108,8 @@ while(win)
 
     SDL_BlitSurface(nombre[niveau], NULL, ecran, &posniv);
     SDL_Rect position;
-    position.x = 212.5;
-    position.y = 112.5;
+    position.x = (Sint16) 212.5;
+    position.y = (Sint16) 112.5;
     if(niveau == 1 || niveau == 4 || niveau == 7)
     {
             terrain = SDL_LoadBMP("LibNiveau/herbe/Terrain.bmp");
@@ -135,19 +136,14 @@ while(win)
 
     dEnnemi mechant;
     Terrain jeu;
-
-
-
     Jeu_InitRand();
-
-
     Jeu_ChoixNiveau(bombermangame,niveau);
     Jeu_ChoixMechant(bombermangame,niveau + 1);
-
     Jeu_Initialisation(bombermangame,jeu,mechant,perso,400 - 50 * niveau);
     mechant.time=SDL_GetTicks();
     Bomberman_Setnbvie(perso,vie_niveau);
     SDL_BlitSurface(nombre[Bombeman_Getnbvie(perso)], NULL, ecran, &posvie);
+
 // Affichage des cases
 
     int i,j;
@@ -184,23 +180,23 @@ while(win)
             cases=Terrain_Getcase(jeu,j,i);
             if(strcmp(cases->carre,"M") == 0)
             {
-                murpos.x=212.5 + ( j * 25);
-                murpos.y=112.5 + ( i * 25);
+                murpos.x=(Sint16) 212.5 + ( j * 25);
+                murpos.y=(Sint16)112.5 + ( i * 25);
                 SDL_BlitSurface(mur, NULL, ecran, &murpos);
 
 
             }else{
                 if(strcmp(cases->carre,"S") == 0)
                 {
-                    murpos.x=212.5 + ( j * 25);
-                    murpos.y=112.5 + ( i * 25);
+                    murpos.x=(Sint16)212.5 + ( j * 25);
+                    murpos.y=(Sint16)112.5 + ( i * 25);
                     SDL_BlitSurface(mursolide, NULL, ecran, &murpos);
 
                 }else{
                         if(strcmp(cases->carre,"E") == 0)
                          {
-                            murpos.x=212.5 + ( j * 25);
-                            murpos.y=112.5 + ( i * 25);
+                            murpos.x=(Sint16)212.5 + ( j * 25);
+                            murpos.y=(Sint16)112.5 + ( i * 25);
                             SDL_BlitSurface(explode, NULL, ecran, &murpos);
                          }
                 }
@@ -254,13 +250,11 @@ while(win)
             }
     }
 
-
     SDL_Rect posbomberman;
-    posbomberman.x=Bomberman_Getposx(perso) * 25 + 212.5;
-    posbomberman.y=Bomberman_Getposy(perso) * 25 + 112.5;
+    posbomberman.x=(Sint16) (Bomberman_Getposx(perso) * 25 + 212.5);
+    posbomberman.y=(Sint16) (Bomberman_Getposy(perso) * 25 + 112.5);
     SDL_SetColorKey(persoactuel, SDL_SRCCOLORKEY, SDL_MapRGB(persoactuel->format, 255, 0, 0));
     SDL_BlitSurface(persoactuel, NULL, ecran, &posbomberman);
-
 
     SDL_Rect posennemi;
 
@@ -271,10 +265,9 @@ while(win)
 
     for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
     {
-        posennemi.x=(tab[i] * 25) + 212.5;
-        posennemi.y=(tab[i+1] * 25) + 112.5;
+        posennemi.x=(Sint16)((tab[i] * 25) + 212.5);
+        posennemi.y=(Sint16)((tab[i+1] * 25) + 112.5);
         SDL_BlitSurface(ennemiact, NULL, ecran, &posennemi);
-
     }
     SDL_Flip(ecran); //MAJ de l'ecran
     delete[] tab;
@@ -293,7 +286,7 @@ while(win)
     int init_a = 0;
 
     Case * touche_explosion;
-    Bombe * bombe;
+    Bombe * bombe = NULL;
 
     SDL_EnableKeyRepeat(10, 10);
 
@@ -306,7 +299,6 @@ while(continuer)
                 init_a = 1;
 
         }
-
 
         SDL_PollEvent(&event); /* Récupèration de l'évènement dans event */
         switch(event.type) /* Test du type d'évènement */
@@ -423,8 +415,8 @@ while(continuer)
             dEnnemi_Mouvement(mechant,jeu);
             mechant.time = entime;
         }
-        posbomberman.x=Bomberman_Getposx(perso) * 25 + 212.5;
-        posbomberman.y=Bomberman_Getposy(perso) * 25 + 112.5;
+        posbomberman.x=(Sint16)(Bomberman_Getposx(perso) * 25 + 212.5);
+        posbomberman.y=(Sint16)(Bomberman_Getposy(perso) * 25 + 112.5);
         SDL_BlitSurface(fond, NULL, ecran, &menpos);
         SDL_BlitSurface(terrain, NULL, ecran, &position);
         SDL_BlitSurface(nombre[niveau], NULL, ecran, &posniv);
@@ -436,28 +428,28 @@ while(continuer)
                 cases=Terrain_Getcase(jeu,j,i);
                 if(strcmp(cases->carre,"M") == 0)
                 {
-                    murpos.x=212.5 + ( j * 25);
-                    murpos.y=112.5 + ( i * 25);
+                    murpos.x=(Sint16) 212.5 + ( j * 25);
+                    murpos.y=(Sint16) 112.5 + ( i * 25);
                     SDL_BlitSurface(mur, NULL, ecran, &murpos);
 
 
                 }else{
                     if(strcmp(cases->carre,"S") == 0)
                     {
-                        murpos.x=212.5 + ( j * 25);
-                        murpos.y=112.5 + ( i * 25);
+                        murpos.x=(Sint16) 212.5 + ( j * 25);
+                        murpos.y=(Sint16) 112.5 + ( i * 25);
                         SDL_BlitSurface(mursolide, NULL, ecran, &murpos);
                     }else{
                         if(strcmp(cases->carre,"B") == 0)
                         {
-                            murpos.x=212.5 + ( j * 25);
-                            murpos.y=112.5 + ( i * 25);
+                            murpos.x=(Sint16) 212.5 + ( j * 25);
+                            murpos.y=(Sint16) 112.5 + ( i * 25);
                             SDL_BlitSurface(bombes, NULL, ecran, &murpos);
                         }else{
                             if(strcmp(cases->carre,"E") == 0)
                             {
-                                murpos.x=212.5 + ( j * 25);
-                                murpos.y=112.5 + ( i * 25);
+                                murpos.x=(Sint16) 212.5 + ( j * 25);
+                                murpos.y=(Sint16) 112.5 + ( i * 25);
                                 SDL_BlitSurface(explode, NULL, ecran, &murpos);
                             }
                         }
@@ -471,8 +463,8 @@ while(continuer)
         en_dir = dEnnemi_GetDirection(mechant);
         for(i=0;i<=2*(mechant.liste_en.nb_en)-1;i=i+2)
         {
-            posennemi.x=(tab[i] * 25) + 212.5;
-            posennemi.y=(tab[i+1] * 25) + 112.5;
+            posennemi.x=(Sint16)((tab[i] * 25) + 212.5);
+            posennemi.y=(Sint16)((tab[i+1] * 25) + 112.5);
             if(en_dir[i/2] == 'b')
             {
                 ennemiact = ennemi[0];
@@ -543,7 +535,6 @@ if(dead)
     SDL_Flip(ecran);
     SDL_Delay(5000);
 }
-
     SDL_FreeSurface(ecran);
     SDL_FreeSurface(menu);
     SDL_FreeSurface(gameover);
@@ -556,11 +547,13 @@ if(dead)
     SDL_FreeSurface(ennemiact);
     SDL_FreeSurface(mur);
     SDL_FreeSurface(fond);
-     for(int i=0;i<4;i++)
+    for(int i=0;i<4;i++)
     {
         SDL_FreeSurface(personnage[i]);
     }
+
     SDL_FreeSurface(persoactuel);
+
     for(int i=0;i<4;i++)
     {
         SDL_FreeSurface(ennemi[i]);
