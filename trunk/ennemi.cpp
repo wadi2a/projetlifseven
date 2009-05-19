@@ -66,7 +66,7 @@ void Ennemi_affectationsurterrain(Ennemi * e, const Terrain &t)
 {
 
 
-    char dir = 'b';
+    char dir = 'g';
     Ennemi_Setnbvie(e,1);
 
         int x,y;
