@@ -77,7 +77,7 @@ int main (int argc, char** argv)
                 switch(event.key.keysym.sym)
                 {
                     case SDLK_s:
-                        niveau = 1;
+                        niveau = 3;
                         attente = 0;
                         win = 1;
                         SDL_Delay(70);
@@ -160,7 +160,10 @@ while(win)
             {
                 mursolide = SDL_LoadBMP("LibNiveau/eau/mursolide.bmp");
                 mur = SDL_LoadBMP("LibNiveau/eau/mur.bmp");
-                bombes = SDL_LoadBMP("LibNiveau/eau/bombe.bmp");
+                bombes = SDL_LoadBMP("LibNiveau/herbe/bombe.bmp");
+                explode = SDL_LoadBMP("LibNiveau/eau/explosioncentre.bmp");
+                SDL_SetColorKey(mur, SDL_SRCCOLORKEY, SDL_MapRGB(mur->format, 255, 0, 0));
+                SDL_SetColorKey(explode, SDL_SRCCOLORKEY, SDL_MapRGB(explode->format, 255, 0, 0));
             }else{
                 if(niveau == 3 || niveau == 6 || niveau == 9)
                 {
@@ -544,15 +547,12 @@ if(dead)
     SDL_FreeSurface(bombes);
     SDL_FreeSurface(mursolide);
     SDL_FreeSurface(explode);
-    SDL_FreeSurface(ennemiact);
     SDL_FreeSurface(mur);
     SDL_FreeSurface(fond);
     for(int i=0;i<4;i++)
     {
         SDL_FreeSurface(personnage[i]);
     }
-
-    SDL_FreeSurface(persoactuel);
 
     for(int i=0;i<4;i++)
     {
