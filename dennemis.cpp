@@ -31,7 +31,7 @@ void dEnnemi_SupprimeEnnemi(dEnnemi & e, Ennemi * m)
             p->precedent->suivant = p->suivant;
             p->suivant->precedent = p->precedent;
             Ennemi_testament(k);
-            delete p;
+
             e.liste_en.nb_en--;
             break;
         }
@@ -132,6 +132,7 @@ void dEnnemi_ToucheExplosion(dEnnemi & e, const Terrain &t)
               }else m=m->suivant;
         }
 }
+
 
 
 
