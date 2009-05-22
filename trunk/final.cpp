@@ -161,7 +161,7 @@ void Final_AllocationImagePE(SDL_Surface * ennemi[4], SDL_Surface * personnage[4
     }
 }
 
-void Final_Menu(SDL_Event &event,int & niveau, int & win, int & quitter)
+void Final_Menu(SDL_Event &event,int & niveau, int & win, int & quitter, bool &jeufin)
 {
         int attente = 1;
         while(attente)
@@ -171,6 +171,7 @@ void Final_Menu(SDL_Event &event,int & niveau, int & win, int & quitter)
             {
                 case SDL_QUIT:
                     attente = 0;
+                    jeufin = true;
                     break;
                 case SDL_KEYDOWN:
                     switch(event.key.keysym.sym)
@@ -185,6 +186,7 @@ void Final_Menu(SDL_Event &event,int & niveau, int & win, int & quitter)
                             win = 0;
                             quitter = 1;
                             attente = 0;
+                            jeufin = true;
                             break;
                         default:
                             break;
@@ -206,8 +208,94 @@ void Final_AffichageMechant(const dEnnemi &mechant, SDL_Surface * ennemiact,SDL_
     }
 }
 
+void Final_MenuPause(SDL_Surface *mpause[3], SDL_Surface *ecran, SDL_Rect &menpos, bool &jeufin,int &quitter, int &continuer, int &win, SDL_Event &event)
+{
+      bool final=true;
+      SDL_BlitSurface(mpause[0], NULL, ecran, &menpos);
+      SDL_Flip(ecran);
+      int mode = 1;
 
-void Final_MouvementEvent(SDL_Event &event,int & continuer, int & win, int & bombepos, Bombe *bombe,int & quitter, SDL_Surface * personnage[4], SDL_Surface *& persoactuel, const Terrain &jeu, Bomberman &perso )
+
+      while(final)
+        {
+        event.type = (Uint8) NULL;
+
+
+        SDL_WaitEvent(&event); /* Récupèration de l'évènement dans event */
+        switch(event.type) /* Test du type d'évènement */
+        {
+            case SDL_KEYDOWN:
+                switch(event.key.keysym.sym)
+                {
+                    case SDLK_UP:
+                        if(mode == 2)
+                        {
+                            mode=1;
+                            SDL_BlitSurface(mpause[0], NULL, ecran, &menpos);
+                            SDL_Flip(ecran);
+                            SDL_Delay(80);
+                        }else{
+                            if (mode == 3)
+                            {
+                                mode=2;
+                                SDL_BlitSurface(mpause[1], NULL, ecran, &menpos);
+                                SDL_Flip(ecran);
+                                SDL_Delay(80);
+                            }
+                        }
+                        break;
+                    case SDLK_DOWN:
+                        if(mode == 1)
+                        {
+                            mode=2;
+                            SDL_BlitSurface(mpause[1], NULL, ecran, &menpos);
+                            SDL_Flip(ecran);
+                            SDL_Delay(80);
+                        }else{if (mode == 2)
+                            {
+                                mode=3;
+                                SDL_BlitSurface(mpause[2], NULL, ecran, &menpos);
+                                SDL_Flip(ecran);
+                                SDL_Delay(80);
+                            }
+                        }
+                        break;
+                    case SDLK_SPACE:
+                        if(mode == 1)
+                        {
+                                final = false;
+                        }
+                        if(mode == 2)
+                        {
+                                final = false;
+                                jeufin = false;
+
+                                continuer = 0;
+                                win = 0;
+                                quitter = 1;
+
+                        }
+                        if(mode == 3)
+                        {
+                                final = false;
+                                jeufin = true;
+
+                                continuer = 0;
+                                quitter = 1;
+                                win = 0;
+
+
+                        break;
+                    default:
+                        break;
+                }
+                break;
+        }
+    }
+}
+}
+
+void Final_MouvementEvent(SDL_Event &event,int & continuer, int & win, int & bombepos, Bombe *bombe,int & quitter, SDL_Surface * personnage[4], SDL_Surface *& persoactuel, const Terrain &jeu, Bomberman &perso, SDL_Surface *ecran, SDL_Surface *mpause[3], bool &jeufin, SDL_Rect &menpos)
 {       event.type = (Uint8) NULL;
 
         SDL_PollEvent(&event); /* Récupèration de l'évènement dans event */
@@ -240,9 +328,8 @@ void Final_MouvementEvent(SDL_Event &event,int & continuer, int & win, int & bom
                         if(bombe->nb) bombepos = 1;
                         break;
                     case SDLK_ESCAPE :
-                        continuer = 0;
-                        quitter = 1;
-                        win = 0;
+                            Final_MenuPause(mpause,ecran,menpos,jeufin,quitter,continuer,win,event);
+
                         break;
 
 
@@ -380,6 +467,7 @@ void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,i
                 continuer = 0;
                 dead = 1;
                 win = 0;
+
         }
 
         touche_explosion = Terrain_Getcase(jeu,perso.posx,perso.posy);
@@ -411,7 +499,7 @@ void Final_MouvementEnnemis(dEnnemi &mechant,const Jeu &bombermangame, Terrain &
          }
 }
 
-void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4])
+void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[2], SDL_Surface *mpause[3])
 {
     SDL_FreeSurface(ecran);
     SDL_FreeSurface(menu);
@@ -433,4 +521,126 @@ void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surfac
     {
         SDL_FreeSurface(ennemi[i]);
     }
+    for(int i=0;i<5;i++)
+    {
+        SDL_FreeSurface(load[i]);
+    }
+    SDL_FreeSurface(menufin[0]);
+    SDL_FreeSurface(menufin[1]);
+    SDL_FreeSurface(mpause[0]);
+    SDL_FreeSurface(mpause[1]);
+    SDL_FreeSurface(mpause[2]);
 }
+
+void Final_AllocationLoad(SDL_Surface *load[5])
+{
+
+    load[0]=SDL_LoadBMP("Menu/load/load1.bmp");
+    load[1]=SDL_LoadBMP("Menu/load/load2.bmp");
+    load[2]=SDL_LoadBMP("Menu/load/load3.bmp");
+    load[3]=SDL_LoadBMP("Menu/load/load4.bmp");
+    load[4]=SDL_LoadBMP("Menu/load/load5.bmp");
+}
+
+void Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&ecran)
+{
+        SDL_Rect posload;
+        Final_AllocationValeurRect(posload,0,0);
+        SDL_BlitSurface(load[0], NULL, ecran, &posload);
+        int tempsboucle = SDL_GetTicks();
+        while( SDL_GetTicks() - tempsboucle < 6000)
+        {
+                if(SDL_GetTicks() - tempsboucle < 2000 && SDL_GetTicks() - tempsboucle > 1000)
+                {
+                    SDL_BlitSurface(load[1], NULL, ecran, &posload);
+                }
+                if(SDL_GetTicks() - tempsboucle < 3000 && SDL_GetTicks() - tempsboucle > 2000)
+                {
+                    SDL_BlitSurface(load[2], NULL, ecran, &posload);
+                }
+
+                if(SDL_GetTicks() - tempsboucle < 4000 && SDL_GetTicks() - tempsboucle > 3000)
+                {
+                    SDL_BlitSurface(load[3], NULL, ecran, &posload);
+                }
+
+                if(SDL_GetTicks() - tempsboucle < 5000 && SDL_GetTicks() - tempsboucle > 4000)
+                {
+                    SDL_BlitSurface(load[4], NULL, ecran, &posload);
+                }
+
+                if(SDL_GetTicks() - tempsboucle < 6000 && SDL_GetTicks() - tempsboucle > 5000)
+                {
+                    SDL_BlitSurface(load[4], NULL, ecran, &posload);
+                }
+                SDL_Flip(ecran);
+        }
+        SDL_Delay(1000);
+
+}
+
+void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, SDL_Surface *ecran, bool &jeufin)
+{
+      bool final=true;
+      SDL_BlitSurface(menufin[0], NULL, ecran, &menpos);
+      SDL_Flip(ecran);
+      int mode = 1;
+
+
+      while(final)
+        {
+        event.type = (Uint8) NULL;
+
+
+        SDL_WaitEvent(&event); /* Récupèration de l'évènement dans event */
+        switch(event.type) /* Test du type d'évènement */
+        {
+            case SDL_KEYDOWN:
+                switch(event.key.keysym.sym)
+                {
+                    case SDLK_UP:
+                        mode=1;
+                        SDL_BlitSurface(menufin[0], NULL, ecran, &menpos);
+                        SDL_Flip(ecran);
+                        break;
+                    case SDLK_DOWN:
+                        mode=2;
+                        SDL_BlitSurface(menufin[1], NULL, ecran, &menpos);
+                        SDL_Flip(ecran);
+                        break;
+                    case SDLK_SPACE:
+                        if(mode == 1)
+                        {
+                                final = false;
+                        }
+                        if(mode == 2)
+                        {
+                                final = false;
+                                jeufin = true;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                break;
+        }
+    }
+
+}
+
+
+void Final_AllocationMenuFin(SDL_Surface * menufin[2])
+{
+    menufin[0]=SDL_LoadBMP("Menu/menuf/1.bmp");
+    menufin[1]=SDL_LoadBMP("Menu/menuf/2.bmp");
+
+}
+
+void Final_AllocationMenuPause(SDL_Surface * mpause[3])
+{
+    mpause[0]=SDL_LoadBMP("Menu/pause/1.bmp");
+    mpause[1]=SDL_LoadBMP("Menu/pause/2.bmp");
+    mpause[2]=SDL_LoadBMP("Menu/pause/3.bmp");
+
+}
+

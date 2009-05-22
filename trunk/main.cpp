@@ -24,30 +24,43 @@ int main (int argc, char** argv)
     SDL_Surface *persoactuel = NULL;
     SDL_Surface *ennemi[4] = {NULL};
     SDL_Surface *fond = NULL;
+    SDL_Surface *load[5] = {NULL};
+    SDL_Surface *menufin[2] = {NULL};
+    SDL_Surface *mpause[3] = {NULL};
 
     ecran = SDL_SetVideoMode(800,600,32,SDL_HWSURFACE | SDL_DOUBLEBUF);
     SDL_WM_SetCaption("Super Bomberman - Deluxe Edition", NULL);
 
 // Couleur de fond de la fenetre
     SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 17, 206, 112));
-    SDL_Rect menpos;
-    Final_AllocationValeurRect(menpos,0,0);
-    menu = SDL_LoadBMP("Menu/menu.bmp");
-    SDL_BlitSurface(menu, NULL, ecran, &menpos);
-    SDL_Flip(ecran); //MAJ de l'ecran
 
     SDL_Rect posniv, posvie;
     Final_AllocationValeurRect(posniv,(Sint16) 170,(Sint16) 3);
     Final_AllocationValeurRect(posvie,(Sint16) 119,(Sint16) 553);
     Final_AllocationNombre(nombre);
+    Final_AllocationLoad(load);
+    Final_AllocationMenuFin(menufin);
+    Final_AllocationMenuPause(mpause);
 
     int win = 0;
     int quitter = 0;
     int niveau;
     int dead = 0;
+    bool jeufin = false;
+
+
+    SDL_Rect menpos;
+    Final_AllocationValeurRect(menpos,0,0);
+    menu = SDL_LoadBMP("Menu/menu.bmp");
+do
+{
+    dead = 0;
+    SDL_BlitSurface(menu, NULL, ecran, &menpos);
+    SDL_Flip(ecran); //MAJ de l'ecran
+
 
 // MENU
-    Final_Menu(event,niveau,win,quitter);
+    Final_Menu(event,niveau,win,quitter,jeufin);
     Jeu bombermangame;
     Bomberman perso;
     int vie_niveau = 3;
@@ -56,6 +69,9 @@ int main (int argc, char** argv)
 while(win)
 {
 // Affichage du fond Terrain
+
+    Final_ChargementEntreNiveau(load,ecran);
+
 
     SDL_BlitSurface(nombre[niveau], NULL, ecran, &posniv);
     SDL_Rect position;
@@ -101,7 +117,7 @@ while(win)
 
 //Début de la boucle infinie avec gestion des mouvements et bombe
     int continuer = 1;
-    int quitter = 0;
+//    int quitter = 0;
     int bombepos = 0;
     int poser = 0;
     int initb = 1;
@@ -110,7 +126,7 @@ while(win)
     int possible_mb = 0;
     int perte_v = 0;
     int init_a = 0;
-    Case * touche_explosion;
+    Case * touche_explosion = NULL;
     Bombe * bombe = NULL;
 
     SDL_EnableKeyRepeat(10, 10);
@@ -119,7 +135,7 @@ while(win)
 while(continuer)
 {
         Final_TestInitBombe(initb,init_a,bombe);
-        Final_MouvementEvent(event,continuer,win,bombepos,bombe,quitter,personnage,persoactuel,jeu,perso);
+        Final_MouvementEvent(event,continuer,win,bombepos,bombe,quitter,personnage,persoactuel,jeu,perso,ecran,mpause,jeufin,menpos);
         Final_PoseBombe(poser,bombe,jeu,perso,init_a,initb,bombepos);
         Final_ExplosionBombe(poser,perte_v,explosion,temps_explosion,initb,possible_mb,bombe,perso,jeu,mechant,init_a);
         Final_AffichageExplosion(explosion,temps_explosion,perte_v,jeu);
@@ -148,17 +164,23 @@ while(continuer)
     Terrain_testament(jeu);
     dEnnemi_Testament(mechant);
     if(init_a) Bombe_testament(bombe);
-}
+    }
+    if(dead && !jeufin)
+    {
+        SDL_BlitSurface(gameover, NULL, ecran, &menpos);
+        SDL_Flip(ecran);
+        SDL_Delay(1500);
+        quitter = 0;
+    }
+    if(!quitter) Final_MenuFin(event,menufin,menpos,ecran,jeufin);
+
+}while(!jeufin);
 
 // Test de Game Over ?
-if(dead)
-{
-    SDL_BlitSurface(gameover, NULL, ecran, &menpos);
-    SDL_Flip(ecran);
-    SDL_Delay(5000);
-}
 
-    Final_LiberationMemoire(ecran,menu,gameover,nombre,terrain,bombes,mursolide,explode,mur,fond,personnage,ennemi);
+
+    Final_LiberationMemoire(ecran,menu,gameover,nombre,terrain,bombes,mursolide,explode,mur,fond,personnage,ennemi,load,menufin,mpause);
     SDL_Quit();
     return EXIT_SUCCESS;
 }
+
