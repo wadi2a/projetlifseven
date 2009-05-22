@@ -15,11 +15,13 @@ void Final_AllocationValeurRectMMBE(const Terrain &jeu,SDL_Surface *& ecran, SDL
 
 void Final_AllocationImagePE(SDL_Surface * ennemi[4], SDL_Surface * personnage[4] ,SDL_Surface *& persoact, SDL_Surface *& ennemiact, const int &niveau);
 
-void Final_Menu(SDL_Event &event,int & niveau, int & win, int & quitter);
+void Final_Menu(SDL_Event &event,int & niveau, int & win, int & quitter, bool &jeufin);
 
 void Final_AffichageMechant(const dEnnemi &mechant, SDL_Surface * ennemiact,SDL_Surface * ecran, SDL_Rect &posennemi, int * tab);
 
-void Final_MouvementEvent(SDL_Event &event,int & continuer, int & win, int & bombepos, Bombe *bombe,int & quitter, SDL_Surface * personnage[4], SDL_Surface *& persoactuel, const Terrain &jeu, Bomberman &perso );
+void Final_MenuPause(SDL_Surface *mpause[3], SDL_Surface *ecran, SDL_Rect &menpos, bool &jeufin,int &quitter, int &continuer, int &win, SDL_Event &event);
+
+void Final_MouvementEvent(SDL_Event &event,int & continuer, int & win, int & bombepos, Bombe *bombe,int & quitter, SDL_Surface * personnage[4], SDL_Surface *& persoactuel, const Terrain &jeu, Bomberman &perso, SDL_Surface *ecran, SDL_Surface *mpause[3], bool &jeufin, SDL_Rect &menpos);
 
 void Final_TestInitBombe(int &initb, int & init_a, Bombe *& bombe);
 
@@ -35,7 +37,16 @@ void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,i
 
 void Final_MouvementEnnemis(dEnnemi &mechant,const Jeu &bombermangame, Terrain &jeu);
 
-void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4]);
+void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[2], SDL_Surface *mpause[3]);
 
+void Final_AllocationLoad(SDL_Surface *load[5]);
+
+void Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&ecran);
+
+void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, SDL_Surface *ecran, bool &jeufin);
+
+void Final_AllocationMenuFin(SDL_Surface * menufin[2]);
+
+void Final_AllocationMenuPause(SDL_Surface * mpause[3]);
 #endif
 
