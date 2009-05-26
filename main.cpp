@@ -8,7 +8,6 @@ int main (int argc, char** argv)
         SDL_Quit();
         exit(EXIT_FAILURE); // On quitte le programme
     }
-
     SDL_Surface *ecran = NULL;
     SDL_Surface *menu = NULL;
     SDL_Surface *gameover = SDL_LoadBMP("Menu/gameover.bmp");
@@ -41,13 +40,8 @@ int main (int argc, char** argv)
     Final_AllocationLoad(load);
     Final_AllocationMenuFin(menufin);
     Final_AllocationMenuPause(mpause);
-
-    int win = 0;
-    int quitter = 0;
-    int niveau;
-    int dead = 0;
+    int win = 0,quitter = 0, niveau,dead = 0;
     bool jeufin = false;
-
 
     SDL_Rect menpos;
     Final_AllocationValeurRect(menpos,0,0);
@@ -71,8 +65,6 @@ while(win)
 // Affichage du fond Terrain
 
     Final_ChargementEntreNiveau(load,ecran);
-
-
     SDL_BlitSurface(nombre[niveau], NULL, ecran, &posniv);
     SDL_Rect position;
     Final_AllocationValeurRect(position,(Sint16) 212.5,(Sint16) 112.5);
@@ -116,16 +108,7 @@ while(win)
     delete[] tab;
 
 //Début de la boucle infinie avec gestion des mouvements et bombe
-    int continuer = 1;
-//    int quitter = 0;
-    int bombepos = 0;
-    int poser = 0;
-    int initb = 1;
-    int explosion = 0;
-    int temps_explosion = 0;
-    int possible_mb = 0;
-    int perte_v = 0;
-    int init_a = 0;
+    int continuer = 1,bombepos = 0,poser = 0,initb = 1,explosion = 0,temps_explosion = 0,possible_mb = 0,perte_v = 0,init_a = 0;
     Case * touche_explosion = NULL;
     Bombe * bombe = NULL;
 
@@ -152,6 +135,7 @@ while(continuer)
         Final_AffichageEnnemis(mechant, posennemi,ennemiact, ennemi,ecran, en_dir, tab);
         delete[] tab;
         delete[] en_dir;
+
         // Fin de blittage de l'écran
 
         Final_TestFinaux(mechant,perso,jeu,win,niveau,vie_niveau,perte_v,continuer,dead,touche_explosion);
@@ -175,12 +159,7 @@ while(continuer)
     if(!quitter) Final_MenuFin(event,menufin,menpos,ecran,jeufin);
 
 }while(!jeufin);
-
-// Test de Game Over ?
-
-
     Final_LiberationMemoire(ecran,menu,gameover,nombre,terrain,bombes,mursolide,explode,mur,fond,personnage,ennemi,load,menufin,mpause);
     SDL_Quit();
     return EXIT_SUCCESS;
 }
-
