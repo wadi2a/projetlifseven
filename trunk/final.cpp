@@ -548,34 +548,36 @@ void Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&ecran)
         Final_AllocationValeurRect(posload,0,0);
         SDL_BlitSurface(load[0], NULL, ecran, &posload);
         int tempsboucle = SDL_GetTicks();
+        int tempsinboucle = SDL_GetTicks();
         while( SDL_GetTicks() - tempsboucle < 6000)
         {
-                if(SDL_GetTicks() - tempsboucle < 2000 && SDL_GetTicks() - tempsboucle > 1000)
+                tempsinboucle = SDL_GetTicks();
+                if(tempsinboucle - tempsboucle < 2000 && tempsinboucle - tempsboucle > 1000)
                 {
                     SDL_BlitSurface(load[1], NULL, ecran, &posload);
                 }
-                if(SDL_GetTicks() - tempsboucle < 3000 && SDL_GetTicks() - tempsboucle > 2000)
+                if(tempsinboucle - tempsboucle < 3000 && tempsinboucle - tempsboucle > 2000)
                 {
                     SDL_BlitSurface(load[2], NULL, ecran, &posload);
                 }
 
-                if(SDL_GetTicks() - tempsboucle < 4000 && SDL_GetTicks() - tempsboucle > 3000)
+                if(tempsinboucle - tempsboucle < 4000 && tempsinboucle - tempsboucle > 3000)
                 {
                     SDL_BlitSurface(load[3], NULL, ecran, &posload);
                 }
 
-                if(SDL_GetTicks() - tempsboucle < 5000 && SDL_GetTicks() - tempsboucle > 4000)
+                if(tempsinboucle - tempsboucle < 5000 && tempsinboucle - tempsboucle > 4000)
                 {
                     SDL_BlitSurface(load[4], NULL, ecran, &posload);
                 }
 
-                if(SDL_GetTicks() - tempsboucle < 6000 && SDL_GetTicks() - tempsboucle > 5000)
+                if(tempsinboucle - tempsboucle < 6000 && tempsinboucle - tempsboucle > 5000)
                 {
                     SDL_BlitSurface(load[4], NULL, ecran, &posload);
                 }
                 SDL_Flip(ecran);
         }
-        SDL_Delay(1000);
+        SDL_Delay(1300);
 
 }
 
