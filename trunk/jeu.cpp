@@ -36,7 +36,3 @@ void Jeu_Initialisation(Jeu &j, Terrain &t, dEnnemi &l, Bomberman &b, const int 
     dEnnemi_Initialisation(l,t,j.nb_mechant);
     j.temps_mouvement=temps;
 }
-
-
-
-

@@ -1,7 +1,6 @@
 #include "dennemis.h"
 
 void dEnnemi_Initialisation(dEnnemi & e, const Terrain &t, const int & nb)
-// Initilialise la liste et rajoute le nombre d'ennemis en les affectant sur le terrain
 {
     initialise(e.liste_en);
     int i;
@@ -16,7 +15,6 @@ void dEnnemi_Initialisation(dEnnemi & e, const Terrain &t, const int & nb)
 }
 
 void dEnnemi_SupprimeEnnemi(dEnnemi & e, Ennemi * m)
-// Supprime l'ennemi m s'il est égal à m donné en paramètre. Suppression propre en mémoire
 {
     Cellule * p = e.liste_en.prem->suivant;
 
@@ -39,13 +37,11 @@ void dEnnemi_SupprimeEnnemi(dEnnemi & e, Ennemi * m)
 }
 
 void dEnnemi_Testament(dEnnemi & e)
-// Supprime proprement en mémoire la liste d'ennemis
 {
     testament(e.liste_en);
 }
 
 void dEnnemi_Mouvement(dEnnemi & e, const Terrain &t)
-// Effectue les mouvements sur l'ensemble des ennemis du terrain
 {
     Cellule * p = e.liste_en.prem->suivant;
     while(p != e.liste_en.prem)
@@ -132,7 +128,3 @@ void dEnnemi_ToucheExplosion(dEnnemi & e, const Terrain &t)
               }else m=m->suivant;
         }
 }
-
-
-
-

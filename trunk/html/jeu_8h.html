@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier jeu.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier jeu.h</h1>Déclarations des types et fonctions pour l'initialisation du jeu (niveau, nombre d'ennemis etc...). <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &quot;<a class="el" href="dennemis_8h-source.html">dennemis.h</a>&quot;</code><br>
+<code>#include &quot;<a class="el" href="bomberman_8h-source.html">bomberman.h</a>&quot;</code><br>
+
+<p>
+<a href="jeu_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sJeu</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="dd9d280ddb4cc17868ad83f7d994bf79"></a><!-- doxytag: member="jeu.h::Jeu" ref="dd9d280ddb4cc17868ad83f7d994bf79" args="" -->
+typedef struct sJeu&nbsp;</td><td class="memItemRight" valign="bottom"><b>Jeu</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#c317b1898df841db09e4aa182c19aec3">Jeu_InitRand</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction qui initialise la fonction de randomisation.  <a href="#c317b1898df841db09e4aa182c19aec3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#9c79be758a01f94183ba5bf08b46d2b7">Jeu_PerteVieContactEnnemi</a> (Bomberman &amp;b, const dEnnemi &amp;e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction qui supprime une vie au Bomberman s'il touche un Ennemi.  <a href="#9c79be758a01f94183ba5bf08b46d2b7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#0f7d7a5534ae891e162b64664a4bbea3">Jeu_ChoixNiveau</a> (Jeu &amp;j, const int &amp;niv)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction de choix de niveau.  <a href="#0f7d7a5534ae891e162b64664a4bbea3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#256700025de3ce83300f34e6dd14707b">Jeu_ChoixMechant</a> (Jeu &amp;j, const int &amp;mech)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction de choix du nombre d'Ennemis.  <a href="#256700025de3ce83300f34e6dd14707b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="jeu_8h.html#f02acab7b330274e16c590a6d8d17485">Jeu_Initialisation</a> (Jeu &amp;j, Terrain &amp;t, dEnnemi &amp;l, Bomberman &amp;b, const int &amp;temps)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction d'initialisation du jeu.  <a href="#f02acab7b330274e16c590a6d8d17485"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Déclarations des types et fonctions pour l'initialisation du jeu (niveau, nombre d'ennemis etc...). 
+<p>
+Ce fichier d'en-tête permet l'initialisation du Jeu, le choix du niveau, le nombre d'ennemis. La fonction d'initialisation permer l'initialisation des Terrains et des Ennemis. <hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="256700025de3ce83300f34e6dd14707b"></a><!-- doxytag: member="jeu.h::Jeu_ChoixMechant" ref="256700025de3ce83300f34e6dd14707b" args="(Jeu &amp;j, const int &amp;mech)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jeu_ChoixMechant           </td>
+          <td>(</td>
+          <td class="paramtype">Jeu &amp;&nbsp;</td>
+          <td class="paramname"> <em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>mech</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction de choix du nombre d'Ennemis. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td>un Jeu en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mech</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Fonction mutateur. Permet de choisir le nombre d'ennemis pour une partie, elle affecte la valeur mech au champs nb_mechant de la structure Jeu. 
+</div>
+</div><p>
+<a class="anchor" name="0f7d7a5534ae891e162b64664a4bbea3"></a><!-- doxytag: member="jeu.h::Jeu_ChoixNiveau" ref="0f7d7a5534ae891e162b64664a4bbea3" args="(Jeu &amp;j, const int &amp;niv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jeu_ChoixNiveau           </td>
+          <td>(</td>
+          <td class="paramtype">Jeu &amp;&nbsp;</td>
+          <td class="paramname"> <em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>niv</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction de choix de niveau. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td>un Jeu en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>niv</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Fonction mutateur. Permet de choisir le niveau pour une partie, elle affecte la valeur niv au champs niveau de la structure Jeu. niv est compris entre 0 et 9. 
+</div>
+</div><p>
+<a class="anchor" name="f02acab7b330274e16c590a6d8d17485"></a><!-- doxytag: member="jeu.h::Jeu_Initialisation" ref="f02acab7b330274e16c590a6d8d17485" args="(Jeu &amp;j, Terrain &amp;t, dEnnemi &amp;l, Bomberman &amp;b, const int &amp;temps)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jeu_Initialisation           </td>
+          <td>(</td>
+          <td class="paramtype">Jeu &amp;&nbsp;</td>
+          <td class="paramname"> <em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">dEnnemi &amp;&nbsp;</td>
+          <td class="paramname"> <em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>temps</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction d'initialisation du jeu. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>j</em>&nbsp;</td><td>un Jeu en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>l</em>&nbsp;</td><td>une Liste d'ennemis en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>temps</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Fonction qui Initialise le Terrain, la liste d'ennemis et le Bomberman en fonction des champs de la structure Jeu. La structure Jeu doit être initialisée préablement. La valeur temps correspond à la vitesse de mouvement (en ms) des Ennemis sur le Terrain. 
+</div>
+</div><p>
+<a class="anchor" name="c317b1898df841db09e4aa182c19aec3"></a><!-- doxytag: member="jeu.h::Jeu_InitRand" ref="c317b1898df841db09e4aa182c19aec3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jeu_InitRand           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction qui initialise la fonction de randomisation. 
+<p>
+A utiliser en début de programme et une seule fois (hors de boucle). 
+</div>
+</div><p>
+<a class="anchor" name="9c79be758a01f94183ba5bf08b46d2b7"></a><!-- doxytag: member="jeu.h::Jeu_PerteVieContactEnnemi" ref="9c79be758a01f94183ba5bf08b46d2b7" args="(Bomberman &amp;b, const dEnnemi &amp;e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Jeu_PerteVieContactEnnemi           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const dEnnemi &amp;&nbsp;</td>
+          <td class="paramname"> <em>e</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction qui supprime une vie au Bomberman s'il touche un Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>une Liste d'Ennemis en donnée</td></tr>
+  </table>
+</dl>
+Teste si le Bomberman touche un des Ennemis de la liste. Si oui, il perd une vie en utilisant la fonction de décrementation du module Bomberman. 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

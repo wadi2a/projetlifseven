@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier liste.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier liste.h</h1>Declarations des types et fonctions pour l'utilisation d'une Liste chainee. <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &quot;<a class="el" href="ennemi_8h-source.html">ennemi.h</a>&quot;</code><br>
+
+<p>
+<a href="liste_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sCellule</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sListe</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c1fb12a40a9729d9b4ee0d8dec98065d"></a><!-- doxytag: member="liste.h::Cellule" ref="c1fb12a40a9729d9b4ee0d8dec98065d" args="" -->
+typedef struct sCellule&nbsp;</td><td class="memItemRight" valign="bottom"><b>Cellule</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8161b001f2e05921a4963c3d7fa5b3a7"></a><!-- doxytag: member="liste.h::Liste" ref="8161b001f2e05921a4963c3d7fa5b3a7" args="" -->
+typedef struct sListe&nbsp;</td><td class="memItemRight" valign="bottom"><b>Liste</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4e9612a53fc1bd6d05e9d178e0d5b004"></a><!-- doxytag: member="liste.h::initialise" ref="4e9612a53fc1bd6d05e9d178e0d5b004" args="(Liste &amp;l)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>initialise</b> (Liste &amp;l)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8283157bfe45de722c25494b8e4b80f6"></a><!-- doxytag: member="liste.h::initialise" ref="8283157bfe45de722c25494b8e4b80f6" args="(Liste &amp;l1, const Liste &amp;l2)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>initialise</b> (Liste &amp;l1, const Liste &amp;l2)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="c79ae9d81dea8e297c0cec8b7ce9f711"></a><!-- doxytag: member="liste.h::testament" ref="c79ae9d81dea8e297c0cec8b7ce9f711" args="(Liste &amp;l)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>testament</b> (Liste &amp;l)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="4b86847f9fe0058c220f3071faec70ac"></a><!-- doxytag: member="liste.h::ajoutEnTete" ref="4b86847f9fe0058c220f3071faec70ac" args="(Ennemi *e, Liste &amp;l)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutEnTete</b> (Ennemi *e, Liste &amp;l)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="23e4856b9992f89f364d426846dc85b9"></a><!-- doxytag: member="liste.h::suppressionEnTete" ref="23e4856b9992f89f364d426846dc85b9" args="(Liste &amp;l)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>suppressionEnTete</b> (Liste &amp;l)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="cf0aae1261804067aba88e1cf8ec1cce"></a><!-- doxytag: member="liste.h::ajoutEnQueue" ref="cf0aae1261804067aba88e1cf8ec1cce" args="(Ennemi *e, Liste &amp;l)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutEnQueue</b> (Ennemi *e, Liste &amp;l)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a4b667c0dc24423996ad40a8e501f4c8"></a><!-- doxytag: member="liste.h::suppressionEnQueue" ref="a4b667c0dc24423996ad40a8e501f4c8" args="(Liste &amp;l)" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><b>suppressionEnQueue</b> (Liste &amp;l)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="74f155a1b9b36d615f7baae688494420"></a><!-- doxytag: member="liste.h::estVide" ref="74f155a1b9b36d615f7baae688494420" args="(const Liste &amp;l)" -->
+bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>estVide</b> (const Liste &amp;l)</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Declarations des types et fonctions pour l'utilisation d'une Liste chainee. 
+<p>
+Ce fichier d'en-t�te permet la gestion d'une Liste chainee. Ce module contient les fonctions d'initialisation de la liste cha�n�e, d'ajout et de suppression d'un �l�ment dans la liste et de Testament de la Liste. </div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

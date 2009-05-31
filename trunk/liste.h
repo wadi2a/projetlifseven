@@ -1,3 +1,10 @@
+/**
+ * \file liste.h
+ * \brief Declarations des types et fonctions pour l'utilisation d'une Liste chainee.
+ *
+ * Ce fichier d'en-tête permet la gestion d'une Liste chainee. Ce module contient les fonctions d'initialisation de la liste
+ * chaînée, d'ajout et de suppression d'un élément dans la liste et de Testament de la Liste.
+*/
 #ifndef _LISTE
 #define _LISTE
 #include "ennemi.h" // Inclus le type Elem dans le module.

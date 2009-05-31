@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier case.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier case.h</h1>Déclarations des types et fonctions pour l'utilisation d'une Case au sein d'un terrain. <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &lt;stdlib.h&gt;</code><br>
+<code>#include &lt;iostream&gt;</code><br>
+<code>#include &lt;time.h&gt;</code><br>
+
+<p>
+<a href="case_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sCase</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="babab317fd00fefc19590dc783eff310"></a><!-- doxytag: member="case.h::Case" ref="babab317fd00fefc19590dc783eff310" args="" -->
+typedef struct sCase&nbsp;</td><td class="memItemRight" valign="bottom"><b>Case</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="case_8h.html#331596ccd50b33ca71a4e6665c31517e">Case_initialisation</a> (Case &amp;a)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialise une case à vide.  <a href="#331596ccd50b33ca71a4e6665c31517e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="case_8h.html#7c7c1391511f878b7a1abcabe0790d7a">Case_setCase</a> (Case &amp;a, const Case &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialise une case à l'état donné en paramètre.  <a href="#7c7c1391511f878b7a1abcabe0790d7a"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Déclarations des types et fonctions pour l'utilisation d'une Case au sein d'un terrain. 
+<p>
+Ce fichier d'en-tête permet la gestion d'une case pour un terrain du Bomberman. Ce fichier contient les fonctions d'initialisations des cases. <hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="331596ccd50b33ca71a4e6665c31517e"></a><!-- doxytag: member="case.h::Case_initialisation" ref="331596ccd50b33ca71a4e6665c31517e" args="(Case &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Case_initialisation           </td>
+          <td>(</td>
+          <td class="paramtype">Case &amp;&nbsp;</td>
+          <td class="paramname"> <em>a</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Initialise une case à vide. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a</em>&nbsp;</td><td>une Case en donnée/résultat non initialisée.</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre une case non initialisée et l'initialise à l'état vide ou "V". 
+</div>
+</div><p>
+<a class="anchor" name="7c7c1391511f878b7a1abcabe0790d7a"></a><!-- doxytag: member="case.h::Case_setCase" ref="7c7c1391511f878b7a1abcabe0790d7a" args="(Case &amp;a, const Case &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Case_setCase           </td>
+          <td>(</td>
+          <td class="paramtype">Case &amp;&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Case &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Initialise une case à l'état donné en paramètre. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a</em>&nbsp;</td><td>une Case en donnée/résultat non initialisée. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>une Case en donnée initialisée.</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre une case non initialisée a et une case b initialisée à un certain état. La case a prendra l'état de la case b. 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

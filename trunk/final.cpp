@@ -645,4 +645,3 @@ void Final_AllocationMenuPause(SDL_Surface * mpause[3])
     mpause[2]=SDL_LoadBMP("Menu/pause/3.bmp");
 
 }
-

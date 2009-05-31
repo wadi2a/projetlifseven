@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman:  Fichier source de terrain.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>terrain.h</h1><a href="terrain_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef _Terrain</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define _Terrain</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#include "<a class="code" href="case_8h.html" title="Déclarations des types et fonctions pour l&amp;#39;utilisation d&amp;#39;une Case au sein...">case.h</a>"</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">struct </span>sTerrain
+<a name="l00014"></a>00014 {
+<a name="l00015"></a>00015      <span class="keywordtype">int</span> dim;
+<a name="l00016"></a>00016      Case *plateau;
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 };
+<a name="l00019"></a>00019 <span class="keyword">typedef</span> <span class="keyword">struct </span>sTerrain Terrain;
+<a name="l00020"></a>00020 
+<a name="l00028"></a>00028 <span class="keywordtype">void</span> Terrain_initialisation(Terrain &amp; t);
+<a name="l00029"></a>00029 
+<a name="l00037"></a>00037 <span class="keywordtype">void</span> Terrain_affectationaleatoire(Terrain &amp;t);
+<a name="l00038"></a>00038 
+<a name="l00045"></a>00045 <span class="keywordtype">void</span> Terrain_testament(Terrain &amp;t);
+<a name="l00046"></a>00046 
+<a name="l00056"></a>00056 Case * Terrain_Getcase(<span class="keyword">const</span> Terrain &amp;t,<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;posx,<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;posy);
+<a name="l00057"></a>00057 
+<a name="l00067"></a>00067 <span class="keywordtype">void</span> Terrain_Setcase(Terrain &amp;t, <span class="keyword">const</span> Case &amp;c, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;posx,<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;poxy);
+<a name="l00068"></a>00068 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

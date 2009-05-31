@@ -82,4 +82,3 @@ void suppressionEnQueue(Liste & l)
 	l.prem->precedent = m; // Le champ precedent de la cellule bidon pointe sur l'ancienne avant-derniere cellule
     m->suivant = l.prem; // Le champ suivant de l'ancienne avant-derniere cellule pointe sur la cellule bidon
 }
-

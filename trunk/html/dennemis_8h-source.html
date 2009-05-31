@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman:  Fichier source de dennemis.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>dennemis.h</h1><a href="dennemis_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef _desEnnemi</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define _desEnnemi</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#include "<a class="code" href="ennemi_8h.html" title="Déclarations des types et fonctions pour l&amp;#39;utilisation d&amp;#39;un seul Ennemi...">ennemi.h</a>"</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include "<a class="code" href="liste_8h.html" title="Declarations des types et fonctions pour l&amp;#39;utilisation d&amp;#39;une Liste chainee...">liste.h</a>"</span>
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">struct </span>sdEnnemi {
+<a name="l00014"></a>00014     Liste liste_en;
+<a name="l00015"></a>00015     <span class="keywordtype">int</span> time;
+<a name="l00016"></a>00016 };<span class="keyword">typedef</span> <span class="keyword">struct </span>sdEnnemi dEnnemi;
+<a name="l00017"></a>00017 
+<a name="l00027"></a>00027 <span class="keywordtype">void</span> dEnnemi_Initialisation(dEnnemi &amp; e, <span class="keyword">const</span> Terrain &amp;t, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; nb);
+<a name="l00028"></a>00028 
+<a name="l00037"></a>00037 <span class="keywordtype">void</span> dEnnemi_SupprimeEnnemi(dEnnemi &amp; e, Ennemi * m);
+<a name="l00038"></a>00038 
+<a name="l00045"></a>00045 <span class="keywordtype">void</span> dEnnemi_Testament(dEnnemi &amp; e);
+<a name="l00046"></a>00046 
+<a name="l00055"></a>00055 <span class="keywordtype">void</span> dEnnemi_Mouvement(dEnnemi &amp; e, <span class="keyword">const</span> Terrain &amp;t);
+<a name="l00056"></a>00056 
+<a name="l00066"></a>00066 <span class="keywordtype">void</span> dEnnemi_PresenceSurBombe(dEnnemi &amp; e, Bombe * b, Terrain &amp;t);
+<a name="l00067"></a>00067 
+<a name="l00076"></a>00076 <span class="keywordtype">int</span> * dEnnemi_GetPosition(dEnnemi &amp; e);
+<a name="l00077"></a>00077 
+<a name="l00086"></a>00086 <span class="keywordtype">char</span> * dEnnemi_GetDirection(dEnnemi &amp; e);
+<a name="l00087"></a>00087 
+<a name="l00096"></a>00096 <span class="keywordtype">void</span> dEnnemi_ToucheExplosion(dEnnemi &amp; e, <span class="keyword">const</span> Terrain &amp;t);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>
