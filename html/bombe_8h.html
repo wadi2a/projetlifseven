@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier bombe.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier bombe.h</h1>Déclarations des types et fonctions pour l'utilisation d'une Bombe au cours d'une partie de Bomberman. <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &quot;<a class="el" href="terrain_8h-source.html">terrain.h</a>&quot;</code><br>
+<code>#include &lt;time.h&gt;</code><br>
+
+<p>
+<a href="bombe_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sBombe</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="f9062bbb17c9e4a22a03e4f56e8714da"></a><!-- doxytag: member="bombe.h::Bombe" ref="f9062bbb17c9e4a22a03e4f56e8714da" args="" -->
+typedef struct sBombe&nbsp;</td><td class="memItemRight" valign="bottom"><b>Bombe</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Bombe *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bombe_8h.html#adfb5dcc1ee1f1b6800dabb995440b02">Bombe_InitialisationBombe</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialise une Bombe.  <a href="#adfb5dcc1ee1f1b6800dabb995440b02"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bombe_8h.html#8f1a6190a4cdff2cd2ae679b10a755b5">Bombe_posebombe</a> (Bombe *b, const int &amp;posx, const int &amp;posy, Terrain &amp;t, const int &amp;rayon)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Teste si on peut poser une Bombe à une certaine coordonnée.  <a href="#8f1a6190a4cdff2cd2ae679b10a755b5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bombe_8h.html#8e8054b2b4433704e9e517d163acd689">Bombe_ExplosionSurTerrain</a> (const Bombe *b, Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Explosion des murs autour d'une bombe.  <a href="#8e8054b2b4433704e9e517d163acd689"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bombe_8h.html#cfbba56d9cff4f15b9fa667fd06959b4">Bombe_bombe</a> (Bombe *b, Terrain &amp;t, const int &amp;x, const int &amp;y, const int &amp;time)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Pose une bombe aux coordonnées données si c'est possible.  <a href="#cfbba56d9cff4f15b9fa667fd06959b4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bombe_8h.html#87aeea747bd3716113d69953284e8dd8">Bombe_testament</a> (Bombe *b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libère proprement en mémoire dynamique la Bombe.  <a href="#87aeea747bd3716113d69953284e8dd8"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Déclarations des types et fonctions pour l'utilisation d'une Bombe au cours d'une partie de Bomberman. 
+<p>
+Ce fichier d'en-tête permet la gestion d'une bombe au cours d'une partie. La gestion de l'explosion avec disparition des murs ainsi que le test de l'état d'une case avant de poser une Bombe (on peut poser une bombe que sur une case vide). <hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="cfbba56d9cff4f15b9fa667fd06959b4"></a><!-- doxytag: member="bombe.h::Bombe_bombe" ref="cfbba56d9cff4f15b9fa667fd06959b4" args="(Bombe *b, Terrain &amp;t, const int &amp;x, const int &amp;y, const int &amp;time)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Bombe_bombe           </td>
+          <td>(</td>
+          <td class="paramtype">Bombe *&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>time</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Pose une bombe aux coordonnées données si c'est possible. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un pointeur sur Bombe </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posx</em>&nbsp;</td><td>un entier en donnée </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posy</em>&nbsp;</td><td>un entier en donnée </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>time</em>&nbsp;</td><td>un entier en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Booléen</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Bombe et les coordonnées où on veut poser la Bombe. Elle appelle la fonction Bombe_posebome, si le résultat est True, elle modifie l'état de la Case où la bombe est posée (état "B"), et affecte l'heure où est posé la bombe dans le champs temps de la Bombe, afin de calculer le temps d'explosion. Elle renvoir True si la bombe est posée, False sinon. 
+</div>
+</div><p>
+<a class="anchor" name="8e8054b2b4433704e9e517d163acd689"></a><!-- doxytag: member="bombe.h::Bombe_ExplosionSurTerrain" ref="8e8054b2b4433704e9e517d163acd689" args="(const Bombe *b, Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bombe_ExplosionSurTerrain           </td>
+          <td>(</td>
+          <td class="paramtype">const Bombe *&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Explosion des murs autour d'une bombe. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un pointeur sur Bombe en donnée </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat</td></tr>
+  </table>
+</dl>
+Cette fonction change l'état des cases à l'état mur ou "M", qui se trouvent dans le rayon d'explosion horizontalement et verticalement par rapport à la Bombe. Ces cases passent à l'état vide ou "V". 
+</div>
+</div><p>
+<a class="anchor" name="adfb5dcc1ee1f1b6800dabb995440b02"></a><!-- doxytag: member="bombe.h::Bombe_InitialisationBombe" ref="adfb5dcc1ee1f1b6800dabb995440b02" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bombe* Bombe_InitialisationBombe           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Initialise une Bombe. 
+<p>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>Un pointeur sur Bombe qui pointe en mémoire sur la Bombe initialisée</dd></dl>
+Cette fonction qui ne prend pas de paramètres, affecte en mémoire dynamique une bombe. Cette bombe ne possède pour le moment aucune coordonnées relative au Terrain. 
+</div>
+</div><p>
+<a class="anchor" name="8f1a6190a4cdff2cd2ae679b10a755b5"></a><!-- doxytag: member="bombe.h::Bombe_posebombe" ref="8f1a6190a4cdff2cd2ae679b10a755b5" args="(Bombe *b, const int &amp;posx, const int &amp;posy, Terrain &amp;t, const int &amp;rayon)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Bombe_posebombe           </td>
+          <td>(</td>
+          <td class="paramtype">Bombe *&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>posx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>posy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>rayon</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Teste si on peut poser une Bombe à une certaine coordonnée. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un pointeur sur Bombe </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posx</em>&nbsp;</td><td>un entier en donnée </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posy</em>&nbsp;</td><td>un entier en donnée </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>rayon</em>&nbsp;</td><td>un entier en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Booléen</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Bombe et les coordonnées où on veut poser la Bombe. Cette fonction va tester si on peut poser la bombe aux coordonnées (posx,posy).C'est à dire si les coordonnées existent et si la case est vide ou "V". Si oui, elle affecte à la bombe les coordonnées en paramètre, son rayon d'explosion et renvoit True. Sinon elle renvoit False. 
+</div>
+</div><p>
+<a class="anchor" name="87aeea747bd3716113d69953284e8dd8"></a><!-- doxytag: member="bombe.h::Bombe_testament" ref="87aeea747bd3716113d69953284e8dd8" args="(Bombe *b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bombe_testament           </td>
+          <td>(</td>
+          <td class="paramtype">Bombe *&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Libère proprement en mémoire dynamique la Bombe. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un pointeur sur Bombe</td></tr>
+  </table>
+</dl>
+Cette fonction va libérer proprement dans la mémoire dynamique la Bombe en utilisant le pointeur sur Bombe fournis. 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

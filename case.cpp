@@ -9,6 +9,3 @@ void Case_setCase(Case &a, const Case &b)
 {
         strcpy(a.carre,b.carre);
 }
-
-
-

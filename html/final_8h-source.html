@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman:  Fichier source de final.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>final.h</h1><a href="final_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef _Final</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define _Final</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#include "<a class="code" href="jeu_8h.html" title="Déclarations des types et fonctions pour l&amp;#39;initialisation du jeu (niveau, nombre...">jeu.h</a>"</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;SDL.h&gt;</span>
+<a name="l00012"></a>00012 
+<a name="l00020"></a>00020 <span class="keywordtype">void</span> Final_AllocationNombre(SDL_Surface * nombre[10]);
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keywordtype">void</span> Final_AllocationValeurRect(SDL_Rect &amp; val, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;x, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;y);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keywordtype">void</span> Final_AllocationImageFT(SDL_Surface *&amp; terrain, SDL_Surface *&amp; fond, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;niveau);
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keywordtype">void</span> Final_AllocationImageMMBE(SDL_Surface *&amp; mursolide, SDL_Surface *&amp; mur ,SDL_Surface *&amp; bombes, SDL_Surface *&amp; explode, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;niveau);
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keywordtype">void</span> Final_AllocationValeurRectMMBE(<span class="keyword">const</span> Terrain &amp;jeu,SDL_Surface *&amp; ecran, SDL_Surface *&amp; mursolide, SDL_Surface *&amp; mur ,SDL_Surface *&amp; bombes, SDL_Surface *&amp; explode, SDL_Rect &amp; murpos);
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 <span class="keywordtype">void</span> Final_AllocationImagePE(SDL_Surface * ennemi[4], SDL_Surface * personnage[4] ,SDL_Surface *&amp; persoact, SDL_Surface *&amp; ennemiact, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;niveau);
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="keywordtype">void</span> Final_Menu(SDL_Event &amp;event,<span class="keywordtype">int</span> &amp; niveau, <span class="keywordtype">int</span> &amp; win, <span class="keywordtype">int</span> &amp; quitter, <span class="keywordtype">bool</span> &amp;jeufin);
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 <span class="keywordtype">void</span> Final_AffichageMechant(<span class="keyword">const</span> dEnnemi &amp;mechant, SDL_Surface * ennemiact,SDL_Surface * ecran, SDL_Rect &amp;posennemi, <span class="keywordtype">int</span> * tab);
+<a name="l00035"></a>00035 
+<a name="l00036"></a>00036 <span class="keywordtype">void</span> Final_MenuPause(SDL_Surface *mpause[3], SDL_Surface *ecran, SDL_Rect &amp;menpos, <span class="keywordtype">bool</span> &amp;jeufin,<span class="keywordtype">int</span> &amp;quitter, <span class="keywordtype">int</span> &amp;continuer, <span class="keywordtype">int</span> &amp;win, SDL_Event &amp;event);
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038 <span class="keywordtype">void</span> Final_MouvementEvent(SDL_Event &amp;event,<span class="keywordtype">int</span> &amp; continuer, <span class="keywordtype">int</span> &amp; win, <span class="keywordtype">int</span> &amp; bombepos, Bombe *bombe,<span class="keywordtype">int</span> &amp; quitter, SDL_Surface * personnage[4], SDL_Surface *&amp; persoactuel, <span class="keyword">const</span> Terrain &amp;jeu, Bomberman &amp;perso, SDL_Surface *ecran, SDL_Surface *mpause[3], <span class="keywordtype">bool</span> &amp;jeufin, SDL_Rect &amp;menpos);
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="keywordtype">void</span> Final_TestInitBombe(<span class="keywordtype">int</span> &amp;initb, <span class="keywordtype">int</span> &amp; init_a, Bombe *&amp; bombe);
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keywordtype">void</span> Final_PoseBombe(<span class="keywordtype">int</span> &amp;poser, Bombe *&amp; bombe,  Terrain &amp;jeu, <span class="keyword">const</span> Bomberman &amp;perso, <span class="keywordtype">int</span> &amp;init_a, <span class="keywordtype">int</span> &amp;initb, <span class="keywordtype">int</span> &amp;bombepos);
+<a name="l00043"></a>00043 
+<a name="l00044"></a>00044 <span class="keywordtype">void</span> Final_ExplosionBombe(<span class="keywordtype">int</span> &amp;poser,<span class="keywordtype">int</span> &amp;perte_v,<span class="keywordtype">int</span> &amp;explosion,<span class="keywordtype">int</span> &amp;temps_explosion,<span class="keywordtype">int</span> &amp;initb, <span class="keywordtype">int</span> &amp;possible_mb, Bombe *&amp; bombe, Bomberman &amp;perso, Terrain &amp;jeu, dEnnemi &amp;mechant, <span class="keywordtype">int</span> &amp;init_a);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 <span class="keywordtype">void</span> Final_AffichageExplosion(<span class="keywordtype">int</span> &amp;explosion, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp; temps_explosion,<span class="keywordtype">int</span> &amp;perte_v, Terrain &amp;jeu);
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="keywordtype">void</span> Final_AffichageEnnemis(<span class="keyword">const</span> dEnnemi &amp;mechant, SDL_Rect &amp;posennemi, SDL_Surface *&amp; ennemiact, SDL_Surface * ennemi[4],SDL_Surface *&amp; ecran, <span class="keywordtype">char</span> *en_dir, <span class="keywordtype">int</span> * tab);
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> Final_TestFinaux(dEnnemi &amp;mechant, Bomberman &amp;perso,Terrain &amp;jeu,<span class="keywordtype">int</span> &amp;win,<span class="keywordtype">int</span> &amp;niveau, <span class="keywordtype">int</span> &amp;vie_niveau, <span class="keywordtype">int</span> &amp;perte_v, <span class="keywordtype">int</span> &amp;continuer, <span class="keywordtype">int</span> &amp;dead, Case * touche_explosion);
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052 <span class="keywordtype">void</span> Final_MouvementEnnemis(dEnnemi &amp;mechant,<span class="keyword">const</span> Jeu &amp;bombermangame, Terrain &amp;jeu);
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[2], SDL_Surface *mpause[3]);
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> Final_AllocationLoad(SDL_Surface *load[5]);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&amp;ecran);
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="keywordtype">void</span> Final_MenuFin(SDL_Event &amp;event, SDL_Surface *menufin[2],SDL_Rect &amp;menpos, SDL_Surface *ecran, <span class="keywordtype">bool</span> &amp;jeufin);
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062 <span class="keywordtype">void</span> Final_AllocationMenuFin(SDL_Surface * menufin[2]);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064 <span class="keywordtype">void</span> Final_AllocationMenuPause(SDL_Surface * mpause[3]);
+<a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
+<a name="l00066"></a>00066 <span class="preprocessor"></span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

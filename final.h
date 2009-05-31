@@ -1,10 +1,29 @@
+/**
+ * \file final.h
+ * \brief Déclarations des fonctions pour l'utilisation de la SDL.
+ *
+ * Ce fichier d'en-tête permet l'initialisation de la SDL, l'initialisation des variables nécessaires pour la SDL,
+ * la gestion du mouvement, les Menus, la gestion des explosions et de l'affichage du Terrain, des Ennemis et du Bomberman.
+*/
 #ifndef _Final
 #define _Final
 #include "jeu.h"
 #include <SDL.h>
 
+/**
+@brief Allocation des nombres
+@param nombre un tableau de taille de SDL_Surface
+
+Cette fonction affecte pour chaque élément du tableau l'image correspondant au nombre (de 0 à 9).
+*/
 void Final_AllocationNombre(SDL_Surface * nombre[10]);
 
+/**
+@brief Allocation des nombres
+@param nombre un tableau de taille de SDL_Surface
+
+Cette fonction affecte pour chaque élément du tableau l'image correspondant au nombre (de 0 à 9).
+*/
 void Final_AllocationValeurRect(SDL_Rect & val, const int &x, const int &y);
 
 void Final_AllocationImageFT(SDL_Surface *& terrain, SDL_Surface *& fond, const int &niveau);

@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier ennemi.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier ennemi.h</h1>Déclarations des types et fonctions pour l'utilisation d'un seul Ennemi au cours d'une partie de Bomberman. <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &quot;<a class="el" href="bombe_8h-source.html">bombe.h</a>&quot;</code><br>
+
+<p>
+<a href="ennemi_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sEnnemi</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="a78a538a66690d25bdc8273557bfd031"></a><!-- doxytag: member="ennemi.h::Ennemi" ref="a78a538a66690d25bdc8273557bfd031" args="" -->
+typedef struct sEnnemi&nbsp;</td><td class="memItemRight" valign="bottom"><b>Ennemi</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#ece29b9fd9fa315aa59113041a6c464c">Ennemi_Creation</a> (Ennemi *&amp;e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction qui affecte en mémoire dynamique l'ennemi.  <a href="#ece29b9fd9fa315aa59113041a6c464c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#e526361d6cda4674215f7170e489af16">Ennemi_Getposx</a> (Ennemi *e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie la position x de l'Ennemi en paramètre.  <a href="#e526361d6cda4674215f7170e489af16"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#7cdb8d64ac4216efefc013bbb6affcf1">Ennemi_Getposy</a> (Ennemi *e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie la position y de l'Ennemi en paramètre.  <a href="#7cdb8d64ac4216efefc013bbb6affcf1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#5b2a7971919056606939e7c74ab50b29">Ennemi_Getdirection</a> (Ennemi *e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie la direction de l'Ennemi en paramètre.  <a href="#5b2a7971919056606939e7c74ab50b29"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#4328ef99a5cc8b31d18eea48b73c07d0">Ennemi_Setposx</a> (Ennemi *e, const int &amp;x)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte un entier à la postion x de l'Ennemi.  <a href="#4328ef99a5cc8b31d18eea48b73c07d0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#2d9dca16118390102431ff2725928ecb">Ennemi_Setposy</a> (Ennemi *e, const int &amp;y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte un entier à la postion y de l'Ennemi.  <a href="#2d9dca16118390102431ff2725928ecb"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#cae7ac2e0af1486acfd4ee3f15152e7c">Ennemi_Setdirection</a> (Ennemi *e, const char &amp;dir)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte la direction dir à l'Ennemi.  <a href="#cae7ac2e0af1486acfd4ee3f15152e7c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#fdf344c1f8aad3433828a929af66f296">Ennemi_Getnbvie</a> (Ennemi *e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie le nombre de vie de l'Ennemi.  <a href="#fdf344c1f8aad3433828a929af66f296"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#4e5cbe859f45061fbd34aebe75a7db70">Ennemi_Setnbvie</a> (Ennemi *e, const int &amp;nbv)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte le nombre nbv de vie à l'Ennemi.  <a href="#4e5cbe859f45061fbd34aebe75a7db70"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#969b206cb62d380770528a506e327611">Ennemi_Decrementevie</a> (Ennemi *e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Décrémente le nombre de vie de l'Ennemi.  <a href="#969b206cb62d380770528a506e327611"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#6d0b7f6ee9976d26cafa583f43d73ea6">Ennemi_affectationsurterrain</a> (Ennemi *e, const Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affectation sur le Terrain des Ennemis.  <a href="#6d0b7f6ee9976d26cafa583f43d73ea6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#c5642aaafddce31f11a7106976238d9b">Ennemi_mouvement</a> (Ennemi *e, const Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gestion du mouvement de l'Ennemi.  <a href="#c5642aaafddce31f11a7106976238d9b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#3c607f60ea385c7d80f94ada1937034c">Ennemi_PresenceSurTrajetBombe</a> (Ennemi *e, Bombe *b, const Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Teste si le Bomberman est présent sur le rayon d'explosion.  <a href="#3c607f60ea385c7d80f94ada1937034c"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ennemi_8h.html#d3626af7746a8623e854c9aac36d95c5">Ennemi_testament</a> (Ennemi *e)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libère proprement en mémoire l'Ennemi.  <a href="#d3626af7746a8623e854c9aac36d95c5"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Déclarations des types et fonctions pour l'utilisation d'un seul Ennemi au cours d'une partie de Bomberman. 
+<p>
+Ce fichier d'en-tête permet la gestion d'un Ennemi pendant une partie. Ce fichier contient les fonctions qui permettent le mouvement, et l'affectation sur le terrain lors de l'Initialisation. Il contient aussi les fonctions de modifications des champs de la structure (vie, bombe, direction, positions). A l'inverse, le fichier contient les fonctions pour obtenir ces mêmes informations. <hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="6d0b7f6ee9976d26cafa583f43d73ea6"></a><!-- doxytag: member="ennemi.h::Ennemi_affectationsurterrain" ref="6d0b7f6ee9976d26cafa583f43d73ea6" args="(Ennemi *e, const Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_affectationsurterrain           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affectation sur le Terrain des Ennemis. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée initialisé</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi et un Terrain t. Cette fonction affecte l'Ennemi de façon aléatoire sur le Terrain. L'ennemi ne sera pas placé aux coordonnées (O,O),(1,0) et (0,1) 
+</div>
+</div><p>
+<a class="anchor" name="ece29b9fd9fa315aa59113041a6c464c"></a><!-- doxytag: member="ennemi.h::Ennemi_Creation" ref="ece29b9fd9fa315aa59113041a6c464c" args="(Ennemi *&amp;e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_Creation           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&amp;&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction qui affecte en mémoire dynamique l'ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi en donnée/résultat</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi préablement initialisé à NULL et le fait pointer sur un Ennemi stocké en mémoire dynamique. 
+</div>
+</div><p>
+<a class="anchor" name="969b206cb62d380770528a506e327611"></a><!-- doxytag: member="ennemi.h::Ennemi_Decrementevie" ref="969b206cb62d380770528a506e327611" args="(Ennemi *e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_Decrementevie           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Décrémente le nombre de vie de l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi. Elle décrémente le nombre de vie de l'Ennemi en utilisant le mutateur de vie du module. 
+</div>
+</div><p>
+<a class="anchor" name="5b2a7971919056606939e7c74ab50b29"></a><!-- doxytag: member="ennemi.h::Ennemi_Getdirection" ref="5b2a7971919056606939e7c74ab50b29" args="(Ennemi *e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Ennemi_Getdirection           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie la direction de l'Ennemi en paramètre. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Caractère</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi. Elle renvoie sa direction qui correspond au champs direction de la structure Ennemi. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="fdf344c1f8aad3433828a929af66f296"></a><!-- doxytag: member="ennemi.h::Ennemi_Getnbvie" ref="fdf344c1f8aad3433828a929af66f296" args="(Ennemi *e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ennemi_Getnbvie           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie le nombre de vie de l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi et renvoit le nombre de vies de l'Ennemi qui correspond au champs nb_vie de la structure Ennemi. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="e526361d6cda4674215f7170e489af16"></a><!-- doxytag: member="ennemi.h::Ennemi_Getposx" ref="e526361d6cda4674215f7170e489af16" args="(Ennemi *e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ennemi_Getposx           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie la position x de l'Ennemi en paramètre. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi pointant sur un Ennemi. Elle renvoie la position x qui correspond au champs posx de la structure ennemi. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="7cdb8d64ac4216efefc013bbb6affcf1"></a><!-- doxytag: member="ennemi.h::Ennemi_Getposy" ref="7cdb8d64ac4216efefc013bbb6affcf1" args="(Ennemi *e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Ennemi_Getposy           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie la position y de l'Ennemi en paramètre. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi. Elle renvoie la position y qui correspond au champs posy de la structure ennemi. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="c5642aaafddce31f11a7106976238d9b"></a><!-- doxytag: member="ennemi.h::Ennemi_mouvement" ref="c5642aaafddce31f11a7106976238d9b" args="(Ennemi *e, const Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_mouvement           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gestion du mouvement de l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée initialisé</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi et un Terrain t. Cette fonction gère de manière aléatoire le mouvement des Ennemis en vérifiant si le mouvement est possible. Cette fonction gère aussi le changement de direction en utilisant le mutateur de direction du module. 
+</div>
+</div><p>
+<a class="anchor" name="3c607f60ea385c7d80f94ada1937034c"></a><!-- doxytag: member="ennemi.h::Ennemi_PresenceSurTrajetBombe" ref="3c607f60ea385c7d80f94ada1937034c" args="(Ennemi *e, Bombe *b, const Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Ennemi_PresenceSurTrajetBombe           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Bombe *&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Teste si le Bomberman est présent sur le rayon d'explosion. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un pointeur sur Bombe </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée initialisé </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Booléen</dd></dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi, le Terrain t et un pointeur b sur Bombe. Lorsque la fonction est appellé, elle teste si l'Ennemi est présent ou pas sur le rayon d'explosion de la Bombe. Elle renvoie "True" si oui, "False" sinon. 
+</div>
+</div><p>
+<a class="anchor" name="cae7ac2e0af1486acfd4ee3f15152e7c"></a><!-- doxytag: member="ennemi.h::Ennemi_Setdirection" ref="cae7ac2e0af1486acfd4ee3f15152e7c" args="(Ennemi *e, const char &amp;dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_Setdirection           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char &amp;&nbsp;</td>
+          <td class="paramname"> <em>dir</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte la direction dir à l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dir</em>&nbsp;</td><td>un Caractère en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b et un caractère dir. Cette fonction affecte la valeur du paramètre dir au champs direction de la structure Ennemi. Le caractère dir doit être b,h,d ou g pour être valable. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="4e5cbe859f45061fbd34aebe75a7db70"></a><!-- doxytag: member="ennemi.h::Ennemi_Setnbvie" ref="4e5cbe859f45061fbd34aebe75a7db70" args="(Ennemi *e, const int &amp;nbv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_Setnbvie           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>nbv</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte le nombre nbv de vie à l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nbv</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi et un entier nbv. Cette fonction affecte la valeur du paramètre nbv au champs nb_vie de la structure Ennemi. L'entier nbv doit avoir une valeur positve ou nulle. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="4328ef99a5cc8b31d18eea48b73c07d0"></a><!-- doxytag: member="ennemi.h::Ennemi_Setposx" ref="4328ef99a5cc8b31d18eea48b73c07d0" args="(Ennemi *e, const int &amp;x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_Setposx           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>x</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte un entier à la postion x de l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi et un entier x. Cette fonction affecte la valeur du paramètre x au champs posx de la structure Ennemi sur lequel le pointeur e pointe. L'entier x doit avoir une valeur entre 0 et la dimension du plateau - 1 pour être valable. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="2d9dca16118390102431ff2725928ecb"></a><!-- doxytag: member="ennemi.h::Ennemi_Setposy" ref="2d9dca16118390102431ff2725928ecb" args="(Ennemi *e, const int &amp;y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_Setposy           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>y</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte un entier à la postion y de l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>y</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi et un entier y. Cette fonction affecte la valeur du paramètre y au champs posy de la structure Ennemi sur lequel le pointeur e pointe. L'entier y doit avoir une valeur entre 0 et la dimension du plateau - 1 pour être valable. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="d3626af7746a8623e854c9aac36d95c5"></a><!-- doxytag: member="ennemi.h::Ennemi_testament" ref="d3626af7746a8623e854c9aac36d95c5" args="(Ennemi *e)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ennemi_testament           </td>
+          <td>(</td>
+          <td class="paramtype">Ennemi *&nbsp;</td>
+          <td class="paramname"> <em>e</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Libère proprement en mémoire l'Ennemi. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>e</em>&nbsp;</td><td>un pointeur sur Ennemi</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un pointeur sur Ennemi e pointant sur un Ennemi. Elle libère proprement en mémoire l'Ennemi. 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

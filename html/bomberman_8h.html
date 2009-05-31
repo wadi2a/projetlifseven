@@ -1,0 +1,582 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier bomberman.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier bomberman.h</h1>Déclarations des types et fonctions pour l'utilisation (mouvement, poser une bombe) du Bomberman au cours d'une partie de Bomberman. <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &quot;<a class="el" href="bombe_8h-source.html">bombe.h</a>&quot;</code><br>
+
+<p>
+<a href="bomberman_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sBomberman</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="bc7fcc20cd3304631db73612673a6515"></a><!-- doxytag: member="bomberman.h::Bomberman" ref="bc7fcc20cd3304631db73612673a6515" args="" -->
+typedef struct sBomberman&nbsp;</td><td class="memItemRight" valign="bottom"><b>Bomberman</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#ddbcee8922792c0c671ddd1924efb4cd">Bomberman_Getposx</a> (const Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie la position x du Bomberman.  <a href="#ddbcee8922792c0c671ddd1924efb4cd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#c024e596c8e66829009202d44b4f93d1">Bomberman_Getposy</a> (const Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie la position y du Bomberman.  <a href="#c024e596c8e66829009202d44b4f93d1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#5247d0a59564ec824c14acb84c9554a7">Bomberman_Getdirection</a> (const Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie la direction du Bomberman ('h','b','g' ou 'd').  <a href="#5247d0a59564ec824c14acb84c9554a7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#a9f2876ea08e6e55765f16e7c9fdf499">Bomberman_Getbombe</a> (const Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie le nombre de Bombe disponible du Bomberman.  <a href="#a9f2876ea08e6e55765f16e7c9fdf499"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#c83a3fb775235b17725eeac0a93dbd00">Bombeman_Getnbvie</a> (const Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Renvoie le nombre de vie du Bomberman.  <a href="#c83a3fb775235b17725eeac0a93dbd00"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#8f3cee39993dd14eb359b9585ec09a05">Bomberman_Setbombe</a> (Bomberman &amp;b, const int &amp;nb)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte un x nombre de Bombes au Bomberman.  <a href="#8f3cee39993dd14eb359b9585ec09a05"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#20ea06a354aeb81a478b8128fd6a0679">Bomberman_Setposx</a> (Bomberman &amp;b, const int &amp;nb)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte un entier à la postion x du Bomberman.  <a href="#20ea06a354aeb81a478b8128fd6a0679"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#d4a86df3f96472249a2fd643d8609a66">Bomberman_Setposy</a> (Bomberman &amp;b, const int &amp;nb)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte un entier à la postion y du Bomberman.  <a href="#d4a86df3f96472249a2fd643d8609a66"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#97e8e57bb9b5145f9d2e4981e645f600">Bomberman_Setdirection</a> (Bomberman &amp;b, const char &amp;nb)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte la direction nb au Bomberman.  <a href="#97e8e57bb9b5145f9d2e4981e645f600"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#f167e80168f93c81cdbdb5f17b83ff95">Bomberman_Setnbvie</a> (Bomberman &amp;b, const int &amp;nbv)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affecte le nombre nbv de vie au Bomberman.  <a href="#f167e80168f93c81cdbdb5f17b83ff95"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#a6d643d09afd793390abf0fbc937b253">Bomberman_Incrementevie</a> (Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Incrémente le nombre de vie du Bomberman.  <a href="#a6d643d09afd793390abf0fbc937b253"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#e03dfdc80f5c64d9c490fb6f20ac00ad">Bomberman_Decrementevie</a> (Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Décrémente le nombre de vie du Bomberman.  <a href="#e03dfdc80f5c64d9c490fb6f20ac00ad"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#3883e8e5c92ef5cc750d30944d72945d">Bomberman_Initialisation</a> (Bomberman &amp;b)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialisation du Bomberman.  <a href="#3883e8e5c92ef5cc750d30944d72945d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#8b01997e23b41021f80a2c9e3c2ab3c5">Bomberman_mouvement</a> (Bomberman &amp;b, const Terrain &amp;t, const int &amp;pos)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gestion du mouvement du Bomberman.  <a href="#8b01997e23b41021f80a2c9e3c2ab3c5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="bomberman_8h.html#da0a7e5fb0acb19365b51be837bddc5b">Bomberman_PresenceSurTrajetBombe</a> (const Bomberman &amp;a, Bombe *b, const Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Teste si le Bomberman est présent sur le rayon d'explosion.  <a href="#da0a7e5fb0acb19365b51be837bddc5b"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Déclarations des types et fonctions pour l'utilisation (mouvement, poser une bombe) du Bomberman au cours d'une partie de Bomberman. 
+<p>
+Ce fichier d'en-tête permet la gestion du Bomberman pendant une partie. Ce fichier contient les fonctions qui permettent le mouvement, l'action de poser une bombe. Il contient aussi les fonctions de modifications des champs de la structure (vie, bombe, direction, positions). A l'inverse, le fichier contient les fonctions pour obtenir ces mêmes informations. <hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="c83a3fb775235b17725eeac0a93dbd00"></a><!-- doxytag: member="bomberman.h::Bombeman_Getnbvie" ref="c83a3fb775235b17725eeac0a93dbd00" args="(const Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Bombeman_Getnbvie           </td>
+          <td>(</td>
+          <td class="paramtype">const Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie le nombre de vie du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un Bomberman b et renvoit le nombre de vies du Bomberman qui correspond au champs nb_vie de la structure Bomberman. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="e03dfdc80f5c64d9c490fb6f20ac00ad"></a><!-- doxytag: member="bomberman.h::Bomberman_Decrementevie" ref="e03dfdc80f5c64d9c490fb6f20ac00ad" args="(Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Decrementevie           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Décrémente le nombre de vie du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat initialisé</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b. Elle décrémente le nombre de vie du Bomberman en utilisant le mutateur de vie du module. 
+</div>
+</div><p>
+<a class="anchor" name="a9f2876ea08e6e55765f16e7c9fdf499"></a><!-- doxytag: member="bomberman.h::Bomberman_Getbombe" ref="a9f2876ea08e6e55765f16e7c9fdf499" args="(const Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Bomberman_Getbombe           </td>
+          <td>(</td>
+          <td class="paramtype">const Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie le nombre de Bombe disponible du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un Bomberman b et renvoit le nombre de bombes du Bomberman disponble qui correspond au champs nb_bombe de la structure Bomberman. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="5247d0a59564ec824c14acb84c9554a7"></a><!-- doxytag: member="bomberman.h::Bomberman_Getdirection" ref="5247d0a59564ec824c14acb84c9554a7" args="(const Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Bomberman_Getdirection           </td>
+          <td>(</td>
+          <td class="paramtype">const Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie la direction du Bomberman ('h','b','g' ou 'd'). 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Caractère</dd></dl>
+Cette fonction prend en paramètre un Bomberman b et renvoit sa direction qui correspond au champs direction de la structure Bomberman. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="ddbcee8922792c0c671ddd1924efb4cd"></a><!-- doxytag: member="bomberman.h::Bomberman_Getposx" ref="ddbcee8922792c0c671ddd1924efb4cd" args="(const Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Bomberman_Getposx           </td>
+          <td>(</td>
+          <td class="paramtype">const Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie la position x du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un Bomberman b et renvoit sa coordonnée x qui correspond au champs posx de la structure Bomberman. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="c024e596c8e66829009202d44b4f93d1"></a><!-- doxytag: member="bomberman.h::Bomberman_Getposy" ref="c024e596c8e66829009202d44b4f93d1" args="(const Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Bomberman_Getposy           </td>
+          <td>(</td>
+          <td class="paramtype">const Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Renvoie la position y du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Entier</dd></dl>
+Cette fonction prend en paramètre un Bomberman b et renvoit sa coordonnée y qui correspond au champs posy de la structure Bomberman. Cette fonction est un accesseur. 
+</div>
+</div><p>
+<a class="anchor" name="a6d643d09afd793390abf0fbc937b253"></a><!-- doxytag: member="bomberman.h::Bomberman_Incrementevie" ref="a6d643d09afd793390abf0fbc937b253" args="(Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Incrementevie           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Incrémente le nombre de vie du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat initialisé</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b. Elle incrémente le nombre de vie du Bomberman en utilisant le mutateur de vie du module. 
+</div>
+</div><p>
+<a class="anchor" name="3883e8e5c92ef5cc750d30944d72945d"></a><!-- doxytag: member="bomberman.h::Bomberman_Initialisation" ref="3883e8e5c92ef5cc750d30944d72945d" args="(Bomberman &amp;b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Initialisation           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Initialisation du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat non initialisé</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b. Elle initialise les champs de la structure Bomberman (position, vie, bombes et direction). 
+</div>
+</div><p>
+<a class="anchor" name="8b01997e23b41021f80a2c9e3c2ab3c5"></a><!-- doxytag: member="bomberman.h::Bomberman_mouvement" ref="8b01997e23b41021f80a2c9e3c2ab3c5" args="(Bomberman &amp;b, const Terrain &amp;t, const int &amp;pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_mouvement           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>pos</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Gestion du mouvement du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat initialisé </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée initialisé </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>pos</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b, le Terrain t et un entier pos qui correspond au cas du mouvement (1,2,3 ou 4 pour h,b,g et d). Lorsque le cas est 1 (ou haut) la fonction teste si le mouvement est possible (case Vide ou "V" et dans le plateau). Lorsque le cas est 2 (ou bas) la fonction teste si le mouvement est possible (case Vide ou "V" et dans le plateau). Lorsque le cas est 3 (ou droite) la fonction teste si le mouvement est possible (case Vide ou "V" et dans le plateau). Lorsque le cas est 4 (ou gauche) la fonction teste si le mouvement est possible (case Vide ou "V" et dans le plateau). 
+</div>
+</div><p>
+<a class="anchor" name="da0a7e5fb0acb19365b51be837bddc5b"></a><!-- doxytag: member="bomberman.h::Bomberman_PresenceSurTrajetBombe" ref="da0a7e5fb0acb19365b51be837bddc5b" args="(const Bomberman &amp;a, Bombe *b, const Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Bomberman_PresenceSurTrajetBombe           </td>
+          <td>(</td>
+          <td class="paramtype">const Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Bombe *&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Teste si le Bomberman est présent sur le rayon d'explosion. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>a</em>&nbsp;</td><td>un Bomberman en donnée initialisé </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un pointeur sur Bombe </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée initialisé </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>un Booléen</dd></dl>
+Cette fonction prend en paramètre un Bomberman a, le Terrain t et un pointeur b sur Bombe. Lorsque la fonction est appellé, elle teste si le Bomberman est présent ou pas sur le rayon d'explosion de la Bombe. Elle renvoie "True" si oui, "False" sinon. 
+</div>
+</div><p>
+<a class="anchor" name="8f3cee39993dd14eb359b9585ec09a05"></a><!-- doxytag: member="bomberman.h::Bomberman_Setbombe" ref="8f3cee39993dd14eb359b9585ec09a05" args="(Bomberman &amp;b, const int &amp;nb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Setbombe           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>nb</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte un x nombre de Bombes au Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nb</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b et un entier nb. Cette fonction affecte la valeur du paramètre nb au champs nb_bombe de la structure Bomberman. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="97e8e57bb9b5145f9d2e4981e645f600"></a><!-- doxytag: member="bomberman.h::Bomberman_Setdirection" ref="97e8e57bb9b5145f9d2e4981e645f600" args="(Bomberman &amp;b, const char &amp;nb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Setdirection           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char &amp;&nbsp;</td>
+          <td class="paramname"> <em>nb</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte la direction nb au Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nb</em>&nbsp;</td><td>un Caractère en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b et un caractère nb. Cette fonction affecte la valeur du paramètre nb au champs direction de la structure Bomberman. Le caractère nb doit être b,h,d ou g pour être valable. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="f167e80168f93c81cdbdb5f17b83ff95"></a><!-- doxytag: member="bomberman.h::Bomberman_Setnbvie" ref="f167e80168f93c81cdbdb5f17b83ff95" args="(Bomberman &amp;b, const int &amp;nbv)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Setnbvie           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>nbv</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte le nombre nbv de vie au Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nbv</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b et un entier nbv. Cette fonction affecte la valeur du paramètre nbv au champs nb_vie de la structure Bomberman. L'entier nbv doit avoir une valeur positve ou nulle. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="20ea06a354aeb81a478b8128fd6a0679"></a><!-- doxytag: member="bomberman.h::Bomberman_Setposx" ref="20ea06a354aeb81a478b8128fd6a0679" args="(Bomberman &amp;b, const int &amp;nb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Setposx           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>nb</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte un entier à la postion x du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nb</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b et un entier nb. Cette fonction affecte la valeur du paramètre nb au champs posx de la structure Bomberman. L'entier nb doit avoir une valeur entre 0 et la dimension du plateau - 1 pour être valable. Cette fonction est un mutateur. 
+</div>
+</div><p>
+<a class="anchor" name="d4a86df3f96472249a2fd643d8609a66"></a><!-- doxytag: member="bomberman.h::Bomberman_Setposy" ref="d4a86df3f96472249a2fd643d8609a66" args="(Bomberman &amp;b, const int &amp;nb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman_Setposy           </td>
+          <td>(</td>
+          <td class="paramtype">Bomberman &amp;&nbsp;</td>
+          <td class="paramname"> <em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>nb</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Affecte un entier à la postion y du Bomberman. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>nb</em>&nbsp;</td><td>un Entier en donnée</td></tr>
+  </table>
+</dl>
+Cette fonction prend en paramètre un Bomberman b et un entier nb. Cette fonction affecte la valeur du paramètre nb au champs posy de la structure Bomberman. L'entier nb doit avoir une valeur entre 0 et la dimension du plateau - 1 pour être valable. Cette fonction est un mutateur. 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

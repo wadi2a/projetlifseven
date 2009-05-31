@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman: Référence du fichier terrain.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="contents">
+<h1>Référence du fichier terrain.h</h1>Déclarations des types et fonctions pour l'utilisation d'un Terrain au cours d'une partie de Bomberman. <a href="#_details">Plus de détails...</a>
+<p>
+<code>#include &quot;<a class="el" href="case_8h-source.html">case.h</a>&quot;</code><br>
+
+<p>
+<a href="terrain_8h-source.html">Aller au code source de ce fichier.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Structures de données</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><b>sTerrain</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Définition de type</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="anchor" name="8e5086042a2f903e0e0b8c4185482cc9"></a><!-- doxytag: member="terrain.h::Terrain" ref="8e5086042a2f903e0e0b8c4185482cc9" args="" -->
+typedef struct sTerrain&nbsp;</td><td class="memItemRight" valign="bottom"><b>Terrain</b></td></tr>
+
+<tr><td colspan="2"><br><h2>Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="terrain_8h.html#1ee63b58102ea3f9425469edf10d23a0">Terrain_initialisation</a> (Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction d'initialisation d'un terrain affectant les cases à vide.  <a href="#1ee63b58102ea3f9425469edf10d23a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="terrain_8h.html#e65fd0c3b4fa0398b7d927e3bdc2e5fd">Terrain_affectationaleatoire</a> (Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction d'affectation aléatoire des états mur et mur solide.  <a href="#e65fd0c3b4fa0398b7d927e3bdc2e5fd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="terrain_8h.html#afcb44dcc752e50369c98fb7ec51132f">Terrain_testament</a> (Terrain &amp;t)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction de libération propre d'un Terrain en mémoire dynamique.  <a href="#afcb44dcc752e50369c98fb7ec51132f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">Case *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="terrain_8h.html#fa058109522bb51ef0255ff64248952a">Terrain_Getcase</a> (const Terrain &amp;t, const int &amp;posx, const int &amp;posy)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction d'acquisition d'une case à partir d'un Terrain.  <a href="#fa058109522bb51ef0255ff64248952a"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="terrain_8h.html#9d340aef5c4789b0877574c98bbc673e">Terrain_Setcase</a> (Terrain &amp;t, const Case &amp;c, const int &amp;posx, const int &amp;poxy)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fonction de mutation d'un état d'une case du Terrain.  <a href="#9d340aef5c4789b0877574c98bbc673e"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Description détaillée</h2>
+Déclarations des types et fonctions pour l'utilisation d'un Terrain au cours d'une partie de Bomberman. 
+<p>
+Ce fichier d'en-tête permet la gestion d'un Terrain : Initilisation à vide (ensemble des cases sont vides), affectation aléatoire des murs solides et murs. <hr><h2>Documentation des fonctions</h2>
+<a class="anchor" name="e65fd0c3b4fa0398b7d927e3bdc2e5fd"></a><!-- doxytag: member="terrain.h::Terrain_affectationaleatoire" ref="e65fd0c3b4fa0398b7d927e3bdc2e5fd" args="(Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Terrain_affectationaleatoire           </td>
+          <td>(</td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction d'affectation aléatoire des états mur et mur solide. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat initialisé.</td></tr>
+  </table>
+</dl>
+Cette fonction place de manière aléatoire les murs que le Bomberman peut exploser, et place les murs solides sur les positions x=y(+-)2 sauf la position (0,0). 
+</div>
+</div><p>
+<a class="anchor" name="fa058109522bb51ef0255ff64248952a"></a><!-- doxytag: member="terrain.h::Terrain_Getcase" ref="fa058109522bb51ef0255ff64248952a" args="(const Terrain &amp;t, const int &amp;posx, const int &amp;posy)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Case* Terrain_Getcase           </td>
+          <td>(</td>
+          <td class="paramtype">const Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>posx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>posy</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction d'acquisition d'une case à partir d'un Terrain. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat non initialisée. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posx</em>&nbsp;</td><td>un entier en donnée. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posy</em>&nbsp;</td><td>un entier en donnée. </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Renvoie:</b></dt><dd>Un pointeur sur Case.</dd></dl>
+Cette fonction renvoit un pointeur sur Case qui pointe sur la case aux coordonnées (posx,posy) sur le Terrain. 
+</div>
+</div><p>
+<a class="anchor" name="1ee63b58102ea3f9425469edf10d23a0"></a><!-- doxytag: member="terrain.h::Terrain_initialisation" ref="1ee63b58102ea3f9425469edf10d23a0" args="(Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Terrain_initialisation           </td>
+          <td>(</td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction d'initialisation d'un terrain affectant les cases à vide. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat non initialisé.</td></tr>
+  </table>
+</dl>
+Cette fonction affecte en mémoire dynamique un tableau de case d'une dimension 15, puis initialise l'ensemble des cases du terrain à l'état vide. Le champ dimension du terrain est initialisé à 15. 
+</div>
+</div><p>
+<a class="anchor" name="9d340aef5c4789b0877574c98bbc673e"></a><!-- doxytag: member="terrain.h::Terrain_Setcase" ref="9d340aef5c4789b0877574c98bbc673e" args="(Terrain &amp;t, const Case &amp;c, const int &amp;posx, const int &amp;poxy)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Terrain_Setcase           </td>
+          <td>(</td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Case &amp;&nbsp;</td>
+          <td class="paramname"> <em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>posx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&nbsp;</td>
+          <td class="paramname"> <em>poxy</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction de mutation d'un état d'une case du Terrain. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat initialisé. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>c</em>&nbsp;</td><td>une Case en donnée. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posx</em>&nbsp;</td><td>un entier en donnée. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>posy</em>&nbsp;</td><td>un entier en donnée.</td></tr>
+  </table>
+</dl>
+Cette fonction modifie l'état de la Case aux coordonnées (posx,posy) sur le Terrain en prenant l'état de la Case c qui est initialisée. 
+</div>
+</div><p>
+<a class="anchor" name="afcb44dcc752e50369c98fb7ec51132f"></a><!-- doxytag: member="terrain.h::Terrain_testament" ref="afcb44dcc752e50369c98fb7ec51132f" args="(Terrain &amp;t)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Terrain_testament           </td>
+          <td>(</td>
+          <td class="paramtype">Terrain &amp;&nbsp;</td>
+          <td class="paramname"> <em>t</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Fonction de libération propre d'un Terrain en mémoire dynamique. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>un Terrain en donnée/résultat initialisé.</td></tr>
+  </table>
+</dl>
+Cette fonction libère proprement en mémoire le Terrain qui est préablement initialisé. 
+</div>
+</div><p>
+</div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>

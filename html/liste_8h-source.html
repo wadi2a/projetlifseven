@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>SuperBomberman:  Fichier source de liste.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Généré par Doxygen 1.5.5 -->
+<div class="navigation" id="top">
+  <div class="tabs">
+    <ul>
+      <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+<h1>liste.h</h1><a href="liste_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef _LISTE</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define _LISTE</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#include "<a class="code" href="ennemi_8h.html" title="Déclarations des types et fonctions pour l&amp;#39;utilisation d&amp;#39;un seul Ennemi...">ennemi.h</a>"</span> <span class="comment">// Inclus le type Elem dans le module.</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="keyword">struct </span>sCellule
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014   Ennemi * en; <span class="comment">// Champs comprenant un pointeur sur ennemi.</span>
+<a name="l00015"></a>00015   <span class="keyword">struct </span>sCellule * suivant; <span class="comment">// pointeur sur cellule suivante.</span>
+<a name="l00016"></a>00016   <span class="keyword">struct </span>sCellule * precedent; <span class="comment">// pointeur sur cellule precedente.</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 };
+<a name="l00019"></a>00019 <span class="keyword">typedef</span> <span class="keyword">struct </span>sCellule Cellule;
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="keyword">struct </span>sListe
+<a name="l00023"></a>00023 {
+<a name="l00024"></a>00024   Cellule * prem; <span class="comment">// Pointeur sur le premier element de la liste.</span>
+<a name="l00025"></a>00025   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nb_elements; <span class="comment">// le nombre d'�l�ments dans la liste.</span>
+<a name="l00026"></a>00026   <span class="keywordtype">int</span> nb_en;
+<a name="l00027"></a>00027 };
+<a name="l00028"></a>00028 <span class="keyword">typedef</span> <span class="keyword">struct </span>sListe Liste;
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031 <span class="keywordtype">void</span> initialise(Liste &amp; l);
+<a name="l00032"></a>00032 <span class="comment">/* Precondition : l non initialisee</span>
+<a name="l00033"></a>00033 <span class="comment">   Postcondition : la liste l est initialisee en tant que liste vide */</span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="keywordtype">void</span> initialise(Liste &amp; l1, <span class="keyword">const</span> Liste &amp; l2);
+<a name="l00036"></a>00036 <span class="comment">/* Precondition : l1 non initialisee,</span>
+<a name="l00037"></a>00037 <span class="comment">                  l2 prealablement initialisee et manipulee uniquement</span>
+<a name="l00038"></a>00038 <span class="comment">                 a travers les operations du module</span>
+<a name="l00039"></a>00039 <span class="comment">   Postcondition : la liste l1 initialisee correspond a une copie de l2</span>
+<a name="l00040"></a>00040 <span class="comment">   (mais les 2 listes sont totalement independantes l'une de l'autre) */</span>
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042 <span class="keywordtype">void</span> testament(Liste &amp; l);
+<a name="l00043"></a>00043 <span class="comment">/* Precondition : l initialisee et manipulee uniquement</span>
+<a name="l00044"></a>00044 <span class="comment">   a travers les operations du module</span>
+<a name="l00045"></a>00045 <span class="comment">   Postcondition : l est detruite proprement en m�moire */</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="keywordtype">void</span> ajoutEnTete(Ennemi * e,Liste &amp; l);
+<a name="l00049"></a>00049 <span class="comment">/* Precondition : l et e initialises et manipules uniquement a travers les</span>
+<a name="l00050"></a>00050 <span class="comment">                  operations de leurs modules respectifs</span>
+<a name="l00051"></a>00051 <span class="comment">   Postcondition : e est ajoute en tete de l, et l.nb_elements est incremente  */</span>
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053 <span class="keywordtype">void</span> suppressionEnTete(Liste &amp; l);
+<a name="l00054"></a>00054 <span class="comment">/* Precondition : testListeVide(l)==false</span>
+<a name="l00055"></a>00055 <span class="comment">   Postcondition : la liste l perd son premier element, et l.nb_elements est</span>
+<a name="l00056"></a>00056 <span class="comment">   decremente */</span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> ajoutEnQueue(Ennemi * e, Liste &amp; l);
+<a name="l00059"></a>00059 <span class="comment">/* Precondition : l et e initialises et manipules uniquement a travers les</span>
+<a name="l00060"></a>00060 <span class="comment">                  operations de leurs modules respectifs</span>
+<a name="l00061"></a>00061 <span class="comment">   Postcondition : e est ajoute en fin de la liste l, et l.nb_elements est incremente */</span>
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 <span class="keywordtype">void</span> suppressionEnQueue(Liste &amp; l);
+<a name="l00064"></a>00064 <span class="comment">/* Precondition : testListeVide(l)==false</span>
+<a name="l00065"></a>00065 <span class="comment">   Postcondition : la liste l perd son dernier element, et l.nb_elements est</span>
+<a name="l00066"></a>00066 <span class="comment">   decremente */</span>
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 <span class="keywordtype">bool</span> estVide(<span class="keyword">const</span> Liste &amp; l);
+<a name="l00069"></a>00069 <span class="comment">/* Precondition : l prealablement initialisee et manipulee uniquement</span>
+<a name="l00070"></a>00070 <span class="comment">                  a travers les operations du module</span>
+<a name="l00071"></a>00071 <span class="comment">   Resultat : true si l est vide, false sinon */</span>
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073 <span class="preprocessor">#endif</span>
+</pre></div></div>
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun May 31 23:02:17 2009 pour SuperBomberman par&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
+</body>
+</html>
