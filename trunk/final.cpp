@@ -58,6 +58,7 @@ void Final_AllocationImageMMBE(SDL_Surface *& mursolide, SDL_Surface *& mur ,SDL
                 bombes = SDL_LoadBMP("LibNiveau/eau/bombe.bmp");
                 explode = SDL_LoadBMP("LibNiveau/eau/explosioncentre.bmp");
                 SDL_SetColorKey(mur, SDL_SRCCOLORKEY, SDL_MapRGB(mur->format, 255, 0, 0));
+                SDL_SetColorKey(mursolide, SDL_SRCCOLORKEY, SDL_MapRGB(mursolide->format, 255, 0, 0));
                 SDL_SetColorKey(bombes, SDL_SRCCOLORKEY, SDL_MapRGB(bombes->format, 255, 0, 0));
                 SDL_SetColorKey(explode, SDL_SRCCOLORKEY, SDL_MapRGB(explode->format, 255, 0, 0));
             }else{
@@ -66,6 +67,10 @@ void Final_AllocationImageMMBE(SDL_Surface *& mursolide, SDL_Surface *& mur ,SDL
                     mursolide = SDL_LoadBMP("LibNiveau/espace/mursolide.bmp");
                     mur = SDL_LoadBMP("LibNiveau/espace/mur.bmp");
                     bombes = SDL_LoadBMP("LibNiveau/espace/bombe.bmp");
+                    SDL_SetColorKey(mur, SDL_SRCCOLORKEY, SDL_MapRGB(mur->format, 255, 0, 0));
+                    SDL_SetColorKey(mursolide, SDL_SRCCOLORKEY, SDL_MapRGB(mursolide->format, 255, 0, 0));
+                    SDL_SetColorKey(bombes, SDL_SRCCOLORKEY, SDL_MapRGB(bombes->format, 255, 0, 0));
+
                 }
             }
     }
