@@ -70,7 +70,7 @@
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Blittage des images des Ennemis lors des Mouvements.  <a href="#4f4e1fbacaf50353ec520c3eca4749e4"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#d047221722993acb81fef430124bf3e9">Final_TestFinaux</a> (dEnnemi &amp;mechant, Bomberman &amp;perso, Terrain &amp;jeu, int &amp;win, int &amp;niveau, int &amp;vie_niveau, int &amp;perte_v, int &amp;continuer, int &amp;dead, Case *touche_explosion)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gère les teste finaux du Jeu.  <a href="#d047221722993acb81fef430124bf3e9"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gère les tests finaux du Jeu.  <a href="#d047221722993acb81fef430124bf3e9"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#9f0319772fd95546b540736e6c50aebf">Final_MouvementEnnemis</a> (dEnnemi &amp;mechant, const Jeu &amp;bombermangame, Terrain &amp;jeu)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gère le mouvement des Ennemis.  <a href="#9f0319772fd95546b540736e6c50aebf"></a><br></td></tr>
@@ -1431,16 +1431,23 @@ Cette fonction pose la Bombe aux coordonnées ou se trouve le Bomberman si bombe
 <div class="memdoc">
 
 <p>
-Gère les teste finaux du Jeu. 
+Gère les tests finaux du Jeu. 
 <p>
 <dl compact><dt><b>Paramètres:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>mechant</em>&nbsp;</td><td>une Liste d'Ennemis en donnée </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>bombermangame</em>&nbsp;</td><td>un Jeu en donnée </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>jeu</em>&nbsp;</td><td>un Terrain en donnée/résultat</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>perso</em>&nbsp;</td><td>un Bomberman en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jeu</em>&nbsp;</td><td>un Terrain en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>win</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>niveau</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>vie_niveau</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>perte_v</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>continuer</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>dead</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>touche_explosion</em>&nbsp;</td><td>un pointeur sur Case</td></tr>
   </table>
 </dl>
-Cette fonction gère le mouvement des Ennemis à la vitesse prédéfinis par le champs temps_mouvement dans la structure Jeu. Pour cela on teste si temps actuel - temps_ennemis (initialisation) &gt;= temps_mouvement. Si oui on effectue les mouvements et temps_ennemis = temps_actuels, pour le prochain mouvement. 
+Cette fonction gère les tests finaux de fin de jeu, en plus du test de contact avec l'explosion pour le Bomberman et un ou plusieurs ennemis. Si le Bomberman touche une explosion, on décrement sa vie et on affecte 1 à perte_v afin qu'il ne reperde pas de vie avant la prochaine bombe. Cette fonction va tester aussi si le Bomberman a toujours assez de vie pour continuer le jeu, sinon GameOver. Et finalement, la fonction teste si tout les ennemis ont été tué pour passer au niveau suivant en incrementant la variable niveau et en sauvegardant le nombre de vie actuel dans vie_niveau. 
 </div>
 </div><p>
 <a class="anchor" name="8138ad1abb56697369b99b90557e9774"></a><!-- doxytag: member="final.h::Final_TestInitBombe" ref="8138ad1abb56697369b99b90557e9774" args="(int &amp;initb, int &amp;init_a, Bombe *&amp;bombe)" -->
@@ -1488,7 +1495,7 @@ Cette fonction initialise la Bombe si elle a déjà explosé (Testament), elle a
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Généré le Mon Jun 1 17:29:22 2009 pour SuperBomberman par&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Généré le Thu Jun 4 23:39:52 2009 pour SuperBomberman par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
 </body>

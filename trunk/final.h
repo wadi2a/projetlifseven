@@ -232,14 +232,24 @@ du tableau d'Entier donné en paramètre. La fonction choisie le bon sprite en f
 void Final_AffichageEnnemis(const dEnnemi &mechant, SDL_Rect &posennemi, SDL_Surface *& ennemiact, SDL_Surface * ennemi[4],SDL_Surface *& ecran, char *en_dir, int * tab);
 
 /**
-@brief Gère les teste finaux du Jeu.
+@brief Gère les tests finaux du Jeu.
 @param mechant une Liste d'Ennemis en donnée
-@param bombermangame un Jeu en donnée
+@param perso un Bomberman en donnée/résultat
 @param jeu un Terrain en donnée/résultat
+@param win un Entier en donnée/résultat
+@param niveau un Entier en donnée/résultat
+@param vie_niveau un Entier en donnée/résultat
+@param perte_v un Entier en donnée/résultat
+@param continuer un Entier en donnée/résultat
+@param dead un Entier en donnée/résultat
+@param touche_explosion un pointeur sur Case
 
-Cette fonction gère le mouvement des Ennemis à la vitesse prédéfinis par le champs temps_mouvement dans la structure Jeu.
-Pour cela on teste si temps actuel - temps_ennemis (initialisation) >= temps_mouvement. Si oui on effectue les mouvements et temps_ennemis = temps_actuels, pour
-le prochain mouvement.
+
+Cette fonction gère les tests finaux de fin de jeu, en plus du test de contact avec l'explosion pour le Bomberman et un ou plusieurs ennemis. Si le Bomberman
+touche une explosion, on décrement sa vie et on affecte 1 à perte_v afin qu'il ne reperde pas de vie avant la prochaine bombe. Cette fonction va tester aussi
+si le Bomberman a toujours assez de vie pour continuer le jeu, sinon GameOver. Et finalement, la fonction teste si tout les ennemis ont été tué pour passer au
+niveau suivant en incrementant la variable niveau et en sauvegardant le nombre de vie actuel dans vie_niveau.
+
 */
 void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,int &niveau, int &vie_niveau, int &perte_v, int &continuer, int &dead, Case * touche_explosion);
 
