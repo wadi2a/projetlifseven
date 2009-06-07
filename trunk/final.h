@@ -243,15 +243,17 @@ void Final_AffichageEnnemis(const dEnnemi &mechant, SDL_Rect &posennemi, SDL_Sur
 @param continuer un Entier en donnée/résultat
 @param dead un Entier en donnée/résultat
 @param touche_explosion un pointeur sur Case
+@param gagner un Entier en donnée/résultat
 
 
 Cette fonction gère les tests finaux de fin de jeu, en plus du test de contact avec l'explosion pour le Bomberman et un ou plusieurs ennemis. Si le Bomberman
 touche une explosion, on décrement sa vie et on affecte 1 à perte_v afin qu'il ne reperde pas de vie avant la prochaine bombe. Cette fonction va tester aussi
 si le Bomberman a toujours assez de vie pour continuer le jeu, sinon GameOver. Et finalement, la fonction teste si tout les ennemis ont été tué pour passer au
-niveau suivant en incrementant la variable niveau et en sauvegardant le nombre de vie actuel dans vie_niveau.
+niveau suivant en incrementant la variable niveau et en sauvegardant le nombre de vie actuel dans vie_niveau. Finalement, cette fonction teste aussi si on a fini
+le jeu et affecte 1 à winner si Oui.
 
 */
-void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,int &niveau, int &vie_niveau, int &perte_v, int &continuer, int &dead, Case * touche_explosion);
+void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,int &niveau, int &vie_niveau, int &perte_v, int &continuer, int &dead, Case * touche_explosion, int &gagner);
 
 /**
 @brief Gère le mouvement des Ennemis
@@ -282,10 +284,11 @@ void Final_MouvementEnnemis(dEnnemi &mechant,const Jeu &bombermangame, Terrain &
 @param load un tableau de taille 5 de pointeur sur SDL_Surface
 @param menufin un tableau de taille 2 de pointeur sur SDL_Surface
 @param mpause un tableau de taille 3 de pointeur sur SDL_Surface
+@param winner un pointeur sur SDL_Surface
 
 Cette fonction libère proprement en mémoire l'ensemble des SDL_Surface utilisée au cours de la partie de Bomberman. Elle est utilisée en toute fin de partie, avant que le jeu ne se quitte.
 */
-void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[2], SDL_Surface *mpause[3]);
+void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[3], SDL_Surface *mpause[3], SDL_Surface *winner);
 /**
 @brief Allocation des images pour Chargement.
 @param load un tableau de taille 5 de SDL_Surface
@@ -313,13 +316,15 @@ void Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&ecran);
 @param menpos un SDL_Rect en donnée/résultat
 @param ecran un pointeur sur SDL_Surface
 @param jeufin un Booléen en donnée/résultat
+@param restart un Booléen en donnée/résultat
 
 Cette fonction affiche le menu de fin en fin de partie (game over), en blittant sur l'ecran l'image qui correspond au choix du joueur
 en appuyant sur H/B. Si le joueur appuis espace:
 S'il se trouve sur Quitter, jeufin prend la valeur true, le jeu se quitte,
 S'il se trouve sur Menu, jeufin prend la valeur false, il retourne sur le Menu.
+S'il se trouve sur Recommencer, jeufin prend la valeur false et restart la valeur true, il retourne en haut de bouclke mais court-circuitre le Menu.
 */
-void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, SDL_Surface *ecran, bool &jeufin);
+void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[3],SDL_Rect &menpos, SDL_Surface *ecran, bool &jeufin, bool &restart);
 
 /**
 @brief Allocation des images pour le menu de fin
@@ -327,7 +332,7 @@ void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, S
 
 Cette fonction affecte pour chaque élément du tableau l'image correspondant au choix du menu. Ici quitter et menu.
 */
-void Final_AllocationMenuFin(SDL_Surface * menufin[2]);
+void Final_AllocationMenuFin(SDL_Surface * menufin[3]);
 
 /**
 @brief Allocation des images pour le menu de pause
@@ -336,5 +341,13 @@ void Final_AllocationMenuFin(SDL_Surface * menufin[2]);
 Cette fonction affecte pour chaque élément du tableau l'image correspondant au choix du menu de pause. Ici Reprendre, Menu et Quitter.
 */
 void Final_AllocationMenuPause(SDL_Surface * mpause[3]);
+
+/**
+@brief Allocation de l'image pour la fin victorieuse du jeu
+@param winner un pointeur sur SDL_Surface en donnée/résultat
+
+Cette fonction affecte l'image correspondant à la victoire à la variable winner.
+*/
+void Final_AllocationVictoire(SDL_Surface *& winner);
 #endif
 

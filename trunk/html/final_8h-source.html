@@ -48,24 +48,26 @@
 <a name="l00218"></a>00218 
 <a name="l00232"></a>00232 <span class="keywordtype">void</span> Final_AffichageEnnemis(<span class="keyword">const</span> dEnnemi &amp;mechant, SDL_Rect &amp;posennemi, SDL_Surface *&amp; ennemiact, SDL_Surface * ennemi[4],SDL_Surface *&amp; ecran, <span class="keywordtype">char</span> *en_dir, <span class="keywordtype">int</span> * tab);
 <a name="l00233"></a>00233 
-<a name="l00254"></a>00254 <span class="keywordtype">void</span> Final_TestFinaux(dEnnemi &amp;mechant, Bomberman &amp;perso,Terrain &amp;jeu,<span class="keywordtype">int</span> &amp;win,<span class="keywordtype">int</span> &amp;niveau, <span class="keywordtype">int</span> &amp;vie_niveau, <span class="keywordtype">int</span> &amp;perte_v, <span class="keywordtype">int</span> &amp;continuer, <span class="keywordtype">int</span> &amp;dead, Case * touche_explosion);
-<a name="l00255"></a>00255 
-<a name="l00266"></a>00266 <span class="keywordtype">void</span> Final_MouvementEnnemis(dEnnemi &amp;mechant,<span class="keyword">const</span> Jeu &amp;bombermangame, Terrain &amp;jeu);
-<a name="l00267"></a>00267 
-<a name="l00288"></a>00288 <span class="keywordtype">void</span> Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[2], SDL_Surface *mpause[3]);
-<a name="l00295"></a>00295 <span class="keywordtype">void</span> Final_AllocationLoad(SDL_Surface *load[5]);
-<a name="l00296"></a>00296 
-<a name="l00307"></a>00307 <span class="keywordtype">void</span> Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&amp;ecran);
-<a name="l00308"></a>00308 
-<a name="l00322"></a>00322 <span class="keywordtype">void</span> Final_MenuFin(SDL_Event &amp;event, SDL_Surface *menufin[2],SDL_Rect &amp;menpos, SDL_Surface *ecran, <span class="keywordtype">bool</span> &amp;jeufin);
-<a name="l00323"></a>00323 
-<a name="l00330"></a>00330 <span class="keywordtype">void</span> Final_AllocationMenuFin(SDL_Surface * menufin[2]);
-<a name="l00331"></a>00331 
-<a name="l00338"></a>00338 <span class="keywordtype">void</span> Final_AllocationMenuPause(SDL_Surface * mpause[3]);
-<a name="l00339"></a>00339 <span class="preprocessor">#endif</span>
-<a name="l00340"></a>00340 <span class="preprocessor"></span>
+<a name="l00256"></a>00256 <span class="keywordtype">void</span> Final_TestFinaux(dEnnemi &amp;mechant, Bomberman &amp;perso,Terrain &amp;jeu,<span class="keywordtype">int</span> &amp;win,<span class="keywordtype">int</span> &amp;niveau, <span class="keywordtype">int</span> &amp;vie_niveau, <span class="keywordtype">int</span> &amp;perte_v, <span class="keywordtype">int</span> &amp;continuer, <span class="keywordtype">int</span> &amp;dead, Case * touche_explosion, <span class="keywordtype">int</span> &amp;gagner);
+<a name="l00257"></a>00257 
+<a name="l00268"></a>00268 <span class="keywordtype">void</span> Final_MouvementEnnemis(dEnnemi &amp;mechant,<span class="keyword">const</span> Jeu &amp;bombermangame, Terrain &amp;jeu);
+<a name="l00269"></a>00269 
+<a name="l00291"></a>00291 <span class="keywordtype">void</span> Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[3], SDL_Surface *mpause[3], SDL_Surface *winner);
+<a name="l00298"></a>00298 <span class="keywordtype">void</span> Final_AllocationLoad(SDL_Surface *load[5]);
+<a name="l00299"></a>00299 
+<a name="l00310"></a>00310 <span class="keywordtype">void</span> Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&amp;ecran);
+<a name="l00311"></a>00311 
+<a name="l00327"></a>00327 <span class="keywordtype">void</span> Final_MenuFin(SDL_Event &amp;event, SDL_Surface *menufin[3],SDL_Rect &amp;menpos, SDL_Surface *ecran, <span class="keywordtype">bool</span> &amp;jeufin, <span class="keywordtype">bool</span> &amp;restart);
+<a name="l00328"></a>00328 
+<a name="l00335"></a>00335 <span class="keywordtype">void</span> Final_AllocationMenuFin(SDL_Surface * menufin[3]);
+<a name="l00336"></a>00336 
+<a name="l00343"></a>00343 <span class="keywordtype">void</span> Final_AllocationMenuPause(SDL_Surface * mpause[3]);
+<a name="l00344"></a>00344 
+<a name="l00351"></a>00351 <span class="keywordtype">void</span> Final_AllocationVictoire(SDL_Surface *&amp; winner);
+<a name="l00352"></a>00352 <span class="preprocessor">#endif</span>
+<a name="l00353"></a>00353 <span class="preprocessor"></span>
 </pre></div></div>
-<hr size="1"><address style="text-align: right;"><small>Généré le Thu Jun 4 23:39:51 2009 pour SuperBomberman par&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun Jun 7 15:01:15 2009 pour SuperBomberman par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
 </body>
