@@ -466,7 +466,7 @@ void Final_AffichageEnnemis(const dEnnemi &mechant, SDL_Rect &posennemi, SDL_Sur
 }
 
 
-void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,int &niveau, int &vie_niveau, int &perte_v, int &continuer, int &dead, Case * touche_explosion)
+void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,int &niveau, int &vie_niveau, int &perte_v, int &continuer, int &dead, Case * touche_explosion, int &gagner)
 {
         Jeu_PerteVieContactEnnemi(perso,mechant); // Test si contact ennemi
         if(perso.nb_vie == 0) // test nombre de vie bomberman
@@ -489,9 +489,16 @@ void Final_TestFinaux(dEnnemi &mechant, Bomberman &perso,Terrain &jeu,int &win,i
         if(mechant.liste_en.nb_en == 0 && perso.nb_vie > 0)
         {
                 continuer = 0;
+                if(niveau == 9)
+                {
+                    continuer = 0;
+                    win = 0;
+                    gagner = 1;
+                }else{
                 win = 1;
                 vie_niveau = Bombeman_Getnbvie(perso);
                 niveau = niveau + 1;
+                }
 
         }
 }
@@ -506,7 +513,7 @@ void Final_MouvementEnnemis(dEnnemi &mechant,const Jeu &bombermangame, Terrain &
          }
 }
 
-void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[2], SDL_Surface *mpause[3])
+void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surface * gameover, SDL_Surface *nombre[10],SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface * explode, SDL_Surface * mur,SDL_Surface *fond, SDL_Surface *personnage[4],SDL_Surface *ennemi[4], SDL_Surface *load[5],SDL_Surface * menufin[3], SDL_Surface *mpause[3], SDL_Surface *winner)
 {
     SDL_FreeSurface(ecran);
     SDL_FreeSurface(menu);
@@ -534,6 +541,7 @@ void Final_LiberationMemoire(SDL_Surface * ecran, SDL_Surface * menu, SDL_Surfac
     }
     SDL_FreeSurface(menufin[0]);
     SDL_FreeSurface(menufin[1]);
+    SDL_FreeSurface(menufin[2]);
     SDL_FreeSurface(mpause[0]);
     SDL_FreeSurface(mpause[1]);
     SDL_FreeSurface(mpause[2]);
@@ -588,7 +596,7 @@ void Final_ChargementEntreNiveau(SDL_Surface *load[5], SDL_Surface *&ecran)
 
 }
 
-void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, SDL_Surface *ecran, bool &jeufin)
+void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[3],SDL_Rect &menpos, SDL_Surface *ecran, bool &jeufin, bool &restart)
 {
       bool final=true;
       SDL_BlitSurface(menufin[0], NULL, ecran, &menpos);
@@ -608,21 +616,34 @@ void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, S
                 switch(event.key.keysym.sym)
                 {
                     case SDLK_UP:
-                        mode=1;
-                        SDL_BlitSurface(menufin[0], NULL, ecran, &menpos);
-                        SDL_Flip(ecran);
+                        if(mode != 1)
+                        {
+                             mode--;
+                             SDL_BlitSurface(menufin[mode-1], NULL, ecran, &menpos);
+                             SDL_Flip(ecran);
+                             SDL_Delay(80);
+                        }
                         break;
                     case SDLK_DOWN:
-                        mode=2;
-                        SDL_BlitSurface(menufin[1], NULL, ecran, &menpos);
-                        SDL_Flip(ecran);
+                        if(mode != 3)
+                        {
+                            mode++;
+                            SDL_BlitSurface(menufin[mode-1], NULL, ecran, &menpos);
+                            SDL_Flip(ecran);
+                            SDL_Delay(80);
+                        }
                         break;
                     case SDLK_SPACE:
                         if(mode == 1)
                         {
                                 final = false;
+                                restart = true;
                         }
                         if(mode == 2)
+                        {
+                                final = false;
+                        }
+                        if(mode == 3)
                         {
                                 final = false;
                                 jeufin = true;
@@ -638,10 +659,11 @@ void Final_MenuFin(SDL_Event &event, SDL_Surface *menufin[2],SDL_Rect &menpos, S
 }
 
 
-void Final_AllocationMenuFin(SDL_Surface * menufin[2])
+void Final_AllocationMenuFin(SDL_Surface * menufin[3])
 {
     menufin[0]=SDL_LoadBMP("Menu/menuf/1.bmp");
     menufin[1]=SDL_LoadBMP("Menu/menuf/2.bmp");
+    menufin[2]=SDL_LoadBMP("Menu/menuf/3.bmp");
 
 }
 
@@ -651,4 +673,9 @@ void Final_AllocationMenuPause(SDL_Surface * mpause[3])
     mpause[1]=SDL_LoadBMP("Menu/pause/2.bmp");
     mpause[2]=SDL_LoadBMP("Menu/pause/3.bmp");
 
+}
+
+void Final_AllocationVictoire(SDL_Surface *& winner)
+{
+    winner=SDL_LoadBMP("Menu/win.bmp");
 }

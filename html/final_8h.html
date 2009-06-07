@@ -68,30 +68,33 @@
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#4f4e1fbacaf50353ec520c3eca4749e4">Final_AffichageEnnemis</a> (const dEnnemi &amp;mechant, SDL_Rect &amp;posennemi, SDL_Surface *&amp;ennemiact, SDL_Surface *ennemi[4], SDL_Surface *&amp;ecran, char *en_dir, int *tab)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Blittage des images des Ennemis lors des Mouvements.  <a href="#4f4e1fbacaf50353ec520c3eca4749e4"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#d047221722993acb81fef430124bf3e9">Final_TestFinaux</a> (dEnnemi &amp;mechant, Bomberman &amp;perso, Terrain &amp;jeu, int &amp;win, int &amp;niveau, int &amp;vie_niveau, int &amp;perte_v, int &amp;continuer, int &amp;dead, Case *touche_explosion)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#49177abb657955196d82876bd74ac881">Final_TestFinaux</a> (dEnnemi &amp;mechant, Bomberman &amp;perso, Terrain &amp;jeu, int &amp;win, int &amp;niveau, int &amp;vie_niveau, int &amp;perte_v, int &amp;continuer, int &amp;dead, Case *touche_explosion, int &amp;gagner)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gère les tests finaux du Jeu.  <a href="#d047221722993acb81fef430124bf3e9"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gère les tests finaux du Jeu.  <a href="#49177abb657955196d82876bd74ac881"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#9f0319772fd95546b540736e6c50aebf">Final_MouvementEnnemis</a> (dEnnemi &amp;mechant, const Jeu &amp;bombermangame, Terrain &amp;jeu)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gère le mouvement des Ennemis.  <a href="#9f0319772fd95546b540736e6c50aebf"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#5de5cefd1605fb72b7095a19a00d9ca6">Final_LiberationMemoire</a> (SDL_Surface *ecran, SDL_Surface *menu, SDL_Surface *gameover, SDL_Surface *nombre[10], SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface *explode, SDL_Surface *mur, SDL_Surface *fond, SDL_Surface *personnage[4], SDL_Surface *ennemi[4], SDL_Surface *load[5], SDL_Surface *menufin[2], SDL_Surface *mpause[3])</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#cb159e3eeb4549ba641e4e82483beca0">Final_LiberationMemoire</a> (SDL_Surface *ecran, SDL_Surface *menu, SDL_Surface *gameover, SDL_Surface *nombre[10], SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface *explode, SDL_Surface *mur, SDL_Surface *fond, SDL_Surface *personnage[4], SDL_Surface *ennemi[4], SDL_Surface *load[5], SDL_Surface *menufin[3], SDL_Surface *mpause[3], SDL_Surface *winner)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libération propre en mémoire des SDL_Surface.  <a href="#5de5cefd1605fb72b7095a19a00d9ca6"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Libération propre en mémoire des SDL_Surface.  <a href="#cb159e3eeb4549ba641e4e82483beca0"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#d94eef89db42e6acafc0b84d1065a82f">Final_AllocationLoad</a> (SDL_Surface *load[5])</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocation des images pour Chargement.  <a href="#d94eef89db42e6acafc0b84d1065a82f"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#de27d03900bfc1acbac830e79722115d">Final_ChargementEntreNiveau</a> (SDL_Surface *load[5], SDL_Surface *&amp;ecran)</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Affichage du chargement entre Niveaux.  <a href="#de27d03900bfc1acbac830e79722115d"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#9bbc724fc82dca9f5d9f9e079c58fb88">Final_MenuFin</a> (SDL_Event &amp;event, SDL_Surface *menufin[2], SDL_Rect &amp;menpos, SDL_Surface *ecran, bool &amp;jeufin)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#b960a38b8eb86c0a70ef0934178c39c7">Final_MenuFin</a> (SDL_Event &amp;event, SDL_Surface *menufin[3], SDL_Rect &amp;menpos, SDL_Surface *ecran, bool &amp;jeufin, bool &amp;restart)</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gestion d'affichage du menu de fin.  <a href="#9bbc724fc82dca9f5d9f9e079c58fb88"></a><br></td></tr>
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#a62a906a6384ac813b0c609059b6b77d">Final_AllocationMenuFin</a> (SDL_Surface *menufin[2])</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gestion d'affichage du menu de fin.  <a href="#b960a38b8eb86c0a70ef0934178c39c7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#4119805bc12faa7aac7f0cf09e4b457b">Final_AllocationMenuFin</a> (SDL_Surface *menufin[3])</td></tr>
 
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocation des images pour le menu de fin.  <a href="#a62a906a6384ac813b0c609059b6b77d"></a><br></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocation des images pour le menu de fin.  <a href="#4119805bc12faa7aac7f0cf09e4b457b"></a><br></td></tr>
 <tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#214a050916fa6e2b13d0dbd76e8e172e">Final_AllocationMenuPause</a> (SDL_Surface *mpause[3])</td></tr>
 
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocation des images pour le menu de pause.  <a href="#214a050916fa6e2b13d0dbd76e8e172e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="final_8h.html#68d00b5a002c7ff00ddab2cc52448285">Final_AllocationVictoire</a> (SDL_Surface *&amp;winner)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Allocation de l'image pour la fin victorieuse du jeu.  <a href="#68d00b5a002c7ff00ddab2cc52448285"></a><br></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Description détaillée</h2>
 Déclarations des fonctions pour l'utilisation de la SDL. 
@@ -464,7 +467,7 @@ Allocation des images pour Chargement.
 Cette fonction affecte pour chaque élément du tableau l'image correspondant au temps de chargement. Ici 1s,2s,...,5s. 
 </div>
 </div><p>
-<a class="anchor" name="a62a906a6384ac813b0c609059b6b77d"></a><!-- doxytag: member="final.h::Final_AllocationMenuFin" ref="a62a906a6384ac813b0c609059b6b77d" args="(SDL_Surface *menufin[2])" -->
+<a class="anchor" name="4119805bc12faa7aac7f0cf09e4b457b"></a><!-- doxytag: member="final.h::Final_AllocationMenuFin" ref="4119805bc12faa7aac7f0cf09e4b457b" args="(SDL_Surface *menufin[3])" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -472,7 +475,7 @@ Cette fonction affecte pour chaque élément du tableau l'image correspondant au
           <td class="memname">void Final_AllocationMenuFin           </td>
           <td>(</td>
           <td class="paramtype">SDL_Surface *&nbsp;</td>
-          <td class="paramname"> <em>menufin</em>[2]          </td>
+          <td class="paramname"> <em>menufin</em>[3]          </td>
           <td>&nbsp;)&nbsp;</td>
           <td width="100%"></td>
         </tr>
@@ -661,6 +664,33 @@ Blittage des images des murs solides, mur, bombes et explosion sur l'Ecran.
 Cette fonction gère l'affichage du plateau du jeu en utilisant les images et en affectant à la varibale SDL_Rect murpos la coordonnée dans le Terrain. 
 </div>
 </div><p>
+<a class="anchor" name="68d00b5a002c7ff00ddab2cc52448285"></a><!-- doxytag: member="final.h::Final_AllocationVictoire" ref="68d00b5a002c7ff00ddab2cc52448285" args="(SDL_Surface *&amp;winner)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Final_AllocationVictoire           </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Surface *&amp;&nbsp;</td>
+          <td class="paramname"> <em>winner</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Allocation de l'image pour la fin victorieuse du jeu. 
+<p>
+<dl compact><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>winner</em>&nbsp;</td><td>un pointeur sur SDL_Surface en donnée/résultat</td></tr>
+  </table>
+</dl>
+Cette fonction affecte l'image correspondant à la victoire à la variable winner. 
+</div>
+</div><p>
 <a class="anchor" name="de27d03900bfc1acbac830e79722115d"></a><!-- doxytag: member="final.h::Final_ChargementEntreNiveau" ref="de27d03900bfc1acbac830e79722115d" args="(SDL_Surface *load[5], SDL_Surface *&amp;ecran)" -->
 <div class="memitem">
 <div class="memproto">
@@ -798,7 +828,7 @@ Fonction qui effectue l'explosion de la Bombe.
 Cette fonction effectue l'explosion de la Bombe si la variable poser = 1 Ensuite si le temps actuel - le champs temps de la bombe est inférieur à 2500ms, on effectue pas l'explosion. Une fois ce temps &gt;= 2500ms, on affecte 1 à explosion, on incremente le nombre de bombe du Bomberman, on affecte 0 à poser, à init_a et 1 à initb (afin de reposer une bombe). On execute la fonction d'explosion des Murs, de teste de presénce du Bomberman et d'Ennemis sur le rayon. Puis on affecte l'heure où à lieu l'explosion dans la variable temps_explosion, afin de maintenir quelques secondes l'explosion. Si le Bomberman perd une vie à cause de l'explosion, on affecte 1 à perte_v afin qu'il ne perde pas de vie s'il reste au contact de l'explosion. 
 </div>
 </div><p>
-<a class="anchor" name="5de5cefd1605fb72b7095a19a00d9ca6"></a><!-- doxytag: member="final.h::Final_LiberationMemoire" ref="5de5cefd1605fb72b7095a19a00d9ca6" args="(SDL_Surface *ecran, SDL_Surface *menu, SDL_Surface *gameover, SDL_Surface *nombre[10], SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface *explode, SDL_Surface *mur, SDL_Surface *fond, SDL_Surface *personnage[4], SDL_Surface *ennemi[4], SDL_Surface *load[5], SDL_Surface *menufin[2], SDL_Surface *mpause[3])" -->
+<a class="anchor" name="cb159e3eeb4549ba641e4e82483beca0"></a><!-- doxytag: member="final.h::Final_LiberationMemoire" ref="cb159e3eeb4549ba641e4e82483beca0" args="(SDL_Surface *ecran, SDL_Surface *menu, SDL_Surface *gameover, SDL_Surface *nombre[10], SDL_Surface *terrain, SDL_Surface *bombes, SDL_Surface *mursolide, SDL_Surface *explode, SDL_Surface *mur, SDL_Surface *fond, SDL_Surface *personnage[4], SDL_Surface *ennemi[4], SDL_Surface *load[5], SDL_Surface *menufin[3], SDL_Surface *mpause[3], SDL_Surface *winner)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -884,13 +914,19 @@ Cette fonction effectue l'explosion de la Bombe si la variable poser = 1 Ensuite
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">SDL_Surface *&nbsp;</td>
-          <td class="paramname"> <em>menufin</em>[2], </td>
+          <td class="paramname"> <em>menufin</em>[3], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">SDL_Surface *&nbsp;</td>
-          <td class="paramname"> <em>mpause</em>[3]</td><td>&nbsp;</td>
+          <td class="paramname"> <em>mpause</em>[3], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Surface *&nbsp;</td>
+          <td class="paramname"> <em>winner</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -920,7 +956,8 @@ Libération propre en mémoire des SDL_Surface.
     <tr><td valign="top"></td><td valign="top"><em>ennemi</em>&nbsp;</td><td>un tableau de taille 4 de pointeur sur SDL_Surface </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>load</em>&nbsp;</td><td>un tableau de taille 5 de pointeur sur SDL_Surface </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>menufin</em>&nbsp;</td><td>un tableau de taille 2 de pointeur sur SDL_Surface </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>mpause</em>&nbsp;</td><td>un tableau de taille 3 de pointeur sur SDL_Surface</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>mpause</em>&nbsp;</td><td>un tableau de taille 3 de pointeur sur SDL_Surface </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>winner</em>&nbsp;</td><td>un pointeur sur SDL_Surface</td></tr>
   </table>
 </dl>
 Cette fonction libère proprement en mémoire l'ensemble des SDL_Surface utilisée au cours de la partie de Bomberman. Elle est utilisée en toute fin de partie, avant que le jeu ne se quitte. 
@@ -984,7 +1021,7 @@ Gestion d'affichage et d'évènements du Menu.
 Cette fonction permet de choisir entre quitter le jeu ou commencer une partie. L'ensemble des variables en paramètre doivent être initialisées. Si l'option quitter est choisie jeufin = true et quitter = 1 ce qui permet de sortir des deux boucles dans le fichier main. Si l'option jouer est choisie win = 1 et niveau = 1, ce qui permet de rentrer dans la boucle de jeu tant que le Bomberman est vivant. 
 </div>
 </div><p>
-<a class="anchor" name="9bbc724fc82dca9f5d9f9e079c58fb88"></a><!-- doxytag: member="final.h::Final_MenuFin" ref="9bbc724fc82dca9f5d9f9e079c58fb88" args="(SDL_Event &amp;event, SDL_Surface *menufin[2], SDL_Rect &amp;menpos, SDL_Surface *ecran, bool &amp;jeufin)" -->
+<a class="anchor" name="b960a38b8eb86c0a70ef0934178c39c7"></a><!-- doxytag: member="final.h::Final_MenuFin" ref="b960a38b8eb86c0a70ef0934178c39c7" args="(SDL_Event &amp;event, SDL_Surface *menufin[3], SDL_Rect &amp;menpos, SDL_Surface *ecran, bool &amp;jeufin, bool &amp;restart)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -998,7 +1035,7 @@ Cette fonction permet de choisir entre quitter le jeu ou commencer une partie. L
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">SDL_Surface *&nbsp;</td>
-          <td class="paramname"> <em>menufin</em>[2], </td>
+          <td class="paramname"> <em>menufin</em>[3], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1016,7 +1053,13 @@ Cette fonction permet de choisir entre quitter le jeu ou commencer une partie. L
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool &amp;&nbsp;</td>
-          <td class="paramname"> <em>jeufin</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>jeufin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&nbsp;</td>
+          <td class="paramname"> <em>restart</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -1036,10 +1079,11 @@ Gestion d'affichage du menu de fin.
     <tr><td valign="top"></td><td valign="top"><em>menufin</em>&nbsp;</td><td>un tableau de taille 2 de pointeur sur SDL_Surface </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>menpos</em>&nbsp;</td><td>un SDL_Rect en donnée/résultat </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>ecran</em>&nbsp;</td><td>un pointeur sur SDL_Surface </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>jeufin</em>&nbsp;</td><td>un Booléen en donnée/résultat</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>jeufin</em>&nbsp;</td><td>un Booléen en donnée/résultat </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>restart</em>&nbsp;</td><td>un Booléen en donnée/résultat</td></tr>
   </table>
 </dl>
-Cette fonction affiche le menu de fin en fin de partie (game over), en blittant sur l'ecran l'image qui correspond au choix du joueur en appuyant sur H/B. Si le joueur appuis espace: S'il se trouve sur Quitter, jeufin prend la valeur true, le jeu se quitte, S'il se trouve sur Menu, jeufin prend la valeur false, il retourne sur le Menu. 
+Cette fonction affiche le menu de fin en fin de partie (game over), en blittant sur l'ecran l'image qui correspond au choix du joueur en appuyant sur H/B. Si le joueur appuis espace: S'il se trouve sur Quitter, jeufin prend la valeur true, le jeu se quitte, S'il se trouve sur Menu, jeufin prend la valeur false, il retourne sur le Menu. S'il se trouve sur Recommencer, jeufin prend la valeur false et restart la valeur true, il retourne en haut de bouclke mais court-circuitre le Menu. 
 </div>
 </div><p>
 <a class="anchor" name="e5e52b5c17cf2fdc819b015c281a3577"></a><!-- doxytag: member="final.h::Final_MenuPause" ref="e5e52b5c17cf2fdc819b015c281a3577" args="(SDL_Surface *mpause[3], SDL_Surface *ecran, SDL_Rect &amp;menpos, bool &amp;jeufin, int &amp;quitter, int &amp;continuer, int &amp;win, SDL_Event &amp;event)" -->
@@ -1357,7 +1401,7 @@ Fonction qui pose la Bombe.
 Cette fonction pose la Bombe aux coordonnées ou se trouve le Bomberman si bombepos = 1. On lance la fonction de teste du posage de Bombe dans le module Bombe. Si on ne peut poser la bombe, on utilise Testament de la bombe et on affecte 1 à initb pour l'initialiser au prochain tour de boucle. Si on peut poser la bombe, on decremente le nombre de bombe du Bomberman et on affecte 1 à poser pour effectuer l'explosion. L'heure système du posage de bombe est enregistré dans le champs temps de la bombe. 
 </div>
 </div><p>
-<a class="anchor" name="d047221722993acb81fef430124bf3e9"></a><!-- doxytag: member="final.h::Final_TestFinaux" ref="d047221722993acb81fef430124bf3e9" args="(dEnnemi &amp;mechant, Bomberman &amp;perso, Terrain &amp;jeu, int &amp;win, int &amp;niveau, int &amp;vie_niveau, int &amp;perte_v, int &amp;continuer, int &amp;dead, Case *touche_explosion)" -->
+<a class="anchor" name="49177abb657955196d82876bd74ac881"></a><!-- doxytag: member="final.h::Final_TestFinaux" ref="49177abb657955196d82876bd74ac881" args="(dEnnemi &amp;mechant, Bomberman &amp;perso, Terrain &amp;jeu, int &amp;win, int &amp;niveau, int &amp;vie_niveau, int &amp;perte_v, int &amp;continuer, int &amp;dead, Case *touche_explosion, int &amp;gagner)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1419,7 +1463,13 @@ Cette fonction pose la Bombe aux coordonnées ou se trouve le Bomberman si bombe
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Case *&nbsp;</td>
-          <td class="paramname"> <em>touche_explosion</em></td><td>&nbsp;</td>
+          <td class="paramname"> <em>touche_explosion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&nbsp;</td>
+          <td class="paramname"> <em>gagner</em></td><td>&nbsp;</td>
         </tr>
         <tr>
           <td></td>
@@ -1444,10 +1494,11 @@ Gère les tests finaux du Jeu.
     <tr><td valign="top"></td><td valign="top"><em>perte_v</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>continuer</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>dead</em>&nbsp;</td><td>un Entier en donnée/résultat </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>touche_explosion</em>&nbsp;</td><td>un pointeur sur Case</td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>touche_explosion</em>&nbsp;</td><td>un pointeur sur Case </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>gagner</em>&nbsp;</td><td>un Entier en donnée/résultat</td></tr>
   </table>
 </dl>
-Cette fonction gère les tests finaux de fin de jeu, en plus du test de contact avec l'explosion pour le Bomberman et un ou plusieurs ennemis. Si le Bomberman touche une explosion, on décrement sa vie et on affecte 1 à perte_v afin qu'il ne reperde pas de vie avant la prochaine bombe. Cette fonction va tester aussi si le Bomberman a toujours assez de vie pour continuer le jeu, sinon GameOver. Et finalement, la fonction teste si tout les ennemis ont été tué pour passer au niveau suivant en incrementant la variable niveau et en sauvegardant le nombre de vie actuel dans vie_niveau. 
+Cette fonction gère les tests finaux de fin de jeu, en plus du test de contact avec l'explosion pour le Bomberman et un ou plusieurs ennemis. Si le Bomberman touche une explosion, on décrement sa vie et on affecte 1 à perte_v afin qu'il ne reperde pas de vie avant la prochaine bombe. Cette fonction va tester aussi si le Bomberman a toujours assez de vie pour continuer le jeu, sinon GameOver. Et finalement, la fonction teste si tout les ennemis ont été tué pour passer au niveau suivant en incrementant la variable niveau et en sauvegardant le nombre de vie actuel dans vie_niveau. Finalement, cette fonction teste aussi si on a fini le jeu et affecte 1 à winner si Oui. 
 </div>
 </div><p>
 <a class="anchor" name="8138ad1abb56697369b99b90557e9774"></a><!-- doxytag: member="final.h::Final_TestInitBombe" ref="8138ad1abb56697369b99b90557e9774" args="(int &amp;initb, int &amp;init_a, Bombe *&amp;bombe)" -->
@@ -1495,7 +1546,7 @@ Cette fonction initialise la Bombe si elle a déjà explosé (Testament), elle a
 </div>
 </div><p>
 </div>
-<hr size="1"><address style="text-align: right;"><small>Généré le Thu Jun 4 23:39:52 2009 pour SuperBomberman par&nbsp;
+<hr size="1"><address style="text-align: right;"><small>Généré le Sun Jun 7 15:01:15 2009 pour SuperBomberman par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.5 </small></address>
 </body>
